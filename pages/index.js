@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import experience from '../content/experience'
-import Section from '../components/Section'
+import Experience from '../components/Experience'
 
 export default () => (
   <div className="root">
@@ -12,15 +12,7 @@ export default () => (
         rel="stylesheet"
       />
     </Head>
-    {experience.map(exp => (
-      <Section>
-        <div>{exp.employers[0].name}</div>
-        <div>
-          <h2>{exp.position}</h2>
-          {exp.description}
-        </div>
-      </Section>
-    ))}
+    {experience.map(exp => <Experience {...exp} />)}
     <style jsx>{`
       :global(html) {
         box-sizing: border-box;

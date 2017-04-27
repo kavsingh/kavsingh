@@ -5,31 +5,31 @@ const Section = ({ children }) => {
   const [first, ...rest] = Children.toArray(children)
 
   return (
-    <div className="root">
-      <div className="description">
+    <div className="Section">
+      <div className="Section__leftPanel">
         {isValidElement(first) && first}
       </div>
-      <div className="content">
+      <div className="Section__rightPanel">
         {(rest || []).filter(el => isValidElement(el))}
       </div>
       <style jsx>{`
-        .root {
+        .Section {
           width: 100%;
           display: flex;
           flex-direction: column;
         }
 
         @media (min-width: 28rem) {
-          .root {
+          .Section {
             flex-direction: row;
           }
 
-          .description {
+          .Section__leftPanel {
             flex: 0 0 30%;
             max-width: 30rem;
           }
 
-          .content {
+          .Section__rightPanel {
             flex: 1 0 auto;
           }
         }
