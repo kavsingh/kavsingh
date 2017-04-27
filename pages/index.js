@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import Section from '../components/section'
 import experience from '../content/experience'
+import Section from '../components/Section'
 
 export default () => (
   <div className="root">
