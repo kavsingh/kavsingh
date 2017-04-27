@@ -1,18 +1,24 @@
 import React from 'react'
 import Head from 'next/head'
 import experience from '../content/experience'
+import Section from '../components/Section'
 import Experience from '../components/Experience'
 
 export default () => (
   <div className="root">
     <Head>
+      <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link
         href="https://fonts.googleapis.com/css?family=Inconsolata"
         rel="stylesheet"
       />
     </Head>
-    {experience.map(exp => <Experience {...exp} />)}
+    <Section
+      title={() => 'Experience'}
+      content={() =>
+        experience.map(exp => <Experience {...exp} key={exp.employer} />)}
+    />
     <style jsx>{`
       :global(html) {
         box-sizing: border-box;

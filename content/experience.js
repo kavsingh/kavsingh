@@ -3,73 +3,58 @@ import md from 'markdown-in-js'
 
 export default [
   {
-    position: 'Front End Developer',
-    employers: [
-      {
-        name: 'Cape Horizon',
-        period: 'July 2013 - Present',
-      },
-    ],
+    employer: 'OurHome',
+    position: 'Co-Founder / CDO / Lead Frontend Developer',
+    period: 'July 2013 - Present',
+    location: 'Melbourne, Australia',
     description: md`
-Working with a startup building apps for families. [OurHome](http://ourhomeapp.com) for families.
-  * Responsible for front end architecture and build, occasionally tasked with designing UI components and animations.
-  * Both apps are built on the same codebase and deployed across iOS and Android via Cordova. This has meant dealing with deployment fragmentation and making engineering decisions to address device/webview implementation quirks.
-  * Both apps are available in 6 languages (English, Chinese, Japanese, French, German and Spanish) requiring internationalisation and translation management strategies.
-  * BackboneJS / RequireJS modules / SASS with Bourbon / Underscore HTML templates
-  * Grunt build system along with Fab to automate builds / deployment
-  * Working with a small team of developers has had the added benefit of insight into the implementation of the Python (via Django) API.
-  * Websites implemented using Coffeescript / RequireJS / Stylus, built using Gulp, served via Node on AWS
+[OurHome](http://ourhomeapp.com) is an app to help families organise their households and incentivise contribution, available on iOS and Android (via Cordova) as well as in-browser.
+* Built on Backbone, code has evolved over time to incorporate ideas from modern libraries (like redux) as well as transitioned to ES2016+.
+* My role as CDO includes oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
+* With our main deployment focus being the iOS and Android app stores, design has always been mobile-first. From a technical view it has also meant dealing with deployment fragmentation, and making engineering /design decisions to address device and webview implementation quirks.
+* Working in a small team of developers has had the added benefit of insight into the implementation of the Python / Django API.
     `,
   },
   {
-    position: 'Web Developer (Contract)',
-    employers: [
-      {
-        name: 'Tundra Interactive',
-        period: 'June 2013 - July 2013',
-      },
-      {
-        name: 'CHE Proximity',
-        period: 'June 2013',
-      },
-      {
-        name: 'Clemenger BBDO',
-        period: 'March 2013',
-      },
-    ],
+    employer: 'CHE Proximity',
+    position: 'Senior Frontend Developer (Freelance)',
+    period: 'November 2016 - Present',
+    location: 'Melbourne, Australia',
     description: md`
-Worked on a range of projects including small, mobile-centric pages, HTML/JS iPad kiosk UIs, Facebook page integrations and full websites. Generally contracted for work on the front end but occasionally implemented functionality in PHP backends. My time in contracting was invaluable, having exposed me to a variety of tech stacks, workflows and cultures.
+In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
+* ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
+* Server rendered React via EpiServer
+* Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
+
     `,
   },
   {
-    position: 'Front End Developer',
-    employers: [
-      {
-        name: 'Someone\'s',
-        period: 'Mar 2012 - Dec 2012',
-      },
-    ],
+    employer: 'Inspire Group',
+    position: 'Frontend Developer (Freelance)',
+    period: '2015 - 2016 (Recurring work)',
+    location: 'Melbourne, Australia',
     description: md`
-UI prototyping and front end build for a large scale web application, for use in desktop browsers.
-* Involved with redesigning UX flows and creating functional prototypes for testing and review, before moving to the front end production team.
-* Client facing app was built around BackboneJS and styled using vanilla CSS.
-* Tested using Selenium
-* Development process was conducted in line with agile methodologies and involved close communication with the back end team to spec out API requirements.
+Worked on a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
+* Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
+* Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets, needing abstractions over LMS apis which helped minimise code divergence.
     `,
   },
   {
-    position: 'Web Developer / Animator',
-    employers: [
-      {
-        name: 'Sense Advertising',
-        period: 'Aug 2009 - Mar 2012',
-      },
-    ],
+    employer: 'Someone’s',
+    position: 'Designer / FrontEnd Developer',
+    period: 'March 2012 - December 2012',
+    location: 'Melbourne, Australia',
     description: md`
-Created a range of digital content augmenting broader advertising campaigns - largely Flash banners and micro-sites, EDMs, and HTML / JS websites for a variety of clients.
-* Having started as the sole web developer, the role involved close collaboration with creative and design teams in order to best meet client needs and expectations.
-* Extensive work with Wordpress along with managing some custom client CMSs.
-* While in the role I headed a small team in creating animations and web assets for an iPad based Sensis application, requiring the production of animations to tight deadlines and ensuring that HTML, CSS, JavaScript and video assets integrated with Sensis' application.
+UI prototyping and front end build for a large scale web application. Involved with re-designing the application's user flows from the ground up creating wireframes, mockups and functional prototypes for testing and review, after which I was involved in the production build implementation.
+    `,
+  },
+  {
+    employer: 'Sense Advertising',
+    position: 'Digital Designer / Animator / Front End Developer',
+    period: 'August 2009 - March 2012',
+    location: 'Melbourne, Australia',
+    description: md`
+A range of web-centric digital content creation, augmenting broader advertising campaigns. These were largely Flash banners, EDMs, and small-scale websites for a variety of clients. Sites often used Wordpress where clients required a CMS. While in this role I headed a small team in the creation of web assets and animations for an iPad based Sensis project. This involved producing numerous animations to tight deadlines, and ensuring that HTML, CSS, JavaScript and video assets integrated well with Sensis’ iPad application.
     `,
   },
 ]

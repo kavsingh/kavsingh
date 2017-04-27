@@ -1,22 +1,36 @@
 import React from 'react'
-import Section from '../Section'
+import PropTypes from 'prop-types'
+import Article from '../Article'
+import ArticleTitle from '../ArticleTitle'
 
-
-const Experience = ({ employers, description, position }) => (
-  <Section>
-    <ul>{
-      employers.map(({ name, period }) => (
-        <li>
-          <h3>{name}</h3>
-          {period}
-        </li>
-      ))
-    }</ul>
-    <div>
-      <h2>{position}</h2>
-      {description}
-    </div>
-  </Section>
+const Experience = ({
+  employer,
+  position,
+  period,
+  location,
+  description,
+}) => (
+  <Article
+    title={() => <ArticleTitle title={position} subtitle={employer} />}
+    meta={() => `${period}, ${location}`}
+    body={() => description}
+  />
 )
+
+Experience.propTypes = {
+  employer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  position: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  period: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  location: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+}
+
+Experience.defaultProps = {
+  employer: '',
+  position: '',
+  period: '',
+  location: '',
+  description: '',
+}
 
 export default Experience
