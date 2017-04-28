@@ -20,6 +20,7 @@ const Article = ({ title, meta, body }) => (
 
       .article__meta {
         font-size: 0.88em;
+        font-weight: 400;
         text-transform: uppercase;
         margin: 0 0 1.1em;
         color: #666;

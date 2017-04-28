@@ -3,10 +3,10 @@ import Head from 'next/head'
 import about from '../content/about'
 import experience from '../content/experience'
 import education from '../content/education'
-import MastHead from '../components/MastHead'
+import HTMLContent from '../components/HTMLContent'
 import Section from '../components/Section'
 import Article from '../components/Article'
-import HTMLContent from '../components/HTMLContent'
+import MastHead from '../components/MastHead'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
 
@@ -68,19 +68,27 @@ export default () => (
       }
 
       .root {
+        padding: 2em;
         width: 100%;
         max-width: 56rem;
         margin: 0 auto;
-        padding: 1em;
         -webkit-font-smoothing: subpixel-antialiased;
       }
 
-      .root :global(.mastHead) {
-        margin: 2em 0 4em;
+      .root :global(.mastHead),
+      .root :global(section) {
+        margin-bottom: 3em;
       }
 
-      .root :global(section) {
-        margin-bottom: 4em;
+      @media (min-width: 30rem) {
+        .root {
+          padding: 4em 2em;
+        }
+
+        .root :global(.mastHead),
+        .root :global(section) {
+          margin-bottom: 4em;
+        }
       }
 
       @page {
@@ -92,10 +100,11 @@ export default () => (
           font: 12px/1.24 Inconsolata, monospace;
         }
 
-        .root :global(.mastHead) {
-          margin: 1em 0 3em;
+        .root {
+          padding: 2em;
         }
 
+        .root :global(.mastHead),
         .root :global(section) {
           margin-bottom: 3em;
         }
