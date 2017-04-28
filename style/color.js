@@ -1,0 +1,5 @@
+export const pageBackground = '#fff'
+export const bodyText = '#222'
+// export const pageBackground = '#222'
+// export const bodyText = '#dedede'
+export const keyline = '#'

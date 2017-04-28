@@ -9,6 +9,7 @@ import Article from '../components/Article'
 import MastHead from '../components/MastHead'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
+import { pageBackground, bodyText } from '../style/color'
 
 export default () => (
   <div className="root">
@@ -53,6 +54,7 @@ export default () => (
 
       :global(html) {
         font: 14px/1.24 Inconsolata, monospace;
+        background-color: ${pageBackground};
       }
 
       :global(html),
@@ -64,7 +66,7 @@ export default () => (
       }
 
       :global(body) {
-        color: #222;
+        color: ${bodyText};
       }
 
       .root {
