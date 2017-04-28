@@ -99,15 +99,6 @@ export default () => (
         :global(html) {
           font: 12px/1.24 Inconsolata, monospace;
         }
-
-        .root {
-          padding: 2em;
-        }
-
-        .root :global(.mastHead),
-        .root :global(section) {
-          margin-bottom: 3em;
-        }
       }
     `}</style>
   </div>
