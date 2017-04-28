@@ -1,8 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import experience from '../content/experience'
+import education from '../content/education'
 import Section from '../components/Section'
 import Experience from '../components/Experience'
+import Education from '../components/Education'
 
 export default () => (
   <div className="root">
@@ -19,6 +21,11 @@ export default () => (
       content={() =>
         experience.map(exp => <Experience {...exp} key={exp.employer} />)}
     />
+    <Section
+      title={() => 'Education'}
+      content={() =>
+        education.map(edu => <Education {...edu} key={edu.institution} />)}
+    />
     <style jsx>{`
       :global(html) {
         box-sizing: border-box;
@@ -31,7 +38,7 @@ export default () => (
       }
 
       :global(html) {
-        font: 16px/1 Inconsolata, monospace;
+        font: 14px/1.24 Inconsolata, monospace;
       }
 
       :global(html),
@@ -47,9 +54,14 @@ export default () => (
       }
 
       .root {
+        width: 100%;
         max-width: 56rem;
         margin: 0 auto;
         padding: 1em;
+      }
+
+      .root :global(section) {
+        margin-bottom: 4em;
       }
     `}</style>
   </div>

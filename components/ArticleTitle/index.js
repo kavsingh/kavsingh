@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ArticleTitle = ({ title, subtitle }) => (
-  <h3>
+  <span className="articleTitle">
     <span className="articleTitle__title">{title}</span>
     <span className="articleTitle__seperator">::</span>
     <span className="articleTitle__subtitle">{subtitle}</span>
@@ -16,10 +16,9 @@ const ArticleTitle = ({ title, subtitle }) => (
       }
       .articleTitle__subtitle {
         font-weight: 400;
-        font-size: 0.9em;
       }
     `}</style>
-  </h3>
+  </span>
 )
 
 ArticleTitle.propTypes = {

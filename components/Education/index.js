@@ -5,31 +5,34 @@ import ArticleTitle from '../ArticleTitle'
 import HTMLContent from '../HTMLContent'
 
 const Experience = ({
-  employer,
-  position,
+  subject,
+  institution,
   period,
+  status,
   location,
   description,
 }) => (
   <Article
-    title={() => <ArticleTitle title={position} subtitle={employer} />}
-    meta={() => `${period}, ${location}`}
+    title={() => <ArticleTitle title={subject} subtitle={institution} />}
+    meta={() => `${status}, ${period}, ${location}`}
     body={() => <HTMLContent>{description}</HTMLContent>}
   />
 )
 
 Experience.propTypes = {
-  employer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  position: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  subject: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  institution: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   period: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  status: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   location: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }
 
 Experience.defaultProps = {
-  employer: '',
-  position: '',
+  subject: '',
+  institution: '',
   period: '',
+  status: '',
   location: '',
   description: '',
 }

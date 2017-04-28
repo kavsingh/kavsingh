@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Section = ({ title, content }) => (
-  <div className="Section">
+  <section className="Section">
     <div className="Section__titleContainer">
-      <h2>{title()}</h2>
+      <h1>{title()}</h1>
     </div>
     <div className="Section__contentContainer">
       {content()}
@@ -16,22 +16,57 @@ const Section = ({ title, content }) => (
         flex-direction: column;
       }
 
-      @media (min-width: 28rem) {
+      .Section__titleContainer,
+      .Section__contentContainer {
+        position: relative;
+        padding-top: 1.4em;
+      }
+
+      .Section__titleContainer::before,
+      .Section__contentContainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        background-color: #ddd;
+      }
+
+      .Section__contentContainer::before {
+        width: 50%;
+      }
+
+      .Section__titleContainer h1 {
+        font-size: 1.1em;
+        margin: 0;
+      }
+
+      .Section__contentContainer :global(article:not(:last-child)) {
+        margin-bottom: 2em;
+      }
+
+      @media (min-width: 30rem) {
         .Section {
+          width: 100%;
           flex-direction: row;
         }
 
         .Section__titleContainer {
-          flex: 0 0 30%;
+          flex: 0 0 20%;
           max-width: 30rem;
+          padding-right: 1em;
+        }
+
+        .Section__titleContainer::before {
+          width: 10%;
         }
 
         .Section__contentContainer {
-          flex: 1 0 auto;
+          flex: 1 0;
         }
       }
     `}</style>
-  </div>
+  </section>
 )
 
 export default Section

@@ -7,6 +7,7 @@ export default [
     institution: 'RMIT University',
     period: '2006 - 2008',
     status: 'graduated',
+    location: 'Melbourne, Australia',
     description: md`
 Graduated with distinction. Final project, built using ActionScript 3, was awarded Best Interactive for the graduating year. A small group of students and I formed a collective called Projector Obscura which involved itself with VJ performances and projection festivals.
     `,
@@ -16,6 +17,7 @@ Graduated with distinction. Final project, built using ActionScript 3, was award
     institution: 'University of Melbourne',
     period: '2000 - 2002',
     status: 'attended',
+    location: 'Melbourne, Australia',
     description: md`
 Completed modules in functional programming, object oriented programming and basic marketing.
     `,
