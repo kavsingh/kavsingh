@@ -18,7 +18,7 @@ export default [
   {
     employer: 'CHE Proximity',
     position: 'Senior Frontend Developer (Freelance)',
-    period: 'November 2016 - Present',
+    period: 'November 2016 - February 2017',
     location: 'Melbourne, Australia',
     description: md`
 In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.

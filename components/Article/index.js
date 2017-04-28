@@ -5,10 +5,14 @@ const constStr = () => ''
 
 const Article = ({ title, meta, body }) => (
   <article className="article">
-    <h1 className="article__title">{title()}</h1>
-    <h2 className="article__meta">{meta()}</h2>
+    {title() ? <h1 className="article__title">{title()}</h1> : null}
+    {meta() ? <h2 className="article__meta">{meta()}</h2> : null}
     <div className="article__body">{body()}</div>
     <style jsx>{`
+      .article {
+        page-break-inside: avoid;
+      }
+
       .article__title {
         font-size: 1.1em;
         margin: 0 0 0.2em;

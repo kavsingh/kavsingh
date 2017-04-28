@@ -1,8 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
+import about from '../content/about'
 import experience from '../content/experience'
 import education from '../content/education'
 import Section from '../components/Section'
+import Article from '../components/Article'
+import HTMLContent from '../components/HTMLContent'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
 
@@ -16,6 +19,15 @@ export default () => (
         rel="stylesheet"
       />
     </Head>
+    <Section
+      title={() => 'Skills'}
+      content={() => (
+        <Article
+          title={() => ''}
+          body={() => <HTMLContent>{about.skills}</HTMLContent>}
+        />
+      )}
+    />
     <Section
       title={() => 'Experience'}
       content={() =>
@@ -62,6 +74,20 @@ export default () => (
 
       .root :global(section) {
         margin-bottom: 4em;
+      }
+
+      @page {
+        size: A4 portrait;
+      }
+
+      @media print {
+        :global(html) {
+          font: 12px/1.24 Inconsolata, monospace;
+        }
+
+        .root :global(section) {
+          margin-bottom: 3em;
+        }
       }
     `}</style>
   </div>

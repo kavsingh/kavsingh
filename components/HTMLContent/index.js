@@ -25,6 +25,21 @@ const HTMLContent = ({ children }) => (
         content: '\\2013';
         margin-right: 0.8em;
       }
+
+      .htmlContent :global(a) {
+        color: inherit;
+      }
+
+      @media print {
+        .htmlContent :global(a) {
+          text-decoration: none;
+        }
+
+        .htmlContent :global(a::after) {
+          content: '[' attr(href) ']';
+          margin-left: 0.4em;
+        }
+      }
     `}</style>
   </div>
 )
