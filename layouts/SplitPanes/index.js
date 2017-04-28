@@ -27,9 +27,9 @@ const SplitPanes = ({ children }) => {
           }
 
           .splitPanes__left {
-            flex: 0 0 20%;
+            flex: 0 0 28%;
             max-width: 30rem;
-            padding-right: 1em;
+            padding-right: 2em;
           }
 
           .splitPanes__right {

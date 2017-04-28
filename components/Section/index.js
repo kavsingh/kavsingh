@@ -29,8 +29,8 @@ const Section = ({ title, content }) => (
         position: absolute;
         top: 0;
         left: 0;
-        height: 1px;
-        background-color: #ddd;
+        height: 0px;
+        border-top: 1px dashed #ccc;
       }
 
       .section__contentContainer::before {

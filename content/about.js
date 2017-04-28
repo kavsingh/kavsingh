@@ -2,7 +2,8 @@ import React from 'react' // eslint-disable-line
 import md from 'markdown-in-js'
 
 export default {
-  name: 'Kav Singh',
+  name: 'Kanwaljeet Singh',
+  profession: 'Frontend Developer',
   links: [
     md`[Email](mailto://flakisms@gmail.com)`,
     md`[Github](https://github.com/kavsingh)`,
