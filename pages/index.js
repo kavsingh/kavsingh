@@ -9,7 +9,7 @@ import Article from '../components/Article'
 import MastHead from '../components/MastHead'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
-import { pageBackground, bodyText } from '../style/color'
+import { screenTheme, printTheme } from '../style/color'
 
 export default () => (
   <div className="root">
@@ -42,21 +42,6 @@ export default () => (
         education.map(edu => <Education {...edu} key={edu.institution} />)}
     />
     <style jsx>{`
-      :global(html) {
-        box-sizing: border-box;
-      }
-
-      :global(html) :global(*),
-      :global(html) :global(*::before),
-      :global(html) :global(*::after) {
-        box-sizing: inherit;
-      }
-
-      :global(html) {
-        font: 14px/1.24 Inconsolata, monospace;
-        background-color: ${pageBackground};
-      }
-
       :global(html),
       :global(body) {
         margin: 0;
@@ -65,8 +50,20 @@ export default () => (
         min-height: 100%;
       }
 
+      :global(html) {
+        box-sizing: border-box;
+        font: 14px/1.24 Inconsolata, monospace;
+        background-color: ${screenTheme.pageBackground};
+      }
+
+      :global(html) :global(*),
+      :global(html) :global(*::before),
+      :global(html) :global(*::after) {
+        box-sizing: inherit;
+      }
+
       :global(body) {
-        color: ${bodyText};
+        color: ${screenTheme.bodyText};
       }
 
       .root {
@@ -100,6 +97,11 @@ export default () => (
       @media print {
         :global(html) {
           font: 12px/1.24 Inconsolata, monospace;
+          background-color: ${printTheme.pageBackground};
+        }
+
+        :global(body) {
+          color: ${printTheme.bodyText};
         }
       }
     `}</style>

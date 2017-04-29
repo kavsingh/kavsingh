@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { screenTheme, printTheme } from '../../style/color'
 
 const constStr = () => ''
 
@@ -23,7 +24,13 @@ const Article = ({ title, meta, body }) => (
         font-weight: 400;
         text-transform: uppercase;
         margin: 0 0 1.1em;
-        color: #666;
+        color: ${screenTheme.bodyTextSecondary};
+      }
+
+      @media print {
+        .article__meta {
+          color: ${printTheme.bodyTextSecondary};
+        }
       }
     `}</style>
   </article>
