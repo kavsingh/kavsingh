@@ -10,12 +10,12 @@
   "engines": {
     "node": ">=7.0.0"
   },
-  "main": ".next/app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "now": "now",
     "deploy": "npm-run-all build now",
     "lint:js": "eslint ."
@@ -24,6 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "common-tags": "^1.4.0",
+    "express": "^4.15.2",
     "markdown-in-js": "^1.1.3",
     "next": "^2.2.0",
     "prop-types": "^15.5.8",
@@ -41,6 +42,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-lodash-fp": "^2.1.3",
     "eslint-plugin-react": "^6.10.3",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "sw-precache-webpack-plugin": "^0.10.1"
   }
 }

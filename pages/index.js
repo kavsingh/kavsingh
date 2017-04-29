@@ -14,6 +14,7 @@ import { screenTheme, printTheme } from '../style/color'
 export default () => (
   <div className="root">
     <Head>
+      <title>Resume - Kav Singh</title>
       <meta name="theme-color" content={`${screenTheme.pageBackground}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link
