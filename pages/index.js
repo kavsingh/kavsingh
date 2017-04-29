@@ -14,7 +14,7 @@ import { screenTheme, printTheme } from '../style/color'
 export default () => (
   <div className="root">
     <Head>
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content={`${screenTheme.pageBackground}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link
         href="https://fonts.googleapis.com/css?family=Inconsolata"
