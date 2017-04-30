@@ -9,7 +9,7 @@ export default [
     status: 'graduated',
     location: 'Melbourne, Australia',
     description: md`
-Graduated with distinction. Final project, built using ActionScript 3, was awarded Best Interactive for the graduating year. A small group of students and I formed a collective called Projector Obscura which involved itself with VJ performances and projection festivals.
+Graduated with distinction. Final project was awarded Best Interactive for the graduating year.
     `,
   },
   {
