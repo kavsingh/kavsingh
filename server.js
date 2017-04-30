@@ -24,7 +24,7 @@ app.prepare().then(() => {
   expressApp.get('*', (req, res) => handle(req, res))
 
   // SSL for local dev to test service worker
-  const server = dev
+  const server = dev || process.env.HTTPS === 'https'
     ? require('https').createServer({
       cert: fs.readFileSync(tilde('.localhost-ssl/cert.pem')),
       key: fs.readFileSync(tilde('.localhost-ssl/key.pem')),
