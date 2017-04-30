@@ -8,7 +8,7 @@ const ArticleTitle = ({ title, subtitle }) => (
     <span className="articleTitle__subtitle">{subtitle}</span>
     <style jsx>{`
       .articleTitle__title {
-        font-weight: 600;
+        font-weight: 700;
       }
       .articleTitle__seperator {
         font-weight: 400;

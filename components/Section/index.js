@@ -40,6 +40,7 @@ const Section = ({ title, content }) => (
 
       .section__titleContainer h1 {
         font-size: 1.1em;
+        font-weight: 700;
         margin: 0;
       }
 

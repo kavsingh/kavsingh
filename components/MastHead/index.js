@@ -46,10 +46,12 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
       }
 
       .mastHead :global(h1) {
+        font-weight: 700;
         font-size: 1.5em;
       }
 
       .mastHead :global(h2) {
+        font-weight: 400;
         font-size: 1.1em;
         color: #666;
       }
