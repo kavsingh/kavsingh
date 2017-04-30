@@ -1,7 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import PrintIcon from 'react-icons/lib/md/print'
 import SplitPanes from '../../layouts/SplitPanes'
 import HTMLContent from '../HTMLContent'
+import Button from '../Button'
+
+const print = typeof window !== 'undefined'
+  && typeof window.print === 'function'
+  && window.print
+
+const handlePrintClick = () => print && print()
 
 const MastHead = ({ name, profession, links }) => (
   <div className="mastHead">
@@ -10,14 +18,24 @@ const MastHead = ({ name, profession, links }) => (
         <h1>{name}</h1>
         <h2>{profession}</h2>
       </header>
-      <ul className="mastHead__links">
-        {links.map((link, i) =>
-          // links are react nodes so there's nothing reliable we can use
-          // here. use index for the time being.
-          // @todo: Some other thing
-          // eslint-disable-next-line react/no-array-index-key
-          <li key={i}><HTMLContent>{link}</HTMLContent></li>)}
-      </ul>
+      <div className="mastHead__content">
+        <ul className="mastHead__links">
+          {links.map((link, i) =>
+            // links are react nodes so there's nothing reliable we can use
+            // here. use index for the time being.
+            // @todo: Some other thing
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={i}><HTMLContent>{link}</HTMLContent></li>)}
+        </ul>
+        {print
+          ? (
+            <Button onClick={handlePrintClick}>
+              <div className="mastHead__print"><PrintIcon /></div>
+            </Button>
+          )
+          : null
+        }
+      </div>
     </SplitPanes>
     <style jsx>{`
       .mastHead {
@@ -39,6 +57,10 @@ const MastHead = ({ name, profession, links }) => (
         color: #666;
       }
 
+      .mastHead__content {
+        position: relative;
+      }
+
       .mastHead__links {
         list-style-type: none;
         padding: 0;
@@ -49,6 +71,17 @@ const MastHead = ({ name, profession, links }) => (
       .mastHead__links :global(p) {
         margin: 0 !important;
         padding: 0;
+      }
+
+      .mastHead__print {
+        font-size: 1.2em;
+        padding: 0.2em 0;
+      }
+
+      @media print {
+        .mastHead__print {
+          display: none;
+        }
       }
     `}</style>
   </div>
