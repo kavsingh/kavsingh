@@ -11,7 +11,12 @@ const MastHead = ({ name, profession, links }) => (
         <h2>{profession}</h2>
       </header>
       <ul className="mastHead__links">
-        {links.map(link => <li><HTMLContent>{link}</HTMLContent></li>)}
+        {links.map((link, i) =>
+          // links are react nodes so there's nothing reliable we can use
+          // here. use index for the time being.
+          // @todo: Some other thing
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={i}><HTMLContent>{link}</HTMLContent></li>)}
       </ul>
     </SplitPanes>
     <style jsx>{`
@@ -53,7 +58,7 @@ MastHead.propTypes = {
   name: PropTypes.string,
   profession: PropTypes.string,
   links: PropTypes.arrayOf(
-    PropTypes.oneOf([PropTypes.string, PropTypes.node]),
+    PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   ),
 }
 
