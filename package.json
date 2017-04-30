@@ -32,7 +32,8 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-icons": "^2.2.3"
+    "react-icons": "^2.2.3",
+    "recompose": "^0.23.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
