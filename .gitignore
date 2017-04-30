@@ -1,6 +1,5 @@
 /node_modules
 .next/
-static/
 .DS_Store
 .nvmrc
 .vscode
