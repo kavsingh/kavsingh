@@ -21,7 +21,7 @@ export default [
     period: 'November 2016 - February 2017',
     location: 'Melbourne, Australia',
     description: md`
-In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
+In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
 * ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
 * Server rendered React via EpiServer
 * Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
