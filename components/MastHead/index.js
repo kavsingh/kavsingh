@@ -27,14 +27,9 @@ const MastHead = ({ name, profession, links }) => (
             // eslint-disable-next-line react/no-array-index-key
             <li key={i}><HTMLContent>{link}</HTMLContent></li>)}
         </ul>
-        {print
-          ? (
-            <Button onClick={handlePrintClick}>
-              <div className="mastHead__print"><PrintIcon /></div>
-            </Button>
-          )
-          : null
-        }
+        <Button onClick={handlePrintClick}>
+          <div className="mastHead__print"><PrintIcon /></div>
+        </Button>
       </div>
     </SplitPanes>
     <style jsx>{`
