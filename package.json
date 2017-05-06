@@ -16,7 +16,7 @@
     "dev": "nodemon server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "start:local": "NODE_ENV=production HTTPS=https node server.js",
+    "start:local": "NODE_ENV=production HTTPS=httpslocal node server.js",
     "now": "now",
     "deploy": "npm-run-all build now",
     "lint:js": "eslint .",

@@ -7,6 +7,7 @@ const next = require('next')
 const fs = require('fs')
 
 const dev = process.env.NODE_ENV !== 'production'
+const useHttps = process.env.HTTPS === 'httpslocal'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 const tilde = path.resolve.bind(path, process.env.HOME)
@@ -24,7 +25,7 @@ app.prepare().then(() => {
   expressApp.get('*', (req, res) => handle(req, res))
 
   // SSL for local dev to test service worker
-  const server = dev || process.env.HTTPS === 'https'
+  const server = useHttps
     ? require('https').createServer({
       cert: fs.readFileSync(tilde('.localhost-ssl/cert.pem')),
       key: fs.readFileSync(tilde('.localhost-ssl/key.pem')),
