@@ -1,22 +1,34 @@
 /* eslint-env node */
 /* eslint-disable no-console, global-require */
 
-const express = require('express')
-const path = require('path')
-const next = require('next')
-const fs = require('fs')
-
 const dev = process.env.NODE_ENV !== 'production'
+const moduleAlias = require('module-alias')
+const fs = require('fs')
+const express = require('express')
+const compression = require('compression')
+const path = require('path')
+
+if (!dev) {
+  moduleAlias.addAlias('react', 'inferno-compat')
+  moduleAlias.addAlias('react-dom/server', 'inferno-server')
+  moduleAlias.addAlias('react-dom', 'inferno-compat')
+}
+
+const next = require('next')
+
 const useHttps = process.env.HTTPS === 'httpslocal'
+const tilde = path.resolve.bind(path, process.env.HOME)
+
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
-const tilde = path.resolve.bind(path, process.env.HOME)
 
 app.prepare().then(() => {
   /*
     Incorporate service worker as per https://github.com/ooade/NextSimpleStarter
   */
   const expressApp = express()
+
+  expressApp.use(compression())
 
   // serve service worker
   expressApp.get('/sw.js',

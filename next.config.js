@@ -1,13 +1,22 @@
 /* eslint-env node */
+const { merge } = require('lodash/fp')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
   webpack: (config, { dev }) => {
-    /*
-      Incorporate caching as per https://github.com/ooade/NextSimpleStarter
-      Enable only in Production
-    */
     if (!dev) {
+      // eslint-disable-next-line no-param-reassign
+      config.resolve = merge(config.resolve || {}, {
+        alias: {
+          react: 'inferno-compat',
+          'react-dom': 'inferno-compat',
+        },
+      })
+
+      /*
+        Incorporate caching as per https://github.com/ooade/NextSimpleStarter
+        Enable only in Production
+      */
       // Service Worker
       config.plugins.push(
         new SWPrecacheWebpackPlugin({
