@@ -25,21 +25,21 @@ export default () => (
     </Head>
     <MastHead {...about} />
     <Section
-      title={() => 'Skills'}
+      title="Skills"
       content={() => (
         <Article
-          title={() => ''}
+          title=""
           body={() => <HTMLContent>{about.skills}</HTMLContent>}
         />
       )}
     />
     <Section
-      title={() => 'Experience'}
+      title="Experience"
       content={() =>
         experience.map(exp => <Experience {...exp} key={exp.employer} />)}
     />
     <Section
-      title={() => 'Education'}
+      title="Education"
       content={() =>
         education.map(edu => <Education {...edu} key={edu.institution} />)}
     />

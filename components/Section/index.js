@@ -1,16 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import SplitPanes from '../../layouts/SplitPanes'
 import { screenTheme, printTheme } from '../../style/color'
+import { callIfFn } from '../../util/function'
+import { renderable } from '../../propTypes'
 
 const Section = ({ title, content }) => (
   <section className="section">
     <SplitPanes>
       <div className="section__titleContainer">
-        <h1>{title()}</h1>
+        <h1>{callIfFn(title)}</h1>
       </div>
       <div className="section__contentContainer">
-        {content()}
+        {callIfFn(content)}
       </div>
     </SplitPanes>
     <style jsx>{`
@@ -67,8 +68,8 @@ const Section = ({ title, content }) => (
 export default Section
 
 Section.propTypes = {
-  title: PropTypes.func,
-  content: PropTypes.func,
+  title: renderable,
+  content: renderable,
 }
 
 Section.defaultProps = {

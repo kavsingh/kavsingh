@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Article from '../Article'
 import ArticleTitle from '../ArticleTitle'
 import HTMLContent from '../HTMLContent'
+import { renderable } from '../../propTypes'
 
 const Experience = ({
   employer,
@@ -12,18 +12,18 @@ const Experience = ({
   description,
 }) => (
   <Article
-    title={() => <ArticleTitle title={position} subtitle={employer} />}
-    meta={() => `${period}, ${location}`}
-    body={() => <HTMLContent>{description}</HTMLContent>}
+    title={<ArticleTitle title={position} subtitle={employer} />}
+    meta={`${period}, ${location}`}
+    body={<HTMLContent>{description}</HTMLContent>}
   />
 )
 
 Experience.propTypes = {
-  employer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  position: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  period: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  location: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  employer: renderable,
+  position: renderable,
+  period: renderable,
+  location: renderable,
+  description: renderable,
 }
 
 Experience.defaultProps = {
