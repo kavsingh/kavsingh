@@ -43,31 +43,47 @@ export default () => (
       content={() =>
         education.map(edu => <Education {...edu} key={edu.institution} />)}
     />
-    <style jsx>{`
-      :global(html),
-      :global(body) {
+    <style jsx global>{`
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html,
+      body {
         margin: 0;
         padding: 0;
         width: 100%;
         min-height: 100%;
       }
 
-      :global(html) {
+      html {
         box-sizing: border-box;
         font: 14px/1.24 Inconsolata, monospace;
         background-color: ${screenTheme.pageBackground};
       }
 
-      :global(html) :global(*),
-      :global(html) :global(*::before),
-      :global(html) :global(*::after) {
-        box-sizing: inherit;
-      }
-
-      :global(body) {
+      body {
         color: ${screenTheme.bodyText};
       }
 
+      @page {
+        size: A4 portrait;
+      }
+
+      @media print {
+        html {
+          font: 12px/1.24 Inconsolata, monospace;
+          background-color: ${printTheme.pageBackground};
+        }
+
+        body {
+          color: ${printTheme.bodyText};
+        }
+      }
+    `}</style>
+    <style jsx>{`
       .root {
         padding: 2em;
         width: 100%;
@@ -89,21 +105,6 @@ export default () => (
         .root :global(.mastHead),
         .root :global(section) {
           margin-bottom: 4em;
-        }
-      }
-
-      @page {
-        size: A4 portrait;
-      }
-
-      @media print {
-        :global(html) {
-          font: 12px/1.24 Inconsolata, monospace;
-          background-color: ${printTheme.pageBackground};
-        }
-
-        :global(body) {
-          color: ${printTheme.bodyText};
         }
       }
     `}</style>
