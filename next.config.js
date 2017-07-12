@@ -3,6 +3,10 @@ const { merge } = require('lodash/fp')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
+  exportPathMap: () => ({
+    '/': { page: '/' },
+  }),
+
   webpack: (config, { dev }) => {
     if (!dev) {
       // eslint-disable-next-line no-param-reassign
