@@ -4,7 +4,7 @@ import md from 'markdown-in-js'
 export default [
   {
     employer: 'OurHome',
-    position: 'Co-Founder / CDO / Lead Frontend Developer',
+    position: 'Co-Founder / CDO / Frontend Developer',
     period: 'July 2013 - Present',
     location: 'Melbourne, Australia',
     description: md`
