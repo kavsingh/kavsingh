@@ -9,7 +9,7 @@ export default [
     location: 'Melbourne, Australia',
     description: md`
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households and incentivise contribution, available on iOS and Android (via Cordova) as well as in-browser.
-* Built on Backbone, code has evolved over time to incorporate ideas from modern libraries (like redux) as well as transitioned to ES2016+.
+* Built on Backbone, code has evolved over time to incorporate ideas from modern libraries as well as transitioned to ES2016+.
 * My role as CDO includes oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
 * With our main deployment focus being the iOS and Android app stores, design has always been mobile-first. From a technical view it has also meant dealing with deployment fragmentation, and making engineering / design decisions to address device and webview implementation quirks.
 * Working in a small team of developers has had the added benefit of insight into the implementation of the Python (Django) API.
