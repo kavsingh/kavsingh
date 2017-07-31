@@ -35,13 +35,15 @@ export default () => (
     />
     <Section
       title="Experience"
-      content={() =>
-        experience.map(exp => <Experience {...exp} key={exp.employer} />)}
+      content={() => experience
+        .filter(({ active }) => !!active)
+        .map(exp => <Experience {...exp} key={exp.employer} />)}
     />
     <Section
       title="Education"
-      content={() =>
-        education.map(edu => <Education {...edu} key={edu.institution} />)}
+      content={() => education
+        .filter(({ active }) => !!active)
+        .map(edu => <Education {...edu} key={edu.institution} />)}
     />
     <style jsx global>{`
       *,
@@ -74,7 +76,7 @@ export default () => (
 
       @media print {
         html {
-          font: 12px/1.24 Inconsolata, monospace;
+          font: 10px/1.2 Inconsolata, monospace;
           background-color: ${printTheme.pageBackground};
         }
 
@@ -105,6 +107,12 @@ export default () => (
         .root :global(.mastHead),
         .root :global(section) {
           margin-bottom: 4em;
+        }
+      }
+
+      @media print {
+        .root {
+          max-width: 100%;
         }
       }
     `}</style>

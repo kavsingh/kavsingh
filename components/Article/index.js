@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { screenTheme, printTheme } from '../../style/color'
 import { callIfFn } from '../../util/function'
 import { renderable } from '../../propTypes'
 
-const Article = ({ title, meta, body }) => (
-  <article className="article">
+const Article = ({ title, meta, body, print }) => (
+  <article className={`article article_print${print ? 'Show' : 'Hide'}`}>
     {title ? <h1 className="article__title">{callIfFn(title)}</h1> : null}
     {meta ? <h2 className="article__meta">{callIfFn(meta)}</h2> : null}
     <div className="article__body">{callIfFn(body)}</div>
@@ -27,6 +28,10 @@ const Article = ({ title, meta, body }) => (
       }
 
       @media print {
+        .article_printHide {
+          display: none;
+        }
+
         .article__meta {
           color: ${printTheme.bodyTextSecondary};
         }
@@ -39,12 +44,14 @@ Article.propTypes = {
   title: renderable,
   meta: renderable,
   body: renderable,
+  print: PropTypes.bool,
 }
 
 Article.defaultProps = {
   title: '',
   meta: '',
   body: '',
+  print: true,
 }
 
 export default Article

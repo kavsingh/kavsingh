@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Article from '../Article'
 import ArticleTitle from '../ArticleTitle'
 import HTMLContent from '../HTMLContent'
@@ -10,11 +11,13 @@ const Experience = ({
   period,
   location,
   description,
+  print,
 }) => (
   <Article
     title={<ArticleTitle title={position} subtitle={employer} />}
     meta={`${period}, ${location}`}
     body={<HTMLContent>{description}</HTMLContent>}
+    print={print}
   />
 )
 
@@ -24,6 +27,7 @@ Experience.propTypes = {
   period: renderable,
   location: renderable,
   description: renderable,
+  print: PropTypes.bool,
 }
 
 Experience.defaultProps = {
@@ -32,6 +36,7 @@ Experience.defaultProps = {
   period: '',
   location: '',
   description: '',
+  print: true,
 }
 
 export default Experience
