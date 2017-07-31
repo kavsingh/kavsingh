@@ -1856,11 +1856,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-airbnb-base@11.x:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-11.2.0.tgz#19a9dc4481a26f70904545ec040116876018f853"
-
-eslint-config-airbnb-base@^11.3.0:
+eslint-config-airbnb-base@^11.3.0, eslint-config-airbnb-base@^11.3.1:
   version "11.3.1"
   resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-11.3.1.tgz#c0ab108c9beed503cb999e4c60f4ef98eda0ed30"
   dependencies:
@@ -1872,16 +1868,16 @@ eslint-config-airbnb@^15.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.3.0"
 
-eslint-config-mongrel-react@kavsingh/eslint-config-mongrel-react#4.0.0:
-  version "4.0.0"
-  resolved "https://codeload.github.com/kavsingh/eslint-config-mongrel-react/tar.gz/405aba2599a2618148bead8138c1c3cf67700805"
+eslint-config-mongrel-react@kavsingh/eslint-config-mongrel-react#4.1.0:
+  version "4.1.0"
+  resolved "https://codeload.github.com/kavsingh/eslint-config-mongrel-react/tar.gz/97f2abe0b2db709e4eb2dfc4ceb5bd6a1fe775de"
   dependencies:
-    eslint-config-airbnb-base "11.x"
-    eslint-config-mongrel kavsingh/eslint-config-mongrel.git#3.0.0
+    eslint-config-airbnb-base "^11.3.1"
+    eslint-config-mongrel kavsingh/eslint-config-mongrel.git#3.1.0
 
-eslint-config-mongrel@kavsingh/eslint-config-mongrel.git#3.0.0:
-  version "3.0.0"
-  resolved "https://codeload.github.com/kavsingh/eslint-config-mongrel/tar.gz/0053b6ed27dcb119efd9ab5a3ea117b060428f76"
+eslint-config-mongrel@kavsingh/eslint-config-mongrel.git#3.1.0:
+  version "3.1.0"
+  resolved "https://codeload.github.com/kavsingh/eslint-config-mongrel/tar.gz/ff0af0303f0873aad396e59dec4927186a6734ab"
 
 eslint-import-resolver-node@^0.3.1:
   version "0.3.1"
