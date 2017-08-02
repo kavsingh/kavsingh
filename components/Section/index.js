@@ -46,7 +46,7 @@ const Section = ({ title, content }) => (
       }
 
       .section__contentContainer :global(article:not(:last-child)) {
-        margin-bottom: 2em;
+        margin-bottom: 4.2em;
       }
 
       @media (min-width: 30rem) {

@@ -68,6 +68,17 @@ Front end build for a iPad kiosk app running a local PHP server. Built for Thriv
     `,
   },
   {
+    employer: 'Clemenger BBDO',
+    position: 'Front-end Developer (Freelance)',
+    period: 'January 2014',
+    location: 'Melbourne, Australia',
+    active: true,
+    print: true,
+    description: md`
+Online quiz for MoneyIQ.
+    `,
+  },
+  {
     employer: 'Someone’s',
     position: 'Designer / Front-end Developer',
     period: 'March 2012 - December 2012',

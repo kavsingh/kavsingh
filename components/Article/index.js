@@ -23,7 +23,7 @@ const Article = ({ title, meta, body, print }) => (
         font-size: 0.88em;
         font-weight: 400;
         text-transform: uppercase;
-        margin: 0 0 1.1em;
+        margin: 0 0 0.8em;
         color: ${screenTheme.bodyTextSecondary};
       }
 
