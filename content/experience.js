@@ -3,6 +3,7 @@ import md from 'markdown-in-js'
 
 export default [
   {
+    slug: 'our-home',
     employer: 'OurHome',
     position: 'Co-Founder / CDO / Front-end Developer',
     period: 'July 2013 - Present',
@@ -18,6 +19,7 @@ export default [
     `,
   },
   {
+    slug: 'che-proximity-2017',
     employer: 'CHE Proximity',
     position: 'Senior Front-end Developer (Freelance)',
     period: 'November 2016 - February 2017',
@@ -32,6 +34,7 @@ In addition to maintenance work on campaign sites across stacks (from PHP to Nod
     `,
   },
   {
+    slug: 'inspire-group',
     employer: 'Inspire Group',
     position: 'Front-end Developer (Freelance)',
     period: '2015 - 2016 (Recurring work)',
@@ -45,6 +48,7 @@ Worked on a number of online education modules which required a high degree of i
     `,
   },
   {
+    slug: 'agent-select-com-au',
     employer: 'AgentSelect.com.au',
     position: 'Front-end Developer (Freelance)',
     period: 'May 2015',
@@ -56,6 +60,7 @@ Helped build out front end api communication for exisiting web site. Worked with
     `,
   },
   {
+    slug: 'savi',
     employer: 'Savi',
     position: 'Front-end Developer (Freelance)',
     period: 'June 2014',
@@ -67,6 +72,7 @@ Developed an iPad kiosk app running on a device-local PHP server. Built for Thri
     `,
   },
   {
+    slug: 'tundra-interactive',
     employer: 'Tundra Interactive',
     position: 'Front-end Developer (Freelance)',
     period: 'June - July 2013',
@@ -80,6 +86,7 @@ Developed an iPad kiosk app running on a device-local PHP server. Built for Thri
     `,
   },
   {
+    slug: 'che-proximity-2013',
     employer: 'CHE Proximity',
     position: 'Front-end Developer (Freelance)',
     period: 'June 2013',
@@ -91,6 +98,7 @@ Built an online financial questionnaire using Backbone.js and styled with Sass (
     `,
   },
   {
+    slug: 'clemenger-bbdo',
     employer: 'Clemenger BBDO',
     position: 'Front-end Developer (Freelance)',
     period: 'March - April 2013',
@@ -102,6 +110,7 @@ Interactive mobile web experience as part of a beer advertising campaign. Users 
     `,
   },
   {
+    slug: 'someones-media-group',
     employer: 'Someones Media Group',
     position: 'Designer / Front-end Developer',
     period: 'March - December 2012',
@@ -113,6 +122,7 @@ UI prototyping and front end build for a large scale web application. Involved w
     `,
   },
   {
+    slug: 'sense-advertising',
     employer: 'Sense Advertising',
     position: 'Digital Designer / Animator / Front-end Developer',
     period: 'August 2009 - March 2012',

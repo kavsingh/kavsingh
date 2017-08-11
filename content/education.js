@@ -3,8 +3,9 @@ import md from 'markdown-in-js'
 
 export default [
   {
-    subject: 'BA (Animation and Interactive Media)',
+    slug: 'rmit-university',
     institution: 'RMIT University',
+    subject: 'BA (Animation and Interactive Media)',
     period: '2006 - 2008',
     status: 'graduated',
     location: 'Melbourne, Australia',
@@ -15,8 +16,9 @@ Graduated with distinction. Final project was awarded Best Interactive for the g
     `,
   },
   {
-    subject: 'BEng. (Software) / BComm.',
+    slug: 'university-of-melbourne',
     institution: 'University of Melbourne',
+    subject: 'BEng. (Software) / BComm.',
     period: '2000 - 2002',
     status: 'attended',
     location: 'Melbourne, Australia',

@@ -37,13 +37,13 @@ export default () => (
       title="Experience"
       content={() => experience
         .filter(({ active }) => !!active)
-        .map((exp, i) => <Experience {...exp} key={`${exp.employer}${i}`} />)}
+        .map(exp => <Experience {...exp} key={exp.slug} />)}
     />
     <Section
       title="Education"
       content={() => education
         .filter(({ active }) => !!active)
-        .map(edu => <Education {...edu} key={edu.institution} />)}
+        .map(edu => <Education {...edu} key={edu.slug} />)}
     />
     <style jsx global>{`
       *,
