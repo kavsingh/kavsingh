@@ -37,7 +37,7 @@ export default () => (
       title="Experience"
       content={() => experience
         .filter(({ active }) => !!active)
-        .map(exp => <Experience {...exp} key={exp.employer} />)}
+        .map((exp, i) => <Experience {...exp} key={`${exp.employer}${i}`} />)}
     />
     <Section
       title="Education"

@@ -45,7 +45,7 @@ Worked on a number of online education modules which required a high degree of i
     `,
   },
   {
-    employer: 'Agent Select',
+    employer: 'AgentSelect.com.au',
     position: 'Front-end Developer (Freelance)',
     period: 'May 2015',
     location: 'Melbourne, Australia',
@@ -63,7 +63,20 @@ Helped build out front end api communication for exisiting web site. Worked with
     active: true,
     print: true,
     description: md`
-Front end build for a iPad kiosk app running a local PHP server. Built for Thrive apartments, the app ran continuously in the apartment development's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address. Backbone SPA.
+Developed an iPad kiosk app running on a device-local PHP server. Built for Thrive apartments, the app ran continuously in the apartment development's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address. Backbone SPA with a strong emphasis on touch-friendly design and interaction.
+    `,
+  },
+  {
+    employer: 'Tundra Interactive',
+    position: 'Front-end Developer (Freelance)',
+    period: 'June - July 2013',
+    location: 'Melbourne, Australia',
+    active: true,
+    print: true,
+    description: md`
+* Webpage for well known local bar, featuring integration with Instragram apis. Built the front end as well as server side image manipulation (PHP with ImageMagick) where photos tagged with the bar's name were processed, modified and composited for display on the webpage.
+* Promotional pages for integration with Facebook with custom interactions.
+
     `,
   },
   {
@@ -80,7 +93,7 @@ Built an online financial questionnaire using Backbone.js and styled with Sass (
   {
     employer: 'Clemenger BBDO',
     position: 'Front-end Developer (Freelance)',
-    period: 'March 2013 - April 2013',
+    period: 'March - April 2013',
     location: 'Melbourne, Australia',
     active: true,
     print: true,
@@ -91,7 +104,7 @@ Interactive mobile web experience as part of a beer advertising campaign. Users 
   {
     employer: 'Someones Media Group',
     position: 'Designer / Front-end Developer',
-    period: 'March 2012 - December 2012',
+    period: 'March - December 2012',
     location: 'Melbourne, Australia',
     active: true,
     print: true,
