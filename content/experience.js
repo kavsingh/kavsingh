@@ -29,7 +29,6 @@ In addition to maintenance work on campaign sites across stacks (from PHP to Nod
 * ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
 * Server rendered React via EpiServer
 * Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
-
     `,
   },
   {
@@ -68,18 +67,29 @@ Front end build for a iPad kiosk app running a local PHP server. Built for Thriv
     `,
   },
   {
-    employer: 'Clemenger BBDO',
+    employer: 'CHE Proximity',
     position: 'Front-end Developer (Freelance)',
-    period: 'January 2014',
+    period: 'June 2013',
     location: 'Melbourne, Australia',
     active: true,
     print: true,
     description: md`
-Online quiz for MoneyIQ.
+Built an online financial questionnaire using Backbone.js and styled with Sass (using Bourbon). Required compatibility with browsers down to IE8 and needed to work across desktop and mobile devices. Worked fairly independently on a quick turnaround.
     `,
   },
   {
-    employer: 'Someone’s',
+    employer: 'Clemenger BBDO',
+    position: 'Front-end Developer (Freelance)',
+    period: 'March 2013 - April 2013',
+    location: 'Melbourne, Australia',
+    active: true,
+    print: true,
+    description: md`
+Interactive mobile web experience as part of a beer advertising campaign. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations with soundscapes with their friends. The campaign page needed to be accessible and performant across a broad range of mobile devices.
+    `,
+  },
+  {
+    employer: 'Someones Media Group',
     position: 'Designer / Front-end Developer',
     period: 'March 2012 - December 2012',
     location: 'Melbourne, Australia',
