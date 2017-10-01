@@ -25,7 +25,6 @@ const Article = ({ title, meta, body, print, id }) => (
       .article__meta {
         font-size: 0.88em;
         font-weight: 400;
-        text-transform: uppercase;
         margin: 0 0 0.8em;
         color: ${screenTheme.bodyTextSecondary};
       }

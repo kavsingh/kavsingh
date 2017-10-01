@@ -7,10 +7,10 @@ export const darkTheme = {
 
 export const lightTheme = {
   pageBackground: '#fff',
-  bodyText: '#222',
+  bodyText: '#333',
   bodyTextSecondary: '#666',
-  keyline: '#ccc',
+  keyline: '#fee',
 }
 
-export const screenTheme = { ...darkTheme }
-export const printTheme = { ...lightTheme }
+export const screenTheme = { ...lightTheme }
+export const printTheme = { ...lightTheme, bodyText: '#111' }

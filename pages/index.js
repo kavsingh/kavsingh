@@ -64,7 +64,9 @@ export default () => (
 
       html {
         box-sizing: border-box;
-        font: 14px/1.24 Inconsolata, monospace;
+        font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
         background-color: ${screenTheme.pageBackground};
       }
 
@@ -78,7 +80,9 @@ export default () => (
 
       @media print {
         html {
-          font: 10px/1.2 Inconsolata, monospace;
+          font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+            'Helvetica Neue', sans-serif;
           background-color: ${printTheme.pageBackground};
         }
 
@@ -109,6 +113,12 @@ export default () => (
         .root :global(.mastHead),
         .root :global(section) {
           margin-bottom: 4em;
+        }
+      }
+
+      @media screen {
+        .root {
+          -webkit-font-smoothing: antialiased;
         }
       }
 

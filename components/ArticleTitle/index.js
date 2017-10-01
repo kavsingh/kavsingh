@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ArticleTitle = ({ title, subtitle }) => (
+const ArticleTitle = ({ title, subtitle, seperator }) => (
   <span className="articleTitle">
     <span className="articleTitle__title">{title}</span>
-    <span className="articleTitle__seperator">::</span>
+    <span className="articleTitle__seperator">{seperator}</span>
     <span className="articleTitle__subtitle">{subtitle}</span>
     <style jsx>{`
       .articleTitle__title {
-        font-weight: 700;
+        font-weight: 600;
       }
       .articleTitle__seperator {
         font-weight: 400;
@@ -24,11 +24,13 @@ const ArticleTitle = ({ title, subtitle }) => (
 ArticleTitle.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  seperator: PropTypes.string,
 }
 
 ArticleTitle.defaultProps = {
   title: '',
   subtitle: '',
+  seperator: '@',
 }
 
 export default ArticleTitle
