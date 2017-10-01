@@ -1,15 +1,15 @@
-const prettierRules = (rules = {}) => ({
-  'prettier/prettier': [
-    'warn',
+const prettierRules = (rules = {}) => [
+  'warn',
+  Object.assign(
     {
       semi: false,
       singleQuote: true,
       bracketSpacing: true,
       trailingComma: 'es5',
-      ...rules
-    }
-  ]
-})
+    },
+    rules
+  )
+]
 
 module.exports = {
   env: {
@@ -26,8 +26,9 @@ module.exports = {
   extends: ['mongrel-react', 'prettier', 'prettier/react'],
 
   rules: {
-    // Server environment is Node 6.X
-    ...prettierRules({ trailingComma: 'es5' })
+    // Server environment is Node 6.X,
+    // IDEs using Node < 8 to parse webpack config
+    'prettier/prettier': prettierRules({ trailingComma: 'es5' })
   },
 
   overrides: [
@@ -40,7 +41,7 @@ module.exports = {
         'propTypes',
         'static',
         'style',
-        'util'
+        'util',
       ].map(dir => `${dir}/**/*.js`),
 
       env: {
@@ -49,7 +50,7 @@ module.exports = {
       },
 
       rules: {
-        ...prettierRules({ trailingComma: 'all' })
+        'prettier/prettier': prettierRules({ trailingComma: 'all' })
       }
     }
   ]
