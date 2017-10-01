@@ -41,7 +41,7 @@ module.exports = {
               urlPattern: /^http.*/, // cache all files
             },
           ],
-        }),
+        })
       )
     }
 

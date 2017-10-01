@@ -31,7 +31,7 @@ app.prepare().then(() => {
 
   // serve service worker
   expressApp.get('/sw.js', (req, res) =>
-    res.sendFile(path.resolve('./.next/sw.js')),
+    res.sendFile(path.resolve('./.next/sw.js'))
   )
 
   expressApp.get('*', (req, res) => handle(req, res))
@@ -43,7 +43,7 @@ app.prepare().then(() => {
           cert: fs.readFileSync(tilde('.localhost-ssl/cert.pem')),
           key: fs.readFileSync(tilde('.localhost-ssl/key.pem')),
         },
-        expressApp,
+        expressApp
       )
     : expressApp
 

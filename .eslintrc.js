@@ -12,6 +12,18 @@ module.exports = {
 
   extends: ['mongrel-react', 'prettier', 'prettier/react',],
 
+  rules: {
+    'prettier/prettier': [
+      'warn',
+      {
+        semi: false,
+        singleQuote: true,
+        trailingComma: 'es5',
+        bracketSpacing: true,
+      },
+    ],
+  },
+
   overrides: [
     {
       files: [
@@ -24,22 +36,23 @@ module.exports = {
         'style',
         'util',
       ].map(dir => `${dir}/**/*.js`),
+
       env: {
         browser: true,
         node: false,
       },
+
+      rules: {
+        'prettier/prettier': [
+          'warn',
+          {
+            semi: false,
+            singleQuote: true,
+            trailingComma: 'all',
+            bracketSpacing: true,
+          },
+        ],
+      },
     },
   ],
-
-  rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        semi: false,
-        singleQuote: true,
-        trailingComma: 'all',
-        bracketSpacing: true,
-      },
-    ],
-  },
 }
