@@ -10,9 +10,7 @@ const Section = ({ title, content }) => (
       <div className="section__titleContainer">
         <h1>{callIfFn(title)}</h1>
       </div>
-      <div className="section__contentContainer">
-        {callIfFn(content)}
-      </div>
+      <div className="section__contentContainer">{callIfFn(content)}</div>
     </SplitPanes>
     <style jsx>{`
       .section {

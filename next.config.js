@@ -1,4 +1,3 @@
-/* eslint-env node */
 const { merge } = require('ramda')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
@@ -42,7 +41,8 @@ module.exports = {
               urlPattern: /^http.*/, // cache all files
             },
           ],
-        }))
+        }),
+      )
     }
 
     return config

@@ -15,21 +15,25 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
       </header>
       <div className="mastHead__content">
         <ul className="mastHead__links">
-          {links.map((link, i) =>
+          {links.map((link, i) => (
             // links are react nodes so there's nothing reliable we can use
             // here. use index for the time being.
             // @todo: Some other thing
             // eslint-disable-next-line react/no-array-index-key
-            <li key={i}><HTMLContent>{link}</HTMLContent></li>)}
+            <li key={i}>
+              <HTMLContent>{link}</HTMLContent>
+            </li>
+          ))}
         </ul>
         <div
-          style={onPrintClick
-            ? {}
-            : { visibility: 'hidden', pointerEvents: 'none' }
+          style={
+            onPrintClick ? {} : { visibility: 'hidden', pointerEvents: 'none' }
           }
         >
           <Button onClick={onPrintClick}>
-            <div className="mastHead__print"><PrintIcon /></div>
+            <div className="mastHead__print">
+              <PrintIcon />
+            </div>
           </Button>
         </div>
       </div>
@@ -104,9 +108,10 @@ MastHead.defaultProps = {
   links: [],
 }
 
-const print = typeof window !== 'undefined'
-  && typeof window.print === 'function'
-  && window.print
+const print =
+  typeof window !== 'undefined' &&
+  typeof window.print === 'function' &&
+  window.print
 
 export default lifecycle({
   state: { onPrintClick: null },

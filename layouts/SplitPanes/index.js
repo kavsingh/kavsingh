@@ -2,17 +2,14 @@ import React, { Children, isValidElement } from 'react'
 import PropTypes from 'prop-types'
 
 const SplitPanes = ({ children }) => {
-  const [first, ...rest] = Children.toArray(children)
-    .filter(node => isValidElement(node))
+  const [first, ...rest] = Children.toArray(children).filter(node =>
+    isValidElement(node),
+  )
 
   return (
     <div className="splitPanes">
-      <div className="splitPanes__left">
-        {first}
-      </div>
-      <div className="splitPanes__right">
-        {rest}
-      </div>
+      <div className="splitPanes__left">{first}</div>
+      <div className="splitPanes__right">{rest}</div>
       <style jsx>{`
         .splitPanes {
           width: 100%;

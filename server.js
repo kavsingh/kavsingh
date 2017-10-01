@@ -31,17 +31,21 @@ app.prepare().then(() => {
   expressApp.use(compression())
 
   // serve service worker
-  expressApp.get('/sw.js',
-    (req, res) => res.sendFile(path.resolve('./.next/sw.js')))
+  expressApp.get('/sw.js', (req, res) =>
+    res.sendFile(path.resolve('./.next/sw.js')),
+  )
 
   expressApp.get('*', (req, res) => handle(req, res))
 
   // SSL for local dev to test service worker
   const server = useHttps
-    ? require('https').createServer({
-      cert: fs.readFileSync(tilde('.localhost-ssl/cert.pem')),
-      key: fs.readFileSync(tilde('.localhost-ssl/key.pem')),
-    }, expressApp)
+    ? require('https').createServer(
+        {
+          cert: fs.readFileSync(tilde('.localhost-ssl/cert.pem')),
+          key: fs.readFileSync(tilde('.localhost-ssl/key.pem')),
+        },
+        expressApp,
+      )
     : expressApp
 
   server.listen(3000, err => {
