@@ -1,3 +1,17 @@
+const prettierRules = (rules = {}) => (
+  [
+    'warn',
+    {
+      semi: false,
+      singleQuote: true,
+      trailingComma: 'es5',
+      bracketSpacing: true,
+      trailingComma: 'es5',
+      ...rules
+    }
+  ]
+)
+
 module.exports = {
   env: {
     browser: false,
@@ -10,18 +24,10 @@ module.exports = {
 
   plugins: ['prettier'],
 
-  extends: ['mongrel-react', 'prettier', 'prettier/react',],
+  extends: ['mongrel-react', 'prettier', 'prettier/react'],
 
   rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        semi: false,
-        singleQuote: true,
-        trailingComma: 'es5',
-        bracketSpacing: true,
-      },
-    ],
+    'prettier/prettier': prettierRules({ trailingComma: 'es5' })
   },
 
   overrides: [
@@ -43,16 +49,8 @@ module.exports = {
       },
 
       rules: {
-        'prettier/prettier': [
-          'warn',
-          {
-            semi: false,
-            singleQuote: true,
-            trailingComma: 'all',
-            bracketSpacing: true,
-          },
-        ],
-      },
-    },
-  ],
+        'prettier/prettier': prettierRules({ trailingComma: 'all' })
+      }
+    }
+  ]
 }
