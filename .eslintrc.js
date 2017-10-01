@@ -37,7 +37,7 @@ module.exports = {
         'content',
         'layouts',
         'pages',
-        'proptypes',
+        'propTypes',
         'static',
         'style',
         'util'
