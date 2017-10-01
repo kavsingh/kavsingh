@@ -1,10 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import lifecycle from "recompose/lifecycle";
-import PrintIcon from "react-icons/lib/md/print";
-import SplitPanes from "../../layouts/SplitPanes";
-import HTMLContent from "../HTMLContent";
-import Button from "../Button";
+import React from 'react'
+import PropTypes from 'prop-types'
+import lifecycle from 'recompose/lifecycle'
+import PrintIcon from 'react-icons/lib/md/print'
+import { screenTheme } from '../../style/color'
+import SplitPanes from '../../layouts/SplitPanes'
+import HTMLContent from '../HTMLContent'
+import Button from '../Button'
 
 const MastHead = ({ name, profession, links, onPrintClick }) => (
   <div className="mastHead">
@@ -14,6 +15,9 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         <h2>{profession}</h2>
       </header>
       <div className="mastHead__content">
+        <div className="masthead__profilePhoto">
+          <img src="static/pic.png" alt="Kav Singh" />
+        </div>
         <ul className="mastHead__links">
           {links.map((link, i) => (
             // links are react nodes so there's nothing reliable we can use
@@ -30,7 +34,7 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
             style={
               onPrintClick
                 ? {}
-                : { visibility: "hidden", pointerEvents: "none" }
+                : { visibility: 'hidden', pointerEvents: 'none' }
             }
           >
             <Button onClick={onPrintClick}>
@@ -38,7 +42,6 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
             </Button>
           </li>
         </ul>
-        <div className="masthead__profilePhoto" />
       </div>
     </SplitPanes>
     <style jsx>{`
@@ -46,26 +49,34 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         width: 100%;
       }
 
-      .mastHead :global(h1),
-      .mastHead :global(h2) {
+      .mastHead header {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .mastHead h1,
+      .mastHead h2 {
         margin: 0 0 0.16em;
         padding: 0;
       }
 
-      .mastHead :global(h1) {
+      .mastHead h1 {
         font-weight: 600;
         font-size: 1.5em;
       }
 
-      .mastHead :global(h2) {
+      .mastHead h2 {
         font-weight: 400;
         font-size: 1em;
         color: #666;
       }
 
       .mastHead__content {
-        position: relative;
+        display: flex;
         width: 100%;
+        align-items: center;
       }
 
       .mastHead__links {
@@ -87,7 +98,26 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         height: 1.6em;
       }
 
+      {/* .mastHead__print :global(svg) {
+        fill: transparent;
+        stroke: ${screenTheme.bodyText};
+        stroke-width: 0.5;
+        transition: fill 0.2s ease-out;
+      }
+
+      .mastHead__print :global(svg):hover {
+        fill: ${screenTheme.bodyText};
+        stroke: ${screenTheme.bodyText};
+      } */}
+
       .masthead__profilePhoto {
+        height: 8em;
+        margin-right: 1em;
+      }
+
+      .masthead__profilePhoto img {
+        height: 100%;
+        width: auto;
       }
 
       @media print {
@@ -97,33 +127,34 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
       }
     `}</style>
   </div>
-);
+)
 
 MastHead.propTypes = {
   name: PropTypes.string,
   profession: PropTypes.string,
   onPrintClick: PropTypes.func,
   links: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.node])
-  )
-};
+    PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  ),
+}
 
 MastHead.defaultProps = {
-  name: "",
-  profession: "",
+  name: '',
+  profession: '',
   onPrintClick: null,
-  links: []
-};
-
-const print =
-  typeof window !== "undefined" &&
-  typeof window.print === "function" &&
-  window.print;
+  links: [],
+}
 
 export default lifecycle({
   state: { onPrintClick: null },
   componentDidMount() {
-    if (!print) return;
-    setTimeout(() => this.setState(() => ({ onPrintClick: () => print() })), 0);
-  }
-})(MastHead);
+    const print =
+      typeof window !== 'undefined' &&
+      typeof window.print === 'function' &&
+      window.print
+
+    if (!print) return
+
+    setTimeout(() => this.setState(() => ({ onPrintClick: () => print() })), 0)
+  },
+})(MastHead)
