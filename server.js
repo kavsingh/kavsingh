@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* eslint-disable no-console, global-require */
 
 const dev = process.env.NODE_ENV !== 'production'
