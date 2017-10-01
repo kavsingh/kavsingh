@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import lifecycle from 'recompose/lifecycle'
-import PrintIcon from 'react-icons/lib/md/print'
-import SplitPanes from '../../layouts/SplitPanes'
-import HTMLContent from '../HTMLContent'
-import Button from '../Button'
+import React from "react";
+import PropTypes from "prop-types";
+import lifecycle from "recompose/lifecycle";
+import PrintIcon from "react-icons/lib/md/print";
+import SplitPanes from "../../layouts/SplitPanes";
+import HTMLContent from "../HTMLContent";
+import Button from "../Button";
 
 const MastHead = ({ name, profession, links, onPrintClick }) => (
   <div className="mastHead">
@@ -24,18 +24,21 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
               <HTMLContent>{link}</HTMLContent>
             </li>
           ))}
-        </ul>
-        <div
-          style={
-            onPrintClick ? {} : { visibility: 'hidden', pointerEvents: 'none' }
-          }
-        >
-          <Button onClick={onPrintClick}>
-            <div className="mastHead__print">
+          <li
+            key="print"
+            className="mastHead__print"
+            style={
+              onPrintClick
+                ? {}
+                : { visibility: "hidden", pointerEvents: "none" }
+            }
+          >
+            <Button onClick={onPrintClick}>
               <PrintIcon />
-            </div>
-          </Button>
-        </div>
+            </Button>
+          </li>
+        </ul>
+        <div className="masthead__profilePhoto" />
       </div>
     </SplitPanes>
     <style jsx>{`
@@ -62,6 +65,7 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
 
       .mastHead__content {
         position: relative;
+        width: 100%;
       }
 
       .mastHead__links {
@@ -83,6 +87,9 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         height: 1.6em;
       }
 
+      .masthead__profilePhoto {
+      }
+
       @media print {
         .mastHead__print {
           display: none;
@@ -90,33 +97,33 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
       }
     `}</style>
   </div>
-)
+);
 
 MastHead.propTypes = {
   name: PropTypes.string,
   profession: PropTypes.string,
   onPrintClick: PropTypes.func,
   links: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  ),
-}
+    PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  )
+};
 
 MastHead.defaultProps = {
-  name: '',
-  profession: '',
+  name: "",
+  profession: "",
   onPrintClick: null,
-  links: [],
-}
+  links: []
+};
 
 const print =
-  typeof window !== 'undefined' &&
-  typeof window.print === 'function' &&
-  window.print
+  typeof window !== "undefined" &&
+  typeof window.print === "function" &&
+  window.print;
 
 export default lifecycle({
   state: { onPrintClick: null },
   componentDidMount() {
-    if (!print) return
-    setTimeout(() => this.setState(() => ({ onPrintClick: () => print() })), 0)
-  },
-})(MastHead)
+    if (!print) return;
+    setTimeout(() => this.setState(() => ({ onPrintClick: () => print() })), 0);
+  }
+})(MastHead);
