@@ -12,8 +12,10 @@ const Experience = ({
   location,
   description,
   print,
+  slug,
 }) => (
   <Article
+    id={`experience-${slug}`}
     title={<ArticleTitle title={position} subtitle={employer} />}
     meta={`${period}, ${location}`}
     body={<HTMLContent>{description}</HTMLContent>}
@@ -28,6 +30,7 @@ Experience.propTypes = {
   location: renderable,
   description: renderable,
   print: PropTypes.bool,
+  slug: PropTypes.string,
 }
 
 Experience.defaultProps = {
@@ -37,6 +40,7 @@ Experience.defaultProps = {
   location: '',
   description: '',
   print: true,
+  slug: '',
 }
 
 export default Experience

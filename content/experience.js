@@ -48,7 +48,7 @@ Worked on a number of online education modules which required a high degree of i
     `,
   },
   {
-    slug: 'agent-select-com-au',
+    slug: 'agent-select',
     employer: 'AgentSelect.com.au',
     position: 'Front-end Developer (Freelance)',
     period: 'May 2015',

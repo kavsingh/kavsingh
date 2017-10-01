@@ -4,8 +4,11 @@ import { screenTheme, printTheme } from '../../style/color'
 import { callIfFn } from '../../util/function'
 import { renderable } from '../../propTypes'
 
-const Article = ({ title, meta, body, print }) => (
-  <article className={`article article_print${print ? 'Show' : 'Hide'}`}>
+const Article = ({ title, meta, body, print, id }) => (
+  <article
+    id={id}
+    className={`article article_print${print ? 'Show' : 'Hide'}`}
+  >
     {title ? <h1 className="article__title">{callIfFn(title)}</h1> : null}
     {meta ? <h2 className="article__meta">{callIfFn(meta)}</h2> : null}
     <div className="article__body">{callIfFn(body)}</div>
@@ -45,6 +48,7 @@ Article.propTypes = {
   meta: renderable,
   body: renderable,
   print: PropTypes.bool,
+  id: PropTypes.string,
 }
 
 Article.defaultProps = {
@@ -52,6 +56,7 @@ Article.defaultProps = {
   meta: '',
   body: '',
   print: true,
+  id: '',
 }
 
 export default Article
