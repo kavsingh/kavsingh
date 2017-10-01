@@ -92,7 +92,8 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
       }
 
       .mastHead__print {
-        display: flex;
+        {/* display: flex; */}
+        display: none;
         align-items: center;
         font-size: 1.2em;
         height: 1.6em;
