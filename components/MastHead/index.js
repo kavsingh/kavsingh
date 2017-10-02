@@ -35,7 +35,7 @@ const MastHead = ({ name, profession, links, onPrintClick }) => {
                 className="mastHead__link mastHead__link_print"
                 key={`${type}-print`}
               >
-                <strong>{label}</strong> {url.replace(/(^\w+:|^)\/\//, '')}
+                <a href={url}>{label}</a> {url.replace(/(^\w+:|^)\/\//, '')}
               </li>
             ))}
             <li
@@ -55,115 +55,95 @@ const MastHead = ({ name, profession, links, onPrintClick }) => {
         </div>
       </SplitPanes>
       <style jsx>{`
-      .mastHead {
-        width: 100%;
-      }
-
-      .mastHead header {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .mastHead h1,
-      .mastHead h2 {
-        margin: 0 0 0.16em;
-        padding: 0;
-      }
-
-      .mastHead h1 {
-        font-weight: 600;
-        font-size: 1.5em;
-      }
-
-      .mastHead h2 {
-        font-weight: 400;
-        font-size: 1em;
-        color: #666;
-      }
-
-      .mastHead__content {
-        display: flex;
-        width: 100%;
-        align-items: center;
-      }
-
-      .mastHead__links {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .mastHead__link a {
-        color: currentColor;
-      }
-
-      .mastHead__link_print {
-        margin-bottom: 0.2em;
-      }
-
-      .mastHead__link_print strong {
-        display: inline-block;
-        font-weight: 500;
-        margin-right: 0.2em;
-      }
-
-      .mastHead__print {
-        {/* display: flex; */}
-        display: none;
-        align-items: center;
-        font-size: 1.2em;
-        height: 1.6em;
-      }
-
-      {/* .mastHead__print :global(svg) {
-        fill: transparent;
-        stroke: ${screenTheme.bodyText};
-        stroke-width: 0.5;
-        transition: fill 0.2s ease-out;
-      }
-
-      .mastHead__print :global(svg):hover {
-        fill: ${screenTheme.bodyText};
-        stroke: ${screenTheme.bodyText};
-      } */}
-
-      .masthead__profilePhoto {
-        height: 8em;
-        margin-right: 1em;
-      }
-
-      .masthead__profilePhoto img {
-        height: 100%;
-        width: auto;
-      }
-
-      @media screen {
-        .mastHead__link_print {
-          display: none;
+        .mastHead {
+          width: 100%;
         }
-      }
 
-      @media print {
+        .mastHead header {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .mastHead h1,
+        .mastHead h2 {
+          margin: 0 0 0.16em;
+          padding: 0;
+        }
+
+        .mastHead h1 {
+          font-weight: 600;
+          font-size: 1.5em;
+        }
+
+        .mastHead h2 {
+          font-weight: 400;
+          font-size: 1em;
+          color: #666;
+        }
+
+        .mastHead__content {
+          display: flex;
+          width: 100%;
+          align-items: center;
+        }
+
+        .mastHead__links {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
         .mastHead__link a {
+          color: currentColor;
+        }
+
+        .mastHead__link_print {
+          margin-bottom: 0.2em;
+        }
+
+        .mastHead__link_print a {
+          display: inline-block;
+          font-weight: 500;
           text-decoration: none;
-        }
-
-        .mastHead__link a::after {
-          content: '- ' attr(href);
-          margin-left: 0.4em;
-        }
-
-        .mastHead__link_web {
-          display: none;
+          margin-right: 0.2em;
         }
 
         .mastHead__print {
-          display: none;
+          display: flex;
+          align-items: center;
+          font-size: 1.2em;
+          height: 1.4em;
+          margin-bottom: -1.4em;
         }
-      }
-    `}</style>
+
+        .masthead__profilePhoto {
+          height: 8em;
+          margin-right: 1em;
+        }
+
+        .masthead__profilePhoto img {
+          height: 100%;
+          width: auto;
+        }
+
+        @media screen {
+          .mastHead__link_print {
+            display: none;
+          }
+        }
+
+        @media print {
+          .mastHead__link_web {
+            display: none;
+          }
+
+          .mastHead__print {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   )
 }
