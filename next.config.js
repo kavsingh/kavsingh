@@ -1,4 +1,3 @@
-const { merge } = require('ramda')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
@@ -8,14 +7,6 @@ module.exports = {
 
   webpack: (config, { dev }) => {
     if (!dev) {
-      // eslint-disable-next-line no-param-reassign
-      config.resolve = merge(config.resolve || {}, {
-        alias: {
-          react: 'inferno-compat',
-          'react-dom': 'inferno-compat',
-        },
-      })
-
       /*
         Incorporate caching as per https://github.com/ooade/NextSimpleStarter
         Enable only in Production

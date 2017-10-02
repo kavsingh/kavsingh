@@ -1,18 +1,10 @@
 /* eslint-disable no-console, global-require */
 
 const dev = process.env.NODE_ENV !== 'production'
-const moduleAlias = require('module-alias')
 const fs = require('fs')
 const express = require('express')
 const compression = require('compression')
 const path = require('path')
-
-if (!dev) {
-  moduleAlias.addAlias('react', 'inferno-compat')
-  moduleAlias.addAlias('react-dom/server', 'inferno-server')
-  moduleAlias.addAlias('react-dom', 'inferno-compat')
-}
-
 const next = require('next')
 
 const useHttps = process.env.HTTPS === 'httpslocal'
