@@ -31,7 +31,7 @@ export default {
       label: 'Website',
       print: true,
       web: false,
-      url: 'http://kavsingh.com',
+      url: '//kavsingh.com',
     },
   ],
   skills: md`

@@ -35,7 +35,9 @@ const MastHead = ({ name, profession, links, onPrintClick }) => {
                 className="mastHead__link mastHead__link_print"
                 key={`${type}-print`}
               >
-                <a href={url}>{label}</a> {url.replace(/(^\w+:|^)\/\//, '')}
+                <a href={url}>
+                  <strong>{label}</strong> {url.replace(/(^\w+:|^)\/\//, '')}
+                </a>
               </li>
             ))}
             <li
@@ -104,9 +106,13 @@ const MastHead = ({ name, profession, links, onPrintClick }) => {
         }
 
         .mastHead__link_print a {
+          color: currentColor;
+          text-decoration: none;
+        }
+
+        .mastHead__link_print a strong {
           display: inline-block;
           font-weight: 500;
-          text-decoration: none;
           margin-right: 0.2em;
         }
 
