@@ -20,8 +20,7 @@
     "start:local": "NODE_ENV=production HTTPS=httpslocal node server.js",
     "now": "now",
     "deploy": "npm-run-all build now",
-    "lint": "eslint .",
-    "lighthouse": "lighthouse https://localhost:3000"
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -51,7 +50,6 @@
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.4.0",
     "https": "^1.0.0",
-    "lighthouse": "^2.4.0",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.1",
     "prettier": "^1.7.3",
