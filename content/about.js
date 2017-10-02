@@ -1,13 +1,38 @@
-import React from 'react' // eslint-disable-line
+import React from "react"; // eslint-disable-line
 import md from 'markdown-in-js'
 
 export default {
   name: 'Kanwaljeet Singh',
   profession: 'Frontend Web Developer',
   links: [
-    md`[Email](mailto://flakisms@gmail.com)`,
-    md`[Github](https://github.com/kavsingh)`,
-    md`[LinkedIn](https://linkedin.com/in/kav-singh)`,
+    {
+      type: 'email',
+      label: 'Email',
+      print: true,
+      web: true,
+      url: 'mailto://flakisms@gmail.com',
+    },
+    {
+      type: 'github',
+      label: 'Github',
+      print: true,
+      web: true,
+      url: 'https://github.com/kavsingh',
+    },
+    {
+      type: 'linkedin',
+      label: 'LinkedIn',
+      print: true,
+      web: true,
+      url: 'https://linkedin.com/in/kav-singh',
+    },
+    {
+      type: 'website',
+      label: 'Website',
+      print: true,
+      web: false,
+      url: 'http://kavsingh.com',
+    },
   ],
   skills: md`
 - Javascript / React, Backbone, Redux, ES2016+, jQuery

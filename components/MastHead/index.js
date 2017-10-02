@@ -4,47 +4,57 @@ import lifecycle from 'recompose/lifecycle'
 import PrintIcon from 'react-icons/lib/md/print'
 import { screenTheme } from '../../style/color'
 import SplitPanes from '../../layouts/SplitPanes'
-import HTMLContent from '../HTMLContent'
 import Button from '../Button'
 
-const MastHead = ({ name, profession, links, onPrintClick }) => (
-  <div className="mastHead">
-    <SplitPanes>
-      <header>
-        <h1>{name}</h1>
-        <h2>{profession}</h2>
-      </header>
-      <div className="mastHead__content">
-        <div className="masthead__profilePhoto">
-          <img src="static/pic.png" alt="Kav Singh" />
-        </div>
-        <ul className="mastHead__links">
-          {links.map((link, i) => (
-            // links are react nodes so there's nothing reliable we can use
-            // here. use index for the time being.
-            // @todo: Some other thing
-            // eslint-disable-next-line react/no-array-index-key
-            <li key={i}>
-              <HTMLContent>{link}</HTMLContent>
+const MastHead = ({ name, profession, links, onPrintClick }) => {
+  const printLinks = links.filter(({ print }) => !!print)
+  const webLinks = links.filter(({ web }) => !!web)
+
+  return (
+    <div className="mastHead">
+      <SplitPanes>
+        <header>
+          <h1>{name}</h1>
+          <h2>{profession}</h2>
+        </header>
+        <div className="mastHead__content">
+          <div className="masthead__profilePhoto">
+            <img src="static/pic.png" alt="Kav Singh" />
+          </div>
+          <ul className="mastHead__links">
+            {webLinks.map(({ url, label, type }) => (
+              <li
+                className="mastHead__link mastHead__link_web"
+                key={`${type}-web`}
+              >
+                <a href={url}>{label}</a>
+              </li>
+            ))}
+            {printLinks.map(({ url, label, type }) => (
+              <li
+                className="mastHead__link mastHead__link_print"
+                key={`${type}-print`}
+              >
+                <strong>{label}</strong> {url.replace(/(^\w+:|^)\/\//, '')}
+              </li>
+            ))}
+            <li
+              key="print"
+              className="mastHead__print"
+              style={
+                onPrintClick
+                  ? {}
+                  : { visibility: 'hidden', pointerEvents: 'none' }
+              }
+            >
+              <Button onClick={onPrintClick}>
+                <PrintIcon />
+              </Button>
             </li>
-          ))}
-          <li
-            key="print"
-            className="mastHead__print"
-            style={
-              onPrintClick
-                ? {}
-                : { visibility: 'hidden', pointerEvents: 'none' }
-            }
-          >
-            <Button onClick={onPrintClick}>
-              <PrintIcon />
-            </Button>
-          </li>
-        </ul>
-      </div>
-    </SplitPanes>
-    <style jsx>{`
+          </ul>
+        </div>
+      </SplitPanes>
+      <style jsx>{`
       .mastHead {
         width: 100%;
       }
@@ -85,10 +95,18 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         margin: 0;
       }
 
-      .mastHead__links :global(li),
-      .mastHead__links :global(p) {
-        margin: 0 !important;
-        padding: 0;
+      .mastHead__link a {
+        color: currentColor;
+      }
+
+      .mastHead__link_print {
+        margin-bottom: 0.2em;
+      }
+
+      .mastHead__link_print strong {
+        display: inline-block;
+        font-weight: 500;
+        margin-right: 0.2em;
       }
 
       .mastHead__print {
@@ -121,14 +139,34 @@ const MastHead = ({ name, profession, links, onPrintClick }) => (
         width: auto;
       }
 
+      @media screen {
+        .mastHead__link_print {
+          display: none;
+        }
+      }
+
       @media print {
+        .mastHead__link a {
+          text-decoration: none;
+        }
+
+        .mastHead__link a::after {
+          content: '- ' attr(href);
+          margin-left: 0.4em;
+        }
+
+        .mastHead__link_web {
+          display: none;
+        }
+
         .mastHead__print {
           display: none;
         }
       }
     `}</style>
-  </div>
-)
+    </div>
+  )
+}
 
 MastHead.propTypes = {
   name: PropTypes.string,
