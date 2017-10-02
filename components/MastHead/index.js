@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import lifecycle from 'recompose/lifecycle'
 import PrintIcon from 'react-icons/lib/md/print'
-import { screenTheme } from '../../style/color'
 import SplitPanes from '../../layouts/SplitPanes'
 import Button from '../Button'
 
