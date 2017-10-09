@@ -22,7 +22,6 @@ module.exports = {
           ],
           forceDelete: true,
           runtimeCaching: [
-            // Example with different handlers
             {
               handler: 'fastest',
               urlPattern: /[.](png|jpg|css)/,
