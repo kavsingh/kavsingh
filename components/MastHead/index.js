@@ -48,7 +48,7 @@ const MastHead = ({ name, profession, links, onPrintClick }) => {
                   : { visibility: 'hidden', pointerEvents: 'none' }
               }
             >
-              <Button onClick={onPrintClick}>
+              <Button onClick={onPrintClick} aria-label="Print CV">
                 <PrintIcon />
               </Button>
             </li>
