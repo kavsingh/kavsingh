@@ -12,7 +12,8 @@ rsync(
     ssh: true,
     recursive: true,
     delete: true,
-    args: ['--group=www-data', '--chmod=ug=rwX,o-rwX', '--progress'],
+    exclude: ['.well-known/'],
+    args: ['--group=www-data', '--chmod=u=rwX,go=rX', '--progress'],
     onStdout(data) {
       process.stdout.write(data)
     },
