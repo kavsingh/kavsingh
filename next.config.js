@@ -14,7 +14,7 @@ module.exports = {
       // Service Worker
       config.plugins.push(
         new SWPrecacheWebpackPlugin({
-          filename: 'sw.js',
+          filepath: './static/sw.js',
           minify: true,
           staticFileGlobsIgnorePatterns: [/\.next\//],
           staticFileGlobs: [

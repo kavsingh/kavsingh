@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "build": "next build",
-    "export": "next build && next export",
+    "export": "next build && next export && mv ./out/static/sw.js out",
     "start": "NODE_ENV=production node server.js",
     "start:local": "NODE_ENV=production HTTPS=httpslocal node server.js",
     "now": "now",
