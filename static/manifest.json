@@ -3,6 +3,6 @@
   "short_name": "KavSingh",
   "start_url": "/",
   "display": "browser",
-  "theme_color": "#222",
-  "background_color": "#222"
+  "theme_color": "#fff",
+  "background_color": "#fff"
 }
