@@ -27,7 +27,6 @@ module.exports = {
 
   rules: {
     // Server environment is Node 6.X,
-    // IDEs using Node < 8 to parse webpack config
     'prettier/prettier': prettierRules({ trailingComma: 'es5' })
   },
 
@@ -50,7 +49,16 @@ module.exports = {
       },
 
       rules: {
-        'prettier/prettier': prettierRules({ trailingComma: 'all' })
+        'prettier/prettier': prettierRules({ trailingComma: 'all' }),
+        // Styled-jsx requires braces around CSS template literal,
+        // causing lint errors
+        'react/jsx-curly-brace-presence': [
+          'error',
+          {
+            props: 'never',
+            children: 'ignore',
+          },
+        ],
       }
     }
   ]
