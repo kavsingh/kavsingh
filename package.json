@@ -16,8 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build && next export && mv ./sw.js out",
+    "compress": "node scripts/bin/compress",
     "sync": "node scripts/bin/sync",
-    "deploy": "npm-run-all build sync",
+    "deploy": "npm-run-all build compress sync",
     "lint": "eslint ."
   },
   "license": "ISC",
@@ -47,6 +48,7 @@
     "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "recursive-readdir": "^2.2.1",
     "rsyncwrapper": "^2.0.1",
     "sw-precache-webpack-plugin": "^0.11.4"
   }
