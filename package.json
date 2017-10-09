@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Personal site of Kav Singh",
   "private": true,
+  "author": "Kav Singh <flakisms@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git@github.com:kavsingh/kavsingh.git"
@@ -19,7 +20,6 @@
     "deploy": "npm-run-all build sync",
     "lint": "eslint ."
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "markdown-in-js": "^1.1.3",

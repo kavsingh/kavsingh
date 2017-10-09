@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
           />
           <meta name="theme-color" content={`${screenTheme.pageBackground}`} />
+          <link rel="icon" href="static/icon.png" type="image/png" />
           <link rel="manifest" href="static/manifest.json" />
         </Head>
         <body>
