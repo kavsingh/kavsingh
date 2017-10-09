@@ -158,7 +158,13 @@ MastHead.propTypes = {
   profession: PropTypes.string,
   onPrintClick: PropTypes.func,
   links: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    PropTypes.shape({
+      type: PropTypes.string,
+      label: PropTypes.string,
+      print: PropTypes.bool,
+      web: PropTypes.bool,
+      url: PropTypes.string,
+    }),
   ),
 }
 
