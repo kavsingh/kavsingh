@@ -8,4 +8,5 @@ out/
 *.sublime-workspace
 *.log
 *.log.*
+.env
 static/sw.js

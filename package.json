@@ -15,7 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build && next export && mv ./out/static/sw.js out",
-    "deploy": "npm-run-all build now",
+    "sync": "node scripts/bin/sync",
+    "deploy": "npm-run-all build sync",
     "lint": "eslint ."
   },
   "author": "",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "babel-plugin-lodash": "^3.2.11",
+    "dotenv": "^4.0.0",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-mongrel-react": "kavsingh/eslint-config-mongrel-react#5.0.0",
@@ -45,6 +47,7 @@
     "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "rsyncwrapper": "^2.0.1",
     "sw-precache-webpack-plugin": "^0.11.4"
   }
 }
