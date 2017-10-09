@@ -9,4 +9,4 @@ out/
 *.log
 *.log.*
 .env
-static/sw.js
+./sw.js
