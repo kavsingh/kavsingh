@@ -12,10 +12,11 @@ export default [
     print: true,
     description: md`
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households and incentivise contribution, available on iOS and Android (via Cordova) as well as in-browser.
-* Built on Backbone, code has evolved over time to incorporate ideas from modern libraries as well as transitioned to ES2016+.
-* My role as CDO includes oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
-* With our main deployment focus being the iOS and Android app stores, design has always been mobile-first. From a technical view it has also meant dealing with deployment fragmentation, and making engineering / design decisions to address device and webview implementation quirks.
-* Working in a small team of developers has had the added benefit of insight into the implementation of the Python (Django) API.
+
+- Built on Backbone, code has evolved over time to incorporate ideas from modern libraries as well as transitioned to ES2016+.
+- My role as CDO includes oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
+- With our main deployment focus being the iOS and Android app stores, design has always been mobile-first. From a technical view it has also meant dealing with deployment fragmentation, and making engineering / design decisions to address device and webview implementation quirks.
+- Working in a small team of developers has had the added benefit of insight into the implementation of the Python (Django) API.
     `,
   },
   {
@@ -28,9 +29,10 @@ export default [
     print: true,
     description: md`
 In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
-* ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
-* Server rendered React via EpiServer
-* Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
+
+- ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
+- Server rendered React via EpiServer
+- Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
     `,
   },
   {
@@ -43,8 +45,9 @@ In addition to maintenance work on campaign sites across stacks (from PHP to Nod
     print: true,
     description: md`
 Worked on a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
-* Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
-* Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets, needing abstractions over LMS apis which helped minimise code divergence.
+
+- Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
+- Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets, needing abstractions over LMS apis which helped minimise code divergence.
     `,
   },
   {
@@ -80,9 +83,8 @@ Developed an iPad kiosk app running on a device-local PHP server. Built for Thri
     active: true,
     print: true,
     description: md`
-* Webpage for well known local bar, featuring integration with Instragram apis. Built the front end as well as server side image manipulation (PHP with ImageMagick) where photos tagged with the bar's name were processed, modified and composited for display on the webpage.
-* Promotional pages for integration with Facebook with custom interactions.
-
+- Webpage for well known local bar, featuring integration with Instragram apis. Built the front end as well as server side image manipulation (PHP with ImageMagick) where photos tagged with the bar's name were processed, modified and composited for display on the webpage.
+- Promotional pages for integration with Facebook with custom interactions.
     `,
   },
   {

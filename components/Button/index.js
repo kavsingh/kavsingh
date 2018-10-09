@@ -2,12 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Button = props => {
-  const { children } = props
-  const withoutChildren = { ...props }
-  delete withoutChildren.children
+  const { children, ...passProps } = props
 
   return (
-    <button {...withoutChildren} className="button">
+    <button {...passProps} className="button" type="button">
       {children}
       <style jsx>{`
         .button {
