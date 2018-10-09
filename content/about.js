@@ -1,4 +1,4 @@
-import React from "react"; // eslint-disable-line
+import React from 'react' // eslint-disable-line
 import md from 'markdown-in-js'
 
 export default {
@@ -35,7 +35,7 @@ export default {
     },
   ],
   skills: md`
-- Javascript / React, Backbone, Redux, ES2016+, jQuery
+- JavaScript / React Native, React, Redux, MobX, Backbone, jQuery
 - CSS / Sass, Less, Stylus, PostCss, CSS in JS
 - HTML / HTML5, Pug (Jade)
 - experience with Node.js, PHP and Python.
