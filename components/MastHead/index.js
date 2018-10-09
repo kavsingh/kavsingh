@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import lifecycle from 'recompose/lifecycle'
-import PrintIcon from 'react-icons/lib/md/print'
+import { MdPrint as PrintIcon } from 'react-icons/md'
 import SplitPanes from '../../layouts/SplitPanes'
 import Button from '../Button'
 
