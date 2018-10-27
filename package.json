@@ -16,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build && next export && mv ./sw.js out",
-    "compress": "node scripts/bin/compress.ts",
+    "compress": "node scripts/bin/compress",
     "sync": "node scripts/bin/sync",
     "deploy": "npm-run-all build compress sync",
     "lint": "eslint ."
