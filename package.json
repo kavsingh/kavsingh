@@ -9,7 +9,7 @@
     "url": "git@github.com:kavsingh/kavsingh.git"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=9.0.0"
   },
   "main": "server.js",
   "scripts": {
