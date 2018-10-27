@@ -16,8 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build && next export && mv ./sw.js out",
-    "compress": "babel-node scripts/bin/compress.ts",
-    "sync": "ts-node scripts/bin/sync",
+    "compress": "node scripts/bin/compress.ts",
+    "sync": "node scripts/bin/sync",
     "deploy": "npm-run-all build compress sync",
     "lint": "eslint ."
   },
@@ -50,7 +50,6 @@
     "recursive-readdir": "^2.2.2",
     "rsyncwrapper": "^3.0.1",
     "sw-precache-webpack-plugin": "^0.11.5",
-    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "type-zoo": "^3.1.1",
     "typescript": "^3.1.3"
