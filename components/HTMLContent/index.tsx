@@ -1,7 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode, StatelessComponent } from 'react'
 
-const HTMLContent = ({ children }) => (
+export interface HTMLContentProps {
+  children: ReactNode
+}
+
+const HTMLContent: StatelessComponent<HTMLContentProps> = ({ children }) => (
   <div className="htmlContent">
     {children}
     <style jsx>{`
@@ -43,13 +46,5 @@ const HTMLContent = ({ children }) => (
     `}</style>
   </div>
 )
-
-HTMLContent.propTypes = {
-  children: PropTypes.node,
-}
-
-HTMLContent.defaultProps = {
-  children: '',
-}
 
 export default HTMLContent

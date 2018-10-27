@@ -1,6 +1,7 @@
+const withTypescript = require('@zeit/next-typescript')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
-module.exports = {
+module.exports = withTypescript({
   exportPathMap: () => ({
     '/': { page: '/' },
   }),
@@ -31,10 +32,10 @@ module.exports = {
               urlPattern: /^http.*/, // cache all files
             },
           ],
-        })
+        }),
       )
     }
 
     return config
   },
-}
+})

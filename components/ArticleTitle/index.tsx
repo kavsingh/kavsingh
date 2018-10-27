@@ -1,7 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { StatelessComponent } from 'react'
 
-const ArticleTitle = ({ title, subtitle, seperator }) => (
+export interface ArticleTitleProps {
+  title: string
+  subtitle: string
+  seperator?: string
+}
+
+const ArticleTitle: StatelessComponent<ArticleTitleProps> = ({
+  title,
+  subtitle,
+  seperator = '@',
+}) => (
   <span className="articleTitle">
     <span className="articleTitle__title">{title}</span>
     <span className="articleTitle__seperator">{seperator}</span>
@@ -20,17 +29,5 @@ const ArticleTitle = ({ title, subtitle, seperator }) => (
     `}</style>
   </span>
 )
-
-ArticleTitle.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  seperator: PropTypes.string,
-}
-
-ArticleTitle.defaultProps = {
-  title: '',
-  subtitle: '',
-  seperator: '@',
-}
 
 export default ArticleTitle

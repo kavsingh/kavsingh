@@ -1,7 +1,22 @@
-import React from 'react' // eslint-disable-line
+import React, { ReactNode } from 'react'
 import md from 'markdown-in-js'
 
-export default {
+export interface AboutLink {
+  type: string
+  label: string
+  print: boolean
+  web: boolean
+  url: string
+}
+
+export interface AboutContent {
+  name: string
+  profession: string
+  links: AboutLink[]
+  skills: ReactNode
+}
+
+const content: AboutContent = {
   name: 'Kanwaljeet Singh',
   profession: 'Frontend Web Developer',
   links: [
@@ -43,3 +58,5 @@ export default {
 My studies in Animation / Interactive Media have also provided grounding in drawing, design, sound and movement, as well as abilities in tools including Photoshop, Illustrator, After Effects, Maya and Ableton Live.
   `,
 }
+
+export default content

@@ -1,16 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import about from '../content/about'
-import experience from '../content/experience'
-import education from '../content/education'
-import HTMLContent from '../components/HTMLContent'
-import Section from '../components/Section'
-import Article from '../components/Article'
-import MastHead from '../components/MastHead'
-import Experience from '../components/Experience'
-import Education from '../components/Education'
-import { screenTheme, printTheme } from '../style/color'
-import '../util/offlineInstall'
+
+import about from '~/content/about'
+import experience from '~/content/experience'
+import education from '~/content/education'
+import HTMLContent from '~/components/HTMLContent'
+import Section from '~/components/Section'
+import Article from '~/components/Article'
+import MastHead from '~/components/MastHead'
+import Experience from '~/components/Experience'
+import Education from '~/components/Education'
+import { screenTheme, printTheme } from '~/style/color'
+import '~/util/offlineInstall'
 
 export default () => (
   <div className="root">

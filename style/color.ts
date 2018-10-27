@@ -12,5 +12,5 @@ export const lightTheme = {
   keyline: '#fee',
 }
 
-export const screenTheme = { ...lightTheme }
+export const screenTheme = { ...darkTheme }
 export const printTheme = { ...lightTheme, bodyText: '#111' }

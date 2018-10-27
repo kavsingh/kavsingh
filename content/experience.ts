@@ -1,7 +1,18 @@
-import React from 'react' // eslint-disable-line
+import React, { ReactNode } from 'react'
 import md from 'markdown-in-js'
 
-export default [
+export interface ExperienceContent {
+  slug: string
+  employer: string
+  position: string
+  period: string
+  location: string
+  active: boolean
+  print: boolean
+  description: ReactNode
+}
+
+const content: ExperienceContent[] = [
   {
     slug: 'our-home',
     employer: 'OurHome',
@@ -136,3 +147,5 @@ A range of web-centric digital content creation, augmenting broader advertising 
     `,
   },
 ]
+
+export default content

@@ -1,10 +1,15 @@
-import React from 'react'
-import SplitPanes from '../../layouts/SplitPanes'
-import { screenTheme, printTheme } from '../../style/color'
-import { callIfFn } from '../../util/function'
-import { renderable } from '../../propTypes'
+import React, { ReactNode, StatelessComponent } from 'react'
 
-const Section = ({ title, content }) => (
+import SplitPanes from '~/layouts/SplitPanes'
+import { screenTheme, printTheme } from '~/style/color'
+import { callIfFn } from '~/util/function'
+
+export interface SectionProps {
+  title: ReactNode | (() => ReactNode)
+  content: ReactNode | (() => ReactNode)
+}
+
+const Section: StatelessComponent<SectionProps> = ({ title, content }) => (
   <section className="section">
     <SplitPanes>
       <div className="section__titleContainer">
@@ -42,13 +47,3 @@ const Section = ({ title, content }) => (
 )
 
 export default Section
-
-Section.propTypes = {
-  title: renderable,
-  content: renderable,
-}
-
-Section.defaultProps = {
-  title: () => null,
-  content: () => null,
-}

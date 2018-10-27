@@ -1,7 +1,19 @@
-import React from 'react' // eslint-disable-line
+import React, { ReactNode } from 'react'
 import md from 'markdown-in-js'
 
-export default [
+export interface EducationContent {
+  slug: string
+  institution: string
+  subject: string
+  period: string
+  status: 'graduated' | 'attended'
+  location: string
+  active: boolean
+  print: boolean
+  description: ReactNode
+}
+
+const content: EducationContent[] = [
   {
     slug: 'rmit-university',
     institution: 'RMIT University',
@@ -29,3 +41,5 @@ Completed modules in functional programming, object oriented programming and bas
     `,
   },
 ]
+
+export default content

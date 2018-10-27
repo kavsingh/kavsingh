@@ -1,5 +1,3 @@
-/* global process */
-/* eslint-disable no-console, no-param-reassign */
 /*
   Install offline service worker
   from https://github.com/ooade/NextSimpleStarter
@@ -15,6 +13,10 @@ if (
     .then(reg => {
       reg.onupdatefound = function regOnUpdateFound() {
         const installingWorker = reg.installing
+
+        if (!installingWorker || !installingWorker.onstatechange) {
+          return
+        }
 
         installingWorker.onstatechange = function workerOnStateChange() {
           switch (installingWorker.state) {

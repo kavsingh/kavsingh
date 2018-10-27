@@ -2,7 +2,8 @@
 
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import { screenTheme } from '../style/color'
+
+import { screenTheme } from '~/style/color'
 
 export default class MyDocument extends Document {
   render() {

@@ -1,10 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { screenTheme, printTheme } from '../../style/color'
-import { callIfFn } from '../../util/function'
-import { renderable } from '../../propTypes'
+import React, { StatelessComponent, ReactNode } from 'react'
 
-const Article = ({ title, meta, body, print, id }) => (
+import { screenTheme, printTheme } from '~/style/color'
+import { callIfFn } from '~/util/function'
+
+interface ArticleProps {
+  body: ReactNode | (() => ReactNode)
+  id?: string
+  title?: ReactNode | (() => ReactNode)
+  meta?: ReactNode | (() => ReactNode)
+  print?: boolean
+}
+
+const Article: StatelessComponent<ArticleProps> = ({
+  id,
+  title,
+  meta,
+  body,
+  print = true,
+}) => (
   <article
     id={id}
     className={`article article_print${print ? 'Show' : 'Hide'}`}
@@ -41,21 +54,5 @@ const Article = ({ title, meta, body, print, id }) => (
     `}</style>
   </article>
 )
-
-Article.propTypes = {
-  title: renderable,
-  meta: renderable,
-  body: renderable,
-  print: PropTypes.bool,
-  id: PropTypes.string,
-}
-
-Article.defaultProps = {
-  title: '',
-  meta: '',
-  body: '',
-  print: true,
-  id: '',
-}
 
 export default Article

@@ -1,7 +1,13 @@
-import React, { Children, isValidElement } from 'react'
-import PropTypes from 'prop-types'
+import React, {
+  Children,
+  isValidElement,
+  StatelessComponent,
+  ReactNode,
+} from 'react'
 
-const SplitPanes = ({ children }) => {
+const SplitPanes: StatelessComponent<{ children: ReactNode }> = ({
+  children = [],
+}) => {
   const [first, ...rest] = Children.toArray(children).filter(node =>
     isValidElement(node),
   )
@@ -39,11 +45,3 @@ const SplitPanes = ({ children }) => {
 }
 
 export default SplitPanes
-
-SplitPanes.propTypes = {
-  children: PropTypes.node,
-}
-
-SplitPanes.defaultProps = {
-  children: [],
-}

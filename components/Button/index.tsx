@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-const Button = props => {
+const Button = (props: any) => {
   const { children, ...passProps } = props
 
   return (
@@ -27,14 +26,6 @@ const Button = props => {
       `}</style>
     </button>
   )
-}
-
-Button.propTypes = {
-  children: PropTypes.node,
-}
-
-Button.defaultProps = {
-  children: [],
 }
 
 export default Button

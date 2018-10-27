@@ -1,24 +1,11 @@
-const prettierRules = (rules = {}) => [
-  'warn',
-  Object.assign(
-    {
-      semi: false,
-      singleQuote: true,
-      bracketSpacing: true,
-      trailingComma: 'es5',
-    },
-    rules
-  )
-]
-
 module.exports = {
   env: {
     browser: false,
-    node: true
+    node: true,
   },
 
   settings: {
-    'import/resolver': 'webpack'
+    'import/resolver': 'webpack',
   },
 
   plugins: ['prettier'],
@@ -26,16 +13,15 @@ module.exports = {
   extends: ['mongrel-react', 'prettier', 'prettier/react'],
 
   rules: {
-    // Server environment is Node 6.X,
-    'prettier/prettier': prettierRules({ trailingComma: 'es5' })
+    'prettier/prettier': 'warn',
   },
 
   overrides: [
     {
       files: 'scripts/**/*.js',
       rules: {
-        'no-console': 'off'
-      }
+        'no-console': 'off',
+      },
     },
     {
       files: [
@@ -51,13 +37,10 @@ module.exports = {
 
       env: {
         browser: true,
-        node: false
+        node: false,
       },
 
       rules: {
-        'prettier/prettier': prettierRules({ trailingComma: 'all' }),
-        // Styled-jsx requires braces around CSS template literal,
-        // causing lint errors
         'react/jsx-curly-brace-presence': [
           'error',
           {
@@ -65,7 +48,7 @@ module.exports = {
             children: 'ignore',
           },
         ],
-      }
-    }
-  ]
+      },
+    },
+  ],
 }
