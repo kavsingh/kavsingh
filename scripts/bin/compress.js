@@ -1,6 +1,6 @@
 const { promisify } = require('util')
 const { createReadStream, createWriteStream } = require('fs')
-const { includes, filter, pipe, placeholder: px } = require('lodash')
+const { includes, filter, pipe, placeholder: px } = require('lodash/fp')
 const writeFile = promisify(require('fs').writeFile)
 const readDir = promisify(require('recursive-readdir'))
 const path = require('path')
