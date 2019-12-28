@@ -1,10 +1,10 @@
-import React, { ReactNode, StatelessComponent } from 'react'
+import React, { ReactNode, FunctionComponent } from 'react'
 
 export interface HTMLContentProps {
   children: ReactNode
 }
 
-const HTMLContent: StatelessComponent<HTMLContentProps> = ({ children }) => (
+const HTMLContent: FunctionComponent<HTMLContentProps> = ({ children }) => (
   <div className="htmlContent">
     {children}
     <style jsx>{`

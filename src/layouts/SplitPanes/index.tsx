@@ -1,11 +1,11 @@
 import React, {
   Children,
   isValidElement,
-  StatelessComponent,
+  FunctionComponent,
   ReactNode,
 } from 'react'
 
-const SplitPanes: StatelessComponent<{ children: ReactNode }> = ({
+const SplitPanes: FunctionComponent<{ children: ReactNode }> = ({
   children = [],
 }) => {
   const [first, ...rest] = Children.toArray(children).filter(node =>

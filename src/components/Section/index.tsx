@@ -1,4 +1,4 @@
-import React, { ReactNode, StatelessComponent } from 'react'
+import React, { ReactNode, FunctionComponent } from 'react'
 
 import SplitPanes from '~/layouts/SplitPanes'
 import { screenTheme, printTheme } from '~/style/color'
@@ -9,7 +9,7 @@ export interface SectionProps {
   content: ReactNode | (() => ReactNode)
 }
 
-const Section: StatelessComponent<SectionProps> = ({ title, content }) => (
+const Section: FunctionComponent<SectionProps> = ({ title, content }) => (
   <section className="section">
     <SplitPanes>
       <div className="section__titleContainer">

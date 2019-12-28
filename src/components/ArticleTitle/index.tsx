@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 export interface ArticleTitleProps {
   title: string
@@ -6,7 +6,7 @@ export interface ArticleTitleProps {
   seperator?: string
 }
 
-const ArticleTitle: StatelessComponent<ArticleTitleProps> = ({
+const ArticleTitle: FunctionComponent<ArticleTitleProps> = ({
   title,
   subtitle,
   seperator = '@',

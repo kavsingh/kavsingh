@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { ExperienceContent } from '~/content/experience'
 
@@ -8,7 +8,7 @@ import HTMLContent from '../HTMLContent'
 
 export type ExperienceProps = ExperienceContent
 
-const Experience: StatelessComponent<ExperienceProps> = ({
+const Experience: FunctionComponent<ExperienceProps> = ({
   employer,
   position,
   period,

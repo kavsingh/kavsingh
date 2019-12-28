@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { EducationContent } from '~/content/education'
 
@@ -8,7 +8,7 @@ import HTMLContent from '../HTMLContent'
 
 export type EducationProps = EducationContent
 
-const Education: StatelessComponent<EducationProps> = ({
+const Education: FunctionComponent<EducationProps> = ({
   subject,
   institution,
   period,
