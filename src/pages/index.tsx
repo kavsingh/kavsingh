@@ -42,9 +42,9 @@ const globalStyles = css`
     color: ${screenTheme.bodyText};
   }
 
-  /* @page {
+  @page {
     size: A4 portrait;
-  } */
+  }
 
   @media print {
     html {
