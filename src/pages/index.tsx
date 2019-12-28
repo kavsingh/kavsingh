@@ -60,42 +60,46 @@ const globalStyles = css`
   }
 `
 
-const IndexPage: FunctionComponent = () => (
-  <>
-    <Head>
-      <title>CV - Kav Singh</title>
-    </Head>
-    <Global styles={globalStyles} />
-    <Root>
-      <MastHead {...about} />
-      <Section
-        title="Skills"
-        content={() => (
-          <Article
-            title=""
-            body={() => <HTMLContent>{about.skills}</HTMLContent>}
-          />
-        )}
-      />
-      <Section
-        title="Experience"
-        content={() =>
-          experience
-            .filter(({ active }) => !!active)
-            .map(exp => <Experience {...exp} key={exp.slug} />)
-        }
-      />
-      <Section
-        title="Education"
-        content={() =>
-          education
-            .filter(({ active }) => !!active)
-            .map(edu => <Education {...edu} key={edu.slug} />)
-        }
-      />
-    </Root>
-  </>
-)
+const IndexPage: FunctionComponent = () => {
+  const skillsContent = (
+    <Article title="" body={<HTMLContent>{about.skills}</HTMLContent>} />
+  )
+
+  const experienceContent = (
+    <>
+      {experience
+        .filter(({ active }) => !!active)
+        .map(exp => (
+          <Experience {...exp} key={exp.slug} />
+        ))}
+    </>
+  )
+
+  const educationContent = (
+    <>
+      {education
+        .filter(({ active }) => !!active)
+        .map(edu => (
+          <Education {...edu} key={edu.slug} />
+        ))}
+    </>
+  )
+
+  return (
+    <>
+      <Head>
+        <title>CV - Kav Singh</title>
+      </Head>
+      <Global styles={globalStyles} />
+      <Root>
+        <MastHead {...about} />
+        <Section title="Skills" content={skillsContent} />
+        <Section title="Experience" content={experienceContent} />
+        <Section title="Education" content={educationContent} />
+      </Root>
+    </>
+  )
+}
 
 const Root = styled.div`
   width: 100%;

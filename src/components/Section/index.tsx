@@ -3,18 +3,17 @@ import styled from '@emotion/styled'
 
 import SplitPanes from '~/layouts/SplitPanes'
 import { screenTheme, printTheme } from '~/style/color'
-import { callIfFn } from '~/util/function'
 
 export interface SectionProps {
-  title: ReactNode | (() => ReactNode)
-  content: ReactNode | (() => ReactNode)
+  title: ReactNode
+  content: ReactNode
 }
 
 const Section: FunctionComponent<SectionProps> = ({ title, content }) => (
   <Container>
     <SplitPanes>
-      <Title>{callIfFn(title)}</Title>
-      <Content>{callIfFn(content)}</Content>
+      <Title>{title}</Title>
+      <Content>{content}</Content>
     </SplitPanes>
   </Container>
 )

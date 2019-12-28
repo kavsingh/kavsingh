@@ -2,13 +2,12 @@ import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
 import { screenTheme, printTheme } from '~/style/color'
-import { callIfFn } from '~/util/function'
 
 interface ArticleProps {
-  body: ReactNode | (() => ReactNode)
+  body: ReactNode
   id?: string
-  title?: ReactNode | (() => ReactNode)
-  meta?: ReactNode | (() => ReactNode)
+  title?: ReactNode
+  meta?: ReactNode
   print?: boolean
 }
 
@@ -20,9 +19,9 @@ const Article: FunctionComponent<ArticleProps> = ({
   print = false,
 }) => (
   <Container id={id} print={print}>
-    {title ? <Title>{callIfFn(title)}</Title> : null}
-    {meta ? <Meta>{callIfFn(meta)}</Meta> : null}
-    <div>{callIfFn(body)}</div>
+    {title ? <Title>{title}</Title> : null}
+    {meta ? <Meta>{meta}</Meta> : null}
+    <div>{body}</div>
   </Container>
 )
 
