@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import md from 'markdown-in-js'
 
 export interface ExperienceContent {

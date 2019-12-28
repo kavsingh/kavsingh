@@ -1,11 +1,10 @@
 module.exports = {
-  presets: ['next/babel', '@zeit/next-typescript/babel'],
+  presets: ['next/babel'],
   plugins: [
     'markdown-in-js/babel',
     [
-      'module-resolver',
+      'babel-plugin-module-resolver',
       {
-        root: ['./'],
         alias: {
           '~/components': './components',
           '~/content': './content',
@@ -13,6 +12,7 @@ module.exports = {
           '~/pages': './pages',
           '~/style': './style',
           '~/util': './util',
+          'extensions': ['.ts', '.tsx', '.js'],
         },
       },
     ],

@@ -2,10 +2,6 @@
 out/
 .next/
 .DS_Store
-.nvmrc
-.vscode
-*.sublime-project
-*.sublime-workspace
 *.log
 *.log.*
 .env

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import Head from 'next/head'
 
 import about from '~/content/about'
@@ -11,119 +11,127 @@ import MastHead from '~/components/MastHead'
 import Experience from '~/components/Experience'
 import Education from '~/components/Education'
 import { screenTheme, printTheme } from '~/style/color'
-import '~/util/offlineInstall'
+import offlineInstall from '~/util/offlineInstall'
 
-export default () => (
-  <div className="root">
-    <Head>
-      <title>CV - Kav Singh</title>
-    </Head>
-    <MastHead {...about} />
-    <Section
-      title="Skills"
-      content={() => (
-        <Article
-          title=""
-          body={() => <HTMLContent>{about.skills}</HTMLContent>}
-        />
-      )}
-    />
-    <Section
-      title="Experience"
-      content={() =>
-        experience
-          .filter(({ active }) => !!active)
-          .map(exp => <Experience {...exp} key={exp.slug} />)
-      }
-    />
-    <Section
-      title="Education"
-      content={() =>
-        education
-          .filter(({ active }) => !!active)
-          .map(edu => <Education {...edu} key={edu.slug} />)
-      }
-    />
-    <style jsx global>{`
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
+const IndexPage: FunctionComponent = () => {
+  useEffect(() => {
+    offlineInstall('/sw.js')
+  }, [])
 
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        min-height: 100%;
-      }
+  return (
+    <div className="root">
+      <Head>
+        <title>CV - Kav Singh</title>
+      </Head>
+      <MastHead {...about} />
+      <Section
+        title="Skills"
+        content={() => (
+          <Article
+            title=""
+            body={() => <HTMLContent>{about.skills}</HTMLContent>}
+          />
+        )}
+      />
+      <Section
+        title="Experience"
+        content={() =>
+          experience
+            .filter(({ active }) => !!active)
+            .map(exp => <Experience {...exp} key={exp.slug} />)
+        }
+      />
+      <Section
+        title="Education"
+        content={() =>
+          education
+            .filter(({ active }) => !!active)
+            .map(edu => <Education {...edu} key={edu.slug} />)
+        }
+      />
+      <style jsx global>{`
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+        }
 
-      html {
-        box-sizing: border-box;
-        font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-          'Helvetica Neue', sans-serif;
-        background-color: ${screenTheme.pageBackground};
-      }
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          min-height: 100%;
+        }
 
-      body {
-        color: ${screenTheme.bodyText};
-      }
-
-      @page {
-        size: A4 portrait;
-      }
-
-      @media print {
         html {
-          font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          box-sizing: border-box;
+          font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
             'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
             'Helvetica Neue', sans-serif;
-          background-color: ${printTheme.pageBackground};
+          background-color: ${screenTheme.pageBackground};
         }
 
         body {
-          color: ${printTheme.bodyText};
+          color: ${screenTheme.bodyText};
         }
-      }
-    `}</style>
-    <style jsx>{`
-      .root {
-        padding: 2em;
-        width: 100%;
-        max-width: 56rem;
-        margin: 0 auto;
-        -webkit-font-smoothing: subpixel-antialiased;
-      }
 
-      .root :global(.mastHead),
-      .root :global(section) {
-        margin-bottom: 3em;
-      }
+        @page {
+          size: A4 portrait;
+        }
 
-      @media (min-width: 30rem) {
+        @media print {
+          html {
+            font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+              'Droid Sans', 'Helvetica Neue', sans-serif;
+            background-color: ${printTheme.pageBackground};
+          }
+
+          body {
+            color: ${printTheme.bodyText};
+          }
+        }
+      `}</style>
+      <style jsx>{`
         .root {
-          padding: 4em 2em;
+          padding: 2em;
+          width: 100%;
+          max-width: 56rem;
+          margin: 0 auto;
+          -webkit-font-smoothing: subpixel-antialiased;
         }
 
         .root :global(.mastHead),
         .root :global(section) {
-          margin-bottom: 4em;
+          margin-bottom: 3em;
         }
-      }
 
-      @media screen {
-        .root {
-          -webkit-font-smoothing: antialiased;
-        }
-      }
+        @media (min-width: 30rem) {
+          .root {
+            padding: 4em 2em;
+          }
 
-      @media print {
-        .root {
-          max-width: 100%;
+          .root :global(.mastHead),
+          .root :global(section) {
+            margin-bottom: 4em;
+          }
         }
-      }
-    `}</style>
-  </div>
-)
+
+        @media screen {
+          .root {
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+
+        @media print {
+          .root {
+            max-width: 100%;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+export default IndexPage

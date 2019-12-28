@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react'
 import { MdPrint as PrintIcon } from 'react-icons/md'
-import { Omit } from 'type-zoo'
 
 import Button from '~/components/Button'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/SplitPanes'
 
-export interface MastHeadProps extends Partial<Omit<AboutContent, 'skills'>> {}
+type MastHeadProps = Partial<Omit<AboutContent, 'skills'>>
 
 interface MastHeadState {
   onPrintClick: (() => void) | null
