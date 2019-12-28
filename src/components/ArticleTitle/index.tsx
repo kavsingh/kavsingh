@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import styled from '@emotion/styled'
 
 export interface ArticleTitleProps {
   title: string
@@ -11,23 +12,24 @@ const ArticleTitle: FunctionComponent<ArticleTitleProps> = ({
   subtitle,
   seperator = '@',
 }) => (
-  <span className="articleTitle">
-    <span className="articleTitle__title">{title}</span>
-    <span className="articleTitle__seperator">{seperator}</span>
-    <span className="articleTitle__subtitle">{subtitle}</span>
-    <style jsx>{`
-      .articleTitle__title {
-        font-weight: 600;
-      }
-      .articleTitle__seperator {
-        font-weight: 400;
-        margin: 0 0.4em;
-      }
-      .articleTitle__subtitle {
-        font-weight: 400;
-      }
-    `}</style>
-  </span>
+  <>
+    <Title>{title}</Title>
+    <Seperator>{seperator}</Seperator>
+    <Subtitle>{subtitle}</Subtitle>
+  </>
 )
+
+const Title = styled.span`
+  font-weight: 600;
+`
+
+const Seperator = styled.span`
+  margin: 0 0.4em;
+  font-weight: 400;
+`
+
+const Subtitle = styled.span`
+  font-weight: 400;
+`
 
 export default ArticleTitle

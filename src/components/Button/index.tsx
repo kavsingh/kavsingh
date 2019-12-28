@@ -1,34 +1,20 @@
-import React, { FunctionComponent } from 'react'
+import styled from '@emotion/styled'
 
-const Button: FunctionComponent<React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->> = props => {
-  const { children, ...passProps } = props
+const Button = styled.button`
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
 
-  return (
-    <button {...passProps} className="button" type="button">
-      {children}
-      <style jsx>{`
-        .button {
-          border: none;
-          background: transparent;
-          font: inherit;
-          color: inherit;
-          cursor: pointer;
-          text-align: inherit;
-          padding: 0;
-          margin: 0;
-          outline: none;
-        }
-
-        .button:focus,
-        .button:active {
-          outline: none;
-        }
-      `}</style>
-    </button>
-  )
-}
+  &:focus,
+  &:active {
+    outline: none;
+  }
+`
 
 export default Button

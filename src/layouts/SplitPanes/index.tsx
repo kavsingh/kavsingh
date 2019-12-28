@@ -4,6 +4,8 @@ import React, {
   FunctionComponent,
   ReactNode,
 } from 'react'
+import styled from '@emotion/styled'
+import { breakpointLarge } from '~/style/breakpoints'
 
 const SplitPanes: FunctionComponent<{ children: ReactNode }> = ({
   children = [],
@@ -13,35 +15,35 @@ const SplitPanes: FunctionComponent<{ children: ReactNode }> = ({
   )
 
   return (
-    <div className="splitPanes">
-      <div className="splitPanes__left">{first}</div>
-      <div className="splitPanes__right">{rest}</div>
-      <style jsx>{`
-        .splitPanes {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-
-        @media (min-width: 30rem) {
-          .splitPanes {
-            width: 100%;
-            flex-direction: row;
-          }
-
-          .splitPanes__left {
-            flex: 0 0 28%;
-            max-width: 30rem;
-            padding-right: 2em;
-          }
-
-          .splitPanes__right {
-            flex: 1 0;
-          }
-        }
-      `}</style>
-    </div>
+    <Container>
+      <Left>{first}</Left>
+      <Right>{rest}</Right>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  ${breakpointLarge} {
+    flex-direction: row;
+  }
+`
+
+const Left = styled.div`
+  ${breakpointLarge} {
+    flex: 0 0 28%;
+    max-width: 30rem;
+    padding-right: 2em;
+  }
+`
+
+const Right = styled.div`
+  ${breakpointLarge} {
+    flex: 1 0;
+  }
+`
 
 export default SplitPanes

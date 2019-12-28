@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
+import styled from '@emotion/styled'
+import { Global, css } from '@emotion/core'
 
 import about from '~/content/about'
 import experience from '~/content/experience'
@@ -11,13 +13,60 @@ import MastHead from '~/components/MastHead'
 import Experience from '~/components/Experience'
 import Education from '~/components/Education'
 import { screenTheme, printTheme } from '~/style/color'
+import { breakpointLarge } from '~/style/breakpoints'
 
-const IndexPage: FunctionComponent = () => {
-  return (
-    <div className="root">
-      <Head>
-        <title>CV - Kav Singh</title>
-      </Head>
+const globalStyles = css`
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+    font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    background-color: ${screenTheme.pageBackground};
+  }
+
+  body {
+    color: ${screenTheme.bodyText};
+  }
+
+  /* @page {
+    size: A4 portrait;
+  } */
+
+  @media print {
+    html {
+      font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+      background-color: ${printTheme.pageBackground};
+    }
+
+    body {
+      color: ${printTheme.bodyText};
+    }
+  }
+`
+
+const IndexPage: FunctionComponent = () => (
+  <>
+    <Head>
+      <title>CV - Kav Singh</title>
+    </Head>
+    <Global styles={globalStyles} />
+    <Root>
       <MastHead {...about} />
       <Section
         title="Skills"
@@ -44,89 +93,44 @@ const IndexPage: FunctionComponent = () => {
             .map(edu => <Education {...edu} key={edu.slug} />)
         }
       />
-      <style jsx global>{`
-        *,
-        *::before,
-        *::after {
-          box-sizing: inherit;
-        }
+    </Root>
+  </>
+)
 
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          min-height: 100%;
-        }
+const Root = styled.div`
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2em;
+  -webkit-font-smoothing: subpixel-antialiased;
 
-        html {
-          box-sizing: border-box;
-          font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-            'Helvetica Neue', sans-serif;
-          background-color: ${screenTheme.pageBackground};
-        }
+  section {
+    margin-bottom: 3em;
 
-        body {
-          color: ${screenTheme.bodyText};
-        }
+    &:first-of-type {
+      margin-top: 3em;
+    }
+  }
 
-        @page {
-          size: A4 portrait;
-        }
+  ${breakpointLarge} {
+    padding: 4em 2em;
 
-        @media print {
-          html {
-            font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI',
-              'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-              'Droid Sans', 'Helvetica Neue', sans-serif;
-            background-color: ${printTheme.pageBackground};
-          }
+    section {
+      margin-bottom: 4em;
 
-          body {
-            color: ${printTheme.bodyText};
-          }
-        }
-      `}</style>
-      <style jsx>{`
-        .root {
-          padding: 2em;
-          width: 100%;
-          max-width: 56rem;
-          margin: 0 auto;
-          -webkit-font-smoothing: subpixel-antialiased;
-        }
+      &:first-of-type {
+        margin-top: 4em;
+      }
+    }
+  }
 
-        .root :global(.mastHead),
-        .root :global(section) {
-          margin-bottom: 3em;
-        }
+  @media screen {
+    -webkit-font-smoothing: antialiased;
+  }
 
-        @media (min-width: 30rem) {
-          .root {
-            padding: 4em 2em;
-          }
-
-          .root :global(.mastHead),
-          .root :global(section) {
-            margin-bottom: 4em;
-          }
-        }
-
-        @media screen {
-          .root {
-            -webkit-font-smoothing: antialiased;
-          }
-        }
-
-        @media print {
-          .root {
-            max-width: 100%;
-          }
-        }
-      `}</style>
-    </div>
-  )
-}
+  @media print {
+    max-width: 100%;
+  }
+`
 
 export default IndexPage
