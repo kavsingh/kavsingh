@@ -1,11 +1,12 @@
 import React, { StatelessComponent } from 'react'
 
-import Article from '~/components/Article'
-import ArticleTitle from '~/components/ArticleTitle'
-import HTMLContent from '~/components/HTMLContent'
 import { EducationContent } from '~/content/education'
 
-export interface EducationProps extends EducationContent {}
+import Article from '../Article'
+import ArticleTitle from '../ArticleTitle'
+import HTMLContent from '../HTMLContent'
+
+export type EducationProps = EducationContent
 
 const Education: StatelessComponent<EducationProps> = ({
   subject,

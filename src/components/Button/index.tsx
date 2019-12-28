@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
-const Button = (props: any) => {
+const Button: FunctionComponent<React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>> = props => {
   const { children, ...passProps } = props
 
   return (

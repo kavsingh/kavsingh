@@ -5,15 +5,8 @@ module.exports = {
     [
       'babel-plugin-module-resolver',
       {
-        alias: {
-          '~/components': './components',
-          '~/content': './content',
-          '~/layouts': './layouts',
-          '~/pages': './pages',
-          '~/style': './style',
-          '~/util': './util',
-          'extensions': ['.ts', '.tsx', '.js'],
-        },
+        alias: { '~': './src' },
+        extensions: ['.ts', '.tsx', '.js'],
       },
     ],
   ],

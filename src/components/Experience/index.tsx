@@ -1,11 +1,12 @@
 import React, { StatelessComponent } from 'react'
 
-import Article from '~/components/Article'
-import ArticleTitle from '~/components/ArticleTitle'
-import HTMLContent from '~/components/HTMLContent'
 import { ExperienceContent } from '~/content/experience'
 
-export interface ExperienceProps extends ExperienceContent {}
+import Article from '../Article'
+import ArticleTitle from '../ArticleTitle'
+import HTMLContent from '../HTMLContent'
+
+export type ExperienceProps = ExperienceContent
 
 const Experience: StatelessComponent<ExperienceProps> = ({
   employer,

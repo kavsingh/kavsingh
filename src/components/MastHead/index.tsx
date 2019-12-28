@@ -1,21 +1,22 @@
 import React, { PureComponent } from 'react'
 import { MdPrint as PrintIcon } from 'react-icons/md'
 
-import Button from '~/components/Button'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/SplitPanes'
+
+import Button from '../Button'
 
 type MastHeadProps = Partial<Omit<AboutContent, 'skills'>>
 
 interface MastHeadState {
-  onPrintClick: (() => void) | null
+  onPrintClick?(): void
 }
 
 export default class MastHead extends PureComponent<
   MastHeadProps,
   MastHeadState
 > {
-  state = { onPrintClick: null }
+  state: MastHeadState = {}
 
   static getDerivedStateFromProps(_: never, state: MastHeadState) {
     if (typeof state.onPrintClick === 'function') return null

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from 'react'
+import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
 
 import about from '~/content/about'
@@ -11,13 +11,8 @@ import MastHead from '~/components/MastHead'
 import Experience from '~/components/Experience'
 import Education from '~/components/Education'
 import { screenTheme, printTheme } from '~/style/color'
-import offlineInstall from '~/util/offlineInstall'
 
 const IndexPage: FunctionComponent = () => {
-  useEffect(() => {
-    offlineInstall('/sw.js')
-  }, [])
-
   return (
     <div className="root">
       <Head>
