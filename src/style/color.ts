@@ -1,16 +1,16 @@
 export const darkTheme = {
-  pageBackground: '#222',
-  bodyText: '#dedede',
-  bodyTextSecondary: '#888',
-  keyline: '#666',
+  pageBackground: 'rgba(34, 34, 34, 1)',
+  bodyText: 'rgba(222, 222, 222, 1)',
+  bodyTextSecondary: 'rgba(136, 136, 136, 1)',
+  keyline: 'rgba(53, 54, 58, 1)',
 }
 
 export const lightTheme = {
-  pageBackground: '#fff',
-  bodyText: '#333',
-  bodyTextSecondary: '#666',
-  keyline: '#fee',
+  pageBackground: 'rgba(255, 255, 255, 1)',
+  bodyText: 'rgba(51, 51, 51, 1)',
+  bodyTextSecondary: 'rgba(102, 102, 102, 1)',
+  keyline: 'rgba(255, 238, 238, 1)',
 }
 
 export const screenTheme = { ...darkTheme }
-export const printTheme = { ...lightTheme, bodyText: '#111' }
+export const printTheme = { ...lightTheme, bodyText: 'rgba(17, 17, 17, 1)' }

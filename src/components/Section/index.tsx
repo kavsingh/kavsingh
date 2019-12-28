@@ -1,4 +1,5 @@
 import React, { ReactNode, FunctionComponent } from 'react'
+import styled from '@emotion/styled'
 
 import SplitPanes from '~/layouts/SplitPanes'
 import { screenTheme, printTheme } from '~/style/color'
@@ -10,40 +11,34 @@ export interface SectionProps {
 }
 
 const Section: FunctionComponent<SectionProps> = ({ title, content }) => (
-  <section className="section">
+  <Container>
     <SplitPanes>
-      <div className="section__titleContainer">
-        <h1>{callIfFn(title)}</h1>
-      </div>
-      <div className="section__contentContainer">{callIfFn(content)}</div>
+      <Title>{callIfFn(title)}</Title>
+      <Content>{callIfFn(content)}</Content>
     </SplitPanes>
-    <style jsx>{`
-      .section {
-        width: 100%;
-        padding-top: 2.4em;
-        border-top: 1px solid ${screenTheme.keyline};
-      }
-
-      .section__titleContainer,
-      .section__contentContainer {
-        position: relative;
-      }
-
-      .section__titleContainer h1 {
-        font-size: 1.1em;
-        font-weight: 600;
-        margin: 0 0 1em;
-      }
-
-      .section__contentContainer :global(article:not(:last-child)) {
-        margin-bottom: 4.2em;
-      }
-
-      @media print {
-        border-top-color: ${printTheme.keyline};
-      }
-    `}</style>
-  </section>
+  </Container>
 )
+
+const Container = styled.section`
+  width: 100%;
+  padding-top: 2.4em;
+  border-top: 1px solid ${screenTheme.keyline};
+
+  @media print {
+    border-top-color: ${printTheme.keyline};
+  }
+`
+
+const Title = styled.h1`
+  margin: 0 0 1em;
+  font-weight: 600;
+  font-size: 1.1em;
+`
+
+const Content = styled.div`
+  > *:not(:last-child) {
+    margin-bottom: 4.2em;
+  }
+`
 
 export default Section
