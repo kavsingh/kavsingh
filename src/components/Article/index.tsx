@@ -1,4 +1,5 @@
-import React, { StatelessComponent, ReactNode } from 'react'
+import React, { ReactNode, FunctionComponent } from 'react'
+import styled from '@emotion/styled'
 
 import { screenTheme, printTheme } from '~/style/color'
 import { callIfFn } from '~/util/function'
@@ -11,48 +12,42 @@ interface ArticleProps {
   print?: boolean
 }
 
-const Article: StatelessComponent<ArticleProps> = ({
+const Article: FunctionComponent<ArticleProps> = ({
   id,
   title,
   meta,
   body,
-  print = true,
+  print = false,
 }) => (
-  <article
-    id={id}
-    className={`article article_print${print ? 'Show' : 'Hide'}`}
-  >
-    {title ? <h1 className="article__title">{callIfFn(title)}</h1> : null}
-    {meta ? <h2 className="article__meta">{callIfFn(meta)}</h2> : null}
-    <div className="article__body">{callIfFn(body)}</div>
-    <style jsx>{`
-      .article {
-        page-break-inside: avoid;
-      }
-
-      .article__title {
-        font-size: 1.1em;
-        margin: 0 0 0.2em;
-      }
-
-      .article__meta {
-        font-size: 0.88em;
-        font-weight: 400;
-        margin: 0 0 0.8em;
-        color: ${screenTheme.bodyTextSecondary};
-      }
-
-      @media print {
-        .article_printHide {
-          display: none;
-        }
-
-        .article__meta {
-          color: ${printTheme.bodyTextSecondary};
-        }
-      }
-    `}</style>
-  </article>
+  <Container id={id} print={print}>
+    {title ? <Title>{callIfFn(title)}</Title> : null}
+    {meta ? <Meta>{callIfFn(meta)}</Meta> : null}
+    <div>{callIfFn(body)}</div>
+  </Container>
 )
+
+const Container = styled.article<{ print: boolean }>`
+  page-break-inside: avoid;
+
+  @media print {
+    display: ${({ print }) => (print ? 'initial' : 'none')};
+  }
+`
+
+const Title = styled.h1`
+  margin: 0 0 0.2em;
+  font-size: 1.1em;
+`
+
+const Meta = styled.h2`
+  margin: 0 0 0.8em;
+  color: ${screenTheme.bodyTextSecondary};
+  font-weight: 400;
+  font-size: 0.88em;
+
+  @media print {
+    color: ${printTheme.bodyTextSecondary};
+  }
+`
 
 export default Article

@@ -22,6 +22,7 @@
     "paths": {
       "~/*": ["src/*"]
     },
+    "plugins": [{ "name": "typescript-styled-plugin", "validate": false }],
     "preserveConstEnums": true,
     "pretty": true,
     "removeComments": false,
