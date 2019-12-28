@@ -37,115 +37,35 @@ const MastHead: FunctionComponent<MastHeadProps> = ({
   return (
     <Container>
       <SplitPanes>
-        <header>
+        <Header>
           <h1>{name}</h1>
           <h2>{profession}</h2>
-        </header>
-        <div className="mastHead__content">
-          <div className="masthead__profilePhoto">
+        </Header>
+        <Content>
+          <ProfilePhoto>
             <img src="static/pic.png" alt="Kav Singh" />
-          </div>
-          <ul className="mastHead__links">
+          </ProfilePhoto>
+          <Links>
             {webLinks.map(({ url, label, type }) => (
-              <li
-                className="mastHead__link mastHead__link_web"
-                key={`${type}-web`}
-              >
+              <WebLinkContainer key={`${type}-web`}>
                 <a href={url}>{label}</a>
-              </li>
+              </WebLinkContainer>
             ))}
             {printLinks.map(({ url, label, type }) => (
-              <li
-                className="mastHead__link mastHead__link_print"
-                key={`${type}-print`}
-              >
+              <PrintLinkContainer key={`${type}-print`}>
                 <a href={url}>
                   <strong>{label}</strong> {url.replace(/(^\w+:|^)\/\//, '')}
                 </a>
-              </li>
+              </PrintLinkContainer>
             ))}
-            <li
-              key="print"
-              className="mastHead__print"
-              style={
-                printAvailable
-                  ? {}
-                  : { visibility: 'hidden', pointerEvents: 'none' }
-              }
-            >
+            <PrintButtonWrapper key="print" visible={printAvailable}>
               <Button onClick={handlePrintClick} aria-label="Print CV">
                 <PrintIcon />
               </Button>
-            </li>
-          </ul>
-        </div>
+            </PrintButtonWrapper>
+          </Links>
+        </Content>
       </SplitPanes>
-      <style jsx>{`
-        .mastHead__content {
-          display: flex;
-          width: 100%;
-          align-items: center;
-        }
-
-        .mastHead__links {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .mastHead__link a {
-          color: currentColor;
-        }
-
-        .mastHead__link_print {
-          margin-bottom: 0.2em;
-        }
-
-        .mastHead__link_print a {
-          color: currentColor;
-          text-decoration: none;
-        }
-
-        .mastHead__link_print a strong {
-          display: inline-block;
-          font-weight: 500;
-          margin-right: 0.2em;
-        }
-
-        .mastHead__print {
-          display: flex;
-          align-items: center;
-          font-size: 1.2em;
-          height: 1.4em;
-          margin-bottom: -1.4em;
-        }
-
-        .masthead__profilePhoto {
-          height: 8em;
-          margin-right: 1em;
-        }
-
-        .masthead__profilePhoto img {
-          height: 100%;
-          width: auto;
-        }
-
-        @media screen {
-          .mastHead__link_print {
-            display: none;
-          }
-        }
-
-        @media print {
-          .mastHead__link_web {
-            display: none;
-          }
-
-          .mastHead__print {
-            display: none;
-          }
-        }
-      `}</style>
     </Container>
   )
 }
@@ -154,13 +74,13 @@ export default MastHead
 
 const Container = styled.div`
   width: 100%;
+`
 
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-  }
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 
   h1,
   h2 {
@@ -177,5 +97,69 @@ const Container = styled.div`
     color: #666;
     font-weight: 400;
     font-size: 1em;
+  }
+`
+
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`
+
+const ProfilePhoto = styled.div`
+  height: 8em;
+  margin-right: 1em;
+
+  & > img {
+    width: auto;
+    height: 100%;
+  }
+`
+
+const Links = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  a {
+    color: currentColor;
+  }
+`
+
+const WebLinkContainer = styled.li`
+  @media print {
+    display: none;
+  }
+`
+
+const PrintLinkContainer = styled.li`
+  margin-bottom: 0.2em;
+
+  a {
+    text-decoration: none;
+
+    strong {
+      display: inline-block;
+      margin-right: 0.2em;
+      font-weight: 500;
+    }
+  }
+
+  @media screen {
+    display: none;
+  }
+`
+const PrintButtonWrapper = styled.li<{ visible: boolean }>`
+  display: flex;
+  align-items: center;
+  height: 1.4em;
+  margin-bottom: -1.4em;
+  font-size: 1.2em;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transition: opacity 200ms ease-out;
+  pointer-events: ${({ visible }) => (visible ? 'initial' : 'none')};
+
+  @media print {
+    display: none;
   }
 `
