@@ -2,7 +2,11 @@ import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
 
+import usePreferredColorScheme from '~/lib/usePreferredColorScheme'
+import { Theme, extractThemeColor, getThemeForColorScheme } from '~/style/theme'
+import { breakpointLarge } from '~/style/breakpoints'
 import about from '~/content/about'
 import experience from '~/content/experience'
 import education from '~/content/education'
@@ -12,10 +16,8 @@ import Article from '~/components/Article'
 import MastHead from '~/components/MastHead'
 import Experience from '~/components/Experience'
 import Education from '~/components/Education'
-import { screenTheme, printTheme } from '~/style/color'
-import { breakpointLarge } from '~/style/breakpoints'
 
-const globalStyles = css`
+const globalStyles = (theme: Theme) => css`
   *,
   *::before,
   *::after {
@@ -35,11 +37,11 @@ const globalStyles = css`
     font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
-    background-color: ${screenTheme.pageBackground};
+    background-color: ${theme.screen.colors.pageBackground};
   }
 
   body {
-    color: ${screenTheme.bodyText};
+    color: ${theme.screen.colors.bodyText};
   }
 
   @page {
@@ -51,16 +53,20 @@ const globalStyles = css`
       font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
         'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
-      background-color: ${printTheme.pageBackground};
+      background-color: ${theme.print.colors.pageBackground};
     }
 
     body {
-      color: ${printTheme.bodyText};
+      color: ${theme.print.colors.bodyText};
     }
   }
 `
 
 const IndexPage: FunctionComponent = () => {
+  const preferredColorScheme = usePreferredColorScheme()
+  const theme = getThemeForColorScheme(preferredColorScheme)
+  const themeColor = extractThemeColor(theme)
+
   const skillsContent = (
     <Article title="" body={<HTMLContent>{about.skills}</HTMLContent>} />
   )
@@ -86,9 +92,10 @@ const IndexPage: FunctionComponent = () => {
   )
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>CV - Kav Singh</title>
+        <meta name="theme-color" content={themeColor} />
       </Head>
       <Global styles={globalStyles} />
       <Root>
@@ -97,7 +104,7 @@ const IndexPage: FunctionComponent = () => {
         <Section title="Experience" content={experienceContent} />
         <Section title="Education" content={educationContent} />
       </Root>
-    </>
+    </ThemeProvider>
   )
 }
 

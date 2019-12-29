@@ -29,7 +29,8 @@
     "@emotion/styled": "10.0.27",
     "emotion-theming": "10.0.27",
     "markdown-in-js": "1.1.4",
-    "react-icons": "3.8.0"
+    "react-icons": "3.8.0",
+    "rgb-hex": "3.0.0"
   },
   "devDependencies": {
     "@babel/node": "7.7.7",
