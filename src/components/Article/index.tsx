@@ -1,7 +1,8 @@
 import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
+import { withTheme } from 'emotion-theming'
 
-import { screenTheme, printTheme } from '~/style/color'
+import { ThemeProps } from '~/style/theme'
 
 interface ArticleProps {
   body: ReactNode
@@ -38,15 +39,15 @@ const Title = styled.h1`
   font-size: 1.1em;
 `
 
-const Meta = styled.h2`
+const Meta = styled.h2<ThemeProps>`
   margin: 0 0 0.8em;
-  color: ${screenTheme.bodyTextSecondary};
+  color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
   font-weight: 400;
   font-size: 0.88em;
 
   @media print {
-    color: ${printTheme.bodyTextSecondary};
+    color: ${({ theme }) => theme.print.colors.bodyTextSecondary};
   }
 `
 
-export default Article
+export default withTheme(Article)

@@ -2,7 +2,7 @@ import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
 import SplitPanes from '~/layouts/SplitPanes'
-import { screenTheme, printTheme } from '~/style/color'
+import { ThemeProps } from '~/style/theme'
 
 export interface SectionProps {
   title: ReactNode
@@ -18,13 +18,13 @@ const Section: FunctionComponent<SectionProps> = ({ title, content }) => (
   </Container>
 )
 
-const Container = styled.section`
+const Container = styled.section<ThemeProps>`
   width: 100%;
   padding-top: 2.4em;
-  border-top: 1px solid ${screenTheme.keyline};
+  border-top: 1px solid ${({ theme }) => theme.screen.colors.keyline};
 
   @media print {
-    border-top-color: ${printTheme.keyline};
+    border-top-color: ${({ theme }) => theme.print.colors.keyline};
   }
 `
 

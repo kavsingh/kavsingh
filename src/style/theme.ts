@@ -22,7 +22,7 @@ export interface Theme {
 }
 
 export interface ThemeProps {
-  theme: Theme
+  theme?: Theme
 }
 
 const print: MediaTypeTheme = {
