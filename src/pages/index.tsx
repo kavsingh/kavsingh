@@ -34,8 +34,8 @@ const globalStyles = (theme: Theme) => css`
 
   html {
     box-sizing: border-box;
-    font: 14px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    font: 14px/1.3 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
     background-color: ${theme.screen.colors.pageBackground};
   }
@@ -50,9 +50,8 @@ const globalStyles = (theme: Theme) => css`
 
   @media print {
     html {
-      font: 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      line-height: 1.2;
       background-color: ${theme.print.colors.pageBackground};
     }
 
