@@ -1,11 +1,15 @@
-const path = require('path')
-const { promisify } = require('util')
-const { createReadStream, createWriteStream } = require('fs')
-const zlib = require('zlib')
-const writeFile = promisify(require('fs').writeFile)
+import fs from 'fs'
+import path from 'path'
+import zlib from 'zlib'
+import { promisify } from 'util'
+import { createReadStream, createWriteStream } from 'fs'
 
-const readDir = promisify(require('recursive-readdir'))
-const { includes, filter, pipe, placeholder: px } = require('lodash/fp')
+import { __, filter, includes, map, pipe } from 'lodash/fp'
+import recursiveReadDir from 'recursive-readdir'
+
+const writeFile = promisify(fs.writeFile)
+
+const readDir = promisify<string, string[]>(recursiveReadDir)
 
 const dist = path.resolve(__dirname, '../../out')
 // Provided by NearlyFreeSpeech:
@@ -20,14 +24,14 @@ RewriteRule ^(.*)$ $1.gz [L]
 
 const shouldCompress = pipe(
   path.extname.bind(path),
-  includes(px, ['.js', '.css', '.html', '.png', '.json']),
+  includes(__, ['.js', '.css', '.html', '.png', '.json']),
 )
 
-const compressAsset = assetPath => {
+const compressAsset = (assetPath: string) => {
   const input = createReadStream(assetPath)
   const output = createWriteStream(`${assetPath}.gz`)
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     input.on('error', error => reject(error))
     output.on('error', error => reject(error))
     output.on('finish', () => resolve(`${assetPath} compressed`))
@@ -36,12 +40,11 @@ const compressAsset = assetPath => {
   })
 }
 
-const compressAssets = assetPaths => Promise.all(assetPaths.map(compressAsset))
-
-const writeHtAccess = destPath => writeFile(destPath, dotHtAccess)
+const writeHtAccess = (destPath: string) => writeFile(destPath, dotHtAccess)
 
 readDir(dist)
   .then(filter(shouldCompress))
-  .then(compressAssets)
+  .then(pipe(map(compressAsset), Promise.all.bind(Promise)))
+  .then(compressed => console.log(`${compressed.length} files compressed`))
   .then(() => writeHtAccess(`${dist}/.htaccess`))
-  .catch(error => console.error(error.toString()))
+  .catch(console.error)

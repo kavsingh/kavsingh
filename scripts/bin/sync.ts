@@ -1,9 +1,10 @@
-const path = require('path')
+import path from 'path'
 
-const dotenv = require('dotenv')
-const rsync = require('rsyncwrapper')
+import dotenv from 'dotenv'
+import rsync from 'rsyncwrapper'
 
 dotenv.config()
+
 const { DEPLOY_DOMAIN, DEPLOY_USER, DEPLOY_PATH } = process.env
 
 rsync(

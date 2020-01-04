@@ -17,8 +17,8 @@
     "dev": "next dev",
     "prebuild": "rm -rf ./out",
     "build": "next build && next export",
-    "compress": "node scripts/bin/compress",
-    "sync": "node scripts/bin/sync",
+    "compress": "ts-node scripts/bin/compress",
+    "sync": "ts-node scripts/bin/sync",
     "deploy": "npm-run-all build compress sync",
     "lint": "tsc && eslint . --ext=.ts,.tsx,.js,.jsx",
     "servestatic": "cd out && ws --spa"
@@ -73,6 +73,7 @@
     "stylelint-order": "4.0.0",
     "stylelint-prettier": "1.1.2",
     "stylelint-processor-styled-components": "1.9.0",
+    "ts-node": "8.5.4",
     "typescript": "3.7.4",
     "typescript-styled-plugin": "0.15.0"
   }
