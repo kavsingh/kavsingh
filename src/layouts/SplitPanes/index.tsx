@@ -5,6 +5,7 @@ import React, {
   ReactNode,
 } from 'react'
 import styled from '@emotion/styled'
+
 import { breakpointLarge } from '~/style/breakpoints'
 
 const SplitPanes: FunctionComponent<{ children: ReactNode }> = ({

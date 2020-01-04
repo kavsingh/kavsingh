@@ -1,3 +1,15 @@
+const srcDependencies = {
+  devDependencies: false,
+  optionalDependencies: false,
+  peerDependencies: false,
+}
+
+const devDependencies = {
+  devDependencies: true,
+  optionalDependencies: false,
+  peerDependencies: false,
+}
+
 const unusedVarsConfig = [
   'warn',
   { ignoreRestSiblings: true, varsIgnorePattern: '^_' },
@@ -15,11 +27,19 @@ module.exports = {
     react: { version: 'detect' },
   },
   env: { node: true, browser: false, es6: true },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'filenames',
+    'import',
+    'react',
+    'react-hooks',
+    'emotion',
+    'prettier',
+  ],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended',
     'prettier',
     'prettier/react',
@@ -30,6 +50,26 @@ module.exports = {
     'no-console': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    // 'filenames/match-regex': ['error', '^[a-z-.]+$', true],
+    // 'filenames/match-exported': ['error', 'kebab'],
+    'import/no-cycle': 'error',
+    'import/no-self-import': 'error',
+    'import/no-unused-modules': 'error',
+    'import/no-useless-path-segments': 'error',
+    'import/no-extraneous-dependencies': ['error', devDependencies],
+    'import/order': [
+      'warn',
+      {
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling', 'index'],
+        ],
+        'pathGroups': [{ pattern: '~/**', group: 'internal' }],
+        'newlines-between': 'always',
+      },
+    ],
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
@@ -55,11 +95,17 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/*.ts', 'src/**/*.tsx'],
+      files: ['src/**/*'],
       env: { browser: true },
       rules: {
         'no-console': 'error',
         '@typescript-eslint/no-var-requires': 'error',
+        'import/no-extraneous-dependencies': ['error', srcDependencies],
+        'emotion/jsx-import': 'off', // handled by babel plugin
+        'emotion/no-vanilla': 'error',
+        'emotion/import-from-emotion': 'error',
+        'emotion/styled-import': 'error',
+        'emotion/syntax-preference': ['error', 'string'],
       },
     },
   ],

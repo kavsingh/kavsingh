@@ -1,10 +1,11 @@
+const path = require('path')
 const { promisify } = require('util')
 const { createReadStream, createWriteStream } = require('fs')
-const { includes, filter, pipe, placeholder: px } = require('lodash/fp')
-const writeFile = promisify(require('fs').writeFile)
-const readDir = promisify(require('recursive-readdir'))
-const path = require('path')
 const zlib = require('zlib')
+const writeFile = promisify(require('fs').writeFile)
+
+const readDir = promisify(require('recursive-readdir'))
+const { includes, filter, pipe, placeholder: px } = require('lodash/fp')
 
 const dist = path.resolve(__dirname, '../../out')
 // Provided by NearlyFreeSpeech:

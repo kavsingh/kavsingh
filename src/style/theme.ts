@@ -1,4 +1,5 @@
 import rgbHex from 'rgb-hex'
+
 import {
   getPreferredColorScheme,
   ColorSchemePreference,

@@ -1,5 +1,6 @@
-const dotenv = require('dotenv')
 const path = require('path')
+
+const dotenv = require('dotenv')
 const rsync = require('rsyncwrapper')
 
 dotenv.config()
