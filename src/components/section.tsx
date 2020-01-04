@@ -1,7 +1,7 @@
 import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-import SplitPanes from '~/layouts/SplitPanes'
+import SplitPanes from '~/layouts/split-panes'
 import { ThemeProps } from '~/style/theme'
 
 export interface SectionProps {

@@ -13,7 +13,7 @@ export interface EducationContent {
   description: ReactNode
 }
 
-const content: EducationContent[] = [
+const education: EducationContent[] = [
   {
     slug: 'rmit-university',
     institution: 'RMIT University',
@@ -42,4 +42,4 @@ Completed modules in functional programming, object oriented programming and bas
   },
 ]
 
-export default content
+export default education

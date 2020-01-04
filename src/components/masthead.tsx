@@ -8,13 +8,13 @@ import { MdPrint as PrintIcon } from 'react-icons/md'
 import styled from '@emotion/styled'
 
 import { AboutContent } from '~/content/about'
-import SplitPanes from '~/layouts/SplitPanes'
+import SplitPanes from '~/layouts/split-panes'
 
-import Button from '../Button'
+import Button from './button'
 
-type MastHeadProps = Partial<Omit<AboutContent, 'skills'>>
+type MastheadProps = Partial<Omit<AboutContent, 'skills'>>
 
-const MastHead: FunctionComponent<MastHeadProps> = ({
+const Masthead: FunctionComponent<MastheadProps> = ({
   name = '',
   profession = '',
   links = [],
@@ -70,7 +70,7 @@ const MastHead: FunctionComponent<MastHeadProps> = ({
   )
 }
 
-export default MastHead
+export default Masthead
 
 const Container = styled.div`
   width: 100%;

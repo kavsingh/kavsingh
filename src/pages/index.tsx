@@ -4,18 +4,18 @@ import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
 
-import usePreferredColorScheme from '~/lib/usePreferredColorScheme'
+import usePreferredColorScheme from '~/lib/use-preferred-color-scheme'
 import { Theme, extractThemeColor, getThemeForColorScheme } from '~/style/theme'
 import { breakpointLarge } from '~/style/breakpoints'
 import about from '~/content/about'
 import experience from '~/content/experience'
 import education from '~/content/education'
-import HTMLContent from '~/components/HTMLContent'
-import Section from '~/components/Section'
-import Article from '~/components/Article'
-import MastHead from '~/components/MastHead'
-import Experience from '~/components/Experience'
-import Education from '~/components/Education'
+import HTMLContent from '~/components/html-content'
+import Section from '~/components/section'
+import Article from '~/components/article'
+import Masthead from '~/components/masthead'
+import Experience from '~/components/experience'
+import Education from '~/components/education'
 
 const globalStyles = (theme: Theme) => css`
   *,
@@ -98,7 +98,7 @@ const IndexPage: FunctionComponent = () => {
       </Head>
       <Global styles={globalStyles} />
       <Root>
-        <MastHead {...about} />
+        <Masthead {...about} />
         <Section title="Skills" content={skillsContent} />
         <Section title="Experience" content={experienceContent} />
         <Section title="Education" content={educationContent} />

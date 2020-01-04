@@ -4,7 +4,7 @@ import {
   getPreferredColorScheme,
   darkSchemeQuery,
   lightSchemeQuery,
-} from './colorScheme'
+} from './color-scheme'
 
 const usePreferredColorScheme = () => {
   const [scheme, setScheme] = useState(getPreferredColorScheme())

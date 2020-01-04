@@ -5,7 +5,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 
 import { extractThemeColor, getInitialTheme } from '~/style/theme'
 
-export default class MyDocument extends Document {
+export default class HTMLDocument extends Document {
   render() {
     const themeColor = extractThemeColor(getInitialTheme())
 

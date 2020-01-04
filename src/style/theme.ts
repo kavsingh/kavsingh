@@ -3,7 +3,7 @@ import rgbHex from 'rgb-hex'
 import {
   getPreferredColorScheme,
   ColorSchemePreference,
-} from '~/lib/colorScheme'
+} from '~/lib/color-scheme'
 
 interface ThemeColors {
   bodyText: string
@@ -61,7 +61,7 @@ export const darkTheme: Theme = {
   },
 }
 
-const defaultTheme = darkTheme
+export const defaultTheme = darkTheme
 
 export const getThemeForColorScheme = (colorScheme: ColorSchemePreference) => {
   if (colorScheme === 'no-preference') return defaultTheme
@@ -74,5 +74,3 @@ export const getInitialTheme = () =>
 
 export const extractThemeColor = (theme: Theme) =>
   `#${rgbHex(theme.screen.colors.pageBackground).slice(0, 6)}`
-
-export default defaultTheme

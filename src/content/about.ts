@@ -16,7 +16,7 @@ export interface AboutContent {
   skills: ReactNode
 }
 
-const content: AboutContent = {
+const about: AboutContent = {
   name: 'Kanwaljeet Singh',
   profession: 'Frontend Web Developer',
   links: [
@@ -59,4 +59,4 @@ My studies in Animation / Interactive Media have also provided grounding in draw
   `,
 }
 
-export default content
+export default about

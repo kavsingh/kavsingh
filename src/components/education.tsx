@@ -2,9 +2,9 @@ import React, { FunctionComponent } from 'react'
 
 import { EducationContent } from '~/content/education'
 
-import Article from '../Article'
-import ArticleTitle from '../ArticleTitle'
-import HTMLContent from '../HTMLContent'
+import Article from './article'
+import ArticleTitle from './article-title'
+import HTMLContent from './html-content'
 
 export type EducationProps = EducationContent
 

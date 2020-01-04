@@ -12,7 +12,7 @@ export interface ExperienceContent {
   description: ReactNode
 }
 
-const content: ExperienceContent[] = [
+const experience: ExperienceContent[] = [
   {
     slug: 'our-home',
     employer: 'OurHome',
@@ -148,4 +148,4 @@ A range of web-centric digital content creation, augmenting broader advertising 
   },
 ]
 
-export default content
+export default experience

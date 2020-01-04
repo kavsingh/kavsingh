@@ -50,8 +50,8 @@ module.exports = {
     'no-console': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    // 'filenames/match-regex': ['error', '^[a-z-.]+$', true],
-    // 'filenames/match-exported': ['error', 'kebab'],
+    'filenames/match-regex': ['error', '^[a-z-.]+$', true],
+    'filenames/match-exported': ['error', 'kebab'],
     'import/no-cycle': 'error',
     'import/no-self-import': 'error',
     'import/no-unused-modules': 'error',
@@ -106,6 +106,12 @@ module.exports = {
         'emotion/import-from-emotion': 'error',
         'emotion/styled-import': 'error',
         'emotion/syntax-preference': ['error', 'string'],
+      },
+    },
+    {
+      files: ['*.config.*', 'src/pages/index.tsx', 'src/pages/_document.tsx'],
+      rules: {
+        'filenames/match-exported': 'off',
       },
     },
   ],
