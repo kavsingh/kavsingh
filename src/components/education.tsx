@@ -21,9 +21,10 @@ const Education: FunctionComponentWithoutChildren<EducationContent> = ({
     id={`education-${slug}`}
     title={<ArticleTitle title={subject} subtitle={institution} />}
     meta={`${status}, ${period}, ${location}`}
-    body={<HTMLContent>{description}</HTMLContent>}
     print={print}
-  />
+  >
+    <HTMLContent>{description}</HTMLContent>
+  </Article>
 )
 
 export default Education

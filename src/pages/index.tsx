@@ -16,7 +16,9 @@ import Education from '~/components/education'
 
 const IndexPage: FunctionComponentWithoutChildren = () => {
   const skillsContent = (
-    <Article title="" body={<HTMLContent>{about.skills}</HTMLContent>} />
+    <Article title="">
+      <HTMLContent>{about.skills}</HTMLContent>
+    </Article>
   )
 
   const experienceContent = (

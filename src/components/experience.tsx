@@ -19,9 +19,10 @@ const Experience: FunctionComponent<ExperienceContent> = ({
     id={`experience-${slug}`}
     title={<ArticleTitle title={position} subtitle={employer} />}
     meta={`${period}, ${location}`}
-    body={<HTMLContent>{description}</HTMLContent>}
     print={print}
-  />
+  >
+    <HTMLContent>{description}</HTMLContent>
+  </Article>
 )
 
 export default Experience

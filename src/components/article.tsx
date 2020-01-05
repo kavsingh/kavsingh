@@ -1,21 +1,19 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 
-import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { ThemeProps } from '~/style/theme'
 
-const Article: FunctionComponentWithoutChildren<{
-  body: ReactNode
+const Article: FunctionComponent<{
   id?: string
   title?: ReactNode
   meta?: ReactNode
   print?: boolean
-}> = ({ id, title, meta, body, print = false }) => (
+}> = ({ id, title, meta, children, print = false }) => (
   <Container id={id} print={print}>
     {title ? <Title>{title}</Title> : null}
     {meta ? <Meta>{meta}</Meta> : null}
-    <div>{body}</div>
+    <Content>{children}</Content>
   </Container>
 )
 
@@ -42,5 +40,7 @@ const Meta = styled.h2<ThemeProps>`
     color: ${({ theme }) => theme.print.colors.bodyTextSecondary};
   }
 `
+
+const Content = styled.div``
 
 export default withTheme(Article)
