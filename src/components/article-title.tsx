@@ -1,17 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 
-export interface ArticleTitleProps {
+import { FunctionComponentWithoutChildren } from '~/typings/component'
+
+const ArticleTitle: FunctionComponentWithoutChildren<{
   title: string
   subtitle: string
   seperator?: string
-}
-
-const ArticleTitle: FunctionComponent<ArticleTitleProps> = ({
-  title,
-  subtitle,
-  seperator = '@',
-}) => (
+}> = ({ title, subtitle, seperator = '@' }) => (
   <>
     <Title>{title}</Title>
     <Seperator>{seperator}</Seperator>

@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
 
+import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { breakpointLarge } from '~/style/breakpoints'
 import about from '~/content/about'
 import experience from '~/content/experience'
@@ -13,7 +14,7 @@ import Masthead from '~/components/masthead'
 import Experience from '~/components/experience'
 import Education from '~/components/education'
 
-const IndexPage: FunctionComponent = () => {
+const IndexPage: FunctionComponentWithoutChildren = () => {
   const skillsContent = (
     <Article title="" body={<HTMLContent>{about.skills}</HTMLContent>} />
   )

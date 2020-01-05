@@ -1,24 +1,17 @@
-import React, { ReactNode, FunctionComponent } from 'react'
+import React, { ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 
+import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { ThemeProps } from '~/style/theme'
 
-interface ArticleProps {
+const Article: FunctionComponentWithoutChildren<{
   body: ReactNode
   id?: string
   title?: ReactNode
   meta?: ReactNode
   print?: boolean
-}
-
-const Article: FunctionComponent<ArticleProps> = ({
-  id,
-  title,
-  meta,
-  body,
-  print = false,
-}) => (
+}> = ({ id, title, meta, body, print = false }) => (
   <Container id={id} print={print}>
     {title ? <Title>{title}</Title> : null}
     {meta ? <Meta>{meta}</Meta> : null}

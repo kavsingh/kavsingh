@@ -1,14 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 
 import { EducationContent } from '~/content/education'
+import { FunctionComponentWithoutChildren } from '~/typings/component'
 
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-export type EducationProps = EducationContent
-
-const Education: FunctionComponent<EducationProps> = ({
+const Education: FunctionComponentWithoutChildren<EducationContent> = ({
   subject,
   institution,
   period,

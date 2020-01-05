@@ -4,12 +4,10 @@ import styled from '@emotion/styled'
 import SplitPanes from '~/layouts/split-panes'
 import { ThemeProps } from '~/style/theme'
 
-export interface SectionProps {
+const Section: FunctionComponent<{
   title: ReactNode
   content: ReactNode
-}
-
-const Section: FunctionComponent<SectionProps> = ({ title, content }) => (
+}> = ({ title, content }) => (
   <Container>
     <SplitPanes>
       <Title>{title}</Title>

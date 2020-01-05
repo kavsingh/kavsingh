@@ -6,9 +6,7 @@ import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-export type ExperienceProps = ExperienceContent
-
-const Experience: FunctionComponent<ExperienceProps> = ({
+const Experience: FunctionComponent<ExperienceContent> = ({
   employer,
   position,
   period,

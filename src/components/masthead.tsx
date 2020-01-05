@@ -1,24 +1,16 @@
-import React, {
-  FunctionComponent,
-  useState,
-  useEffect,
-  useCallback,
-} from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { MdPrint as PrintIcon } from 'react-icons/md'
 import styled from '@emotion/styled'
 
+import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/split-panes'
 
 import Button from './button'
 
-type MastheadProps = Partial<Omit<AboutContent, 'skills'>>
-
-const Masthead: FunctionComponent<MastheadProps> = ({
-  name = '',
-  profession = '',
-  links = [],
-}) => {
+const Masthead: FunctionComponentWithoutChildren<Partial<
+  Omit<AboutContent, 'skills'>
+>> = ({ name = '', profession = '', links = [] }) => {
   const [printAvailable, setPrintAvailable] = useState(false)
 
   const handlePrintClick = useCallback(() => {

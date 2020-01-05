@@ -1,19 +1,10 @@
-import React, {
-  Children,
-  isValidElement,
-  FunctionComponent,
-  ReactNode,
-} from 'react'
+import React, { Children, isValidElement, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
 import { breakpointLarge } from '~/style/breakpoints'
 
-const SplitPanes: FunctionComponent<{ children: ReactNode }> = ({
-  children = [],
-}) => {
-  const [first, ...rest] = Children.toArray(children).filter(node =>
-    isValidElement(node),
-  )
+const SplitPanes: FunctionComponent = ({ children }) => {
+  const [first, ...rest] = Children.toArray(children).filter(isValidElement)
 
   return (
     <Container>
