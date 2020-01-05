@@ -4,7 +4,7 @@ import { AppType } from 'next/dist/next-server/lib/utils'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
 
-import usePreferredColorScheme from '~/lib/use-preferred-color-scheme'
+import { usePreferredColorScheme } from '~/lib/color-scheme'
 import { Theme, getThemeForColorScheme, extractThemeColor } from '~/style/theme'
 
 const globalStyles = (theme: Theme) => css`
