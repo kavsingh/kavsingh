@@ -32,8 +32,8 @@ const compressAsset = (assetPath: string) => {
   const output = createWriteStream(`${assetPath}.gz`)
 
   return new Promise<string>((resolve, reject) => {
-    input.on('error', error => reject(error))
-    output.on('error', error => reject(error))
+    input.on('error', reject)
+    output.on('error', reject)
     output.on('finish', () => resolve(`${assetPath} compressed`))
 
     input.pipe(zlib.createGzip()).pipe(output)

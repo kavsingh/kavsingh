@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
-    "prebuild": "rm -rf ./out",
+    "prebuild": "rm -rf ./.next && rm -rf ./out",
     "build": "next build && next export",
     "compress": "ts-node scripts/bin/compress",
     "sync": "ts-node scripts/bin/sync",
