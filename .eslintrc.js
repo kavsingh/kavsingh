@@ -109,7 +109,12 @@ module.exports = {
       },
     },
     {
-      files: ['*.config.*', 'src/pages/index.tsx', 'src/pages/_document.tsx'],
+      files: [
+        '*.config.*',
+        'src/pages/_document.tsx',
+        'src/pages/_app.tsx',
+        'src/pages/index.tsx',
+      ],
       rules: {
         'filenames/match-exported': 'off',
       },
