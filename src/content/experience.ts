@@ -22,7 +22,7 @@ const experience: ExperienceContent[] = [
     active: true,
     print: true,
     description: md`
-[8fit](https://8fit.com) - Health and fitness app based in Berlin.
+[8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
 - React Native + TypeScript app
 - Web project with Gatsby + GraphQL against Contentful CMS
@@ -31,18 +31,18 @@ const experience: ExperienceContent[] = [
   {
     slug: 'our-home',
     employer: 'OurHome',
-    position: 'Co-Founder / CDO / Front-end Developer',
+    position: 'Front-end Developer (Co-Founder / CDO)',
     period: 'July 2013 - Present',
     location: 'Melbourne, Australia',
     active: true,
     print: true,
     description: md`
-[OurHome](http://ourhomeapp.com) is an app to help families organise their households and incentivise contribution, available on iOS and Android (via Cordova) as well as in-browser.
+[OurHome](http://ourhomeapp.com) is an app to help families organise their households. It is available on iOS, Android, and as a web app.
 
-- Built on Backbone, code has evolved over time to incorporate ideas from modern libraries as well as transitioned to ES2016+.
-- My role as CDO includes oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
-- With our main deployment focus being the iOS and Android app stores, design has always been mobile-first. From a technical view it has also meant dealing with deployment fragmentation, and making engineering / design decisions to address device and webview implementation quirks.
-- Working in a small team of developers has had the added benefit of insight into the implementation of the Python (Django) API.
+- Cordova app built on Backbone. Code has evolved over time to incorporate ideas from modern libraries. Slowly transitioning to React.
+- Oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
+- Mobile-first design, dealing with deployment fragmentation and making engineering / design decisions to address device and webview implementation quirks.
+- Working in a small team of developers has allowed insight into the implementation of the Python (Django) API.
     `,
   },
   {
@@ -73,7 +73,7 @@ In addition to maintenance work on campaign sites across stacks (from PHP to Nod
 Worked on a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
 
 - Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
-- Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets, needing abstractions over LMS apis which helped minimise code divergence.
+- Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets.
     `,
   },
   {
@@ -97,7 +97,7 @@ Helped build out front end api communication for exisiting web site. Worked with
     active: true,
     print: true,
     description: md`
-Developed an iPad kiosk app running on a device-local PHP server. Built for Thrive apartments, the app ran continuously in the apartment development's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address. Backbone SPA with a strong emphasis on touch-friendly design and interaction.
+Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server. The app ran continuously in a local apartment developer's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address.
     `,
   },
   {
@@ -109,8 +109,8 @@ Developed an iPad kiosk app running on a device-local PHP server. Built for Thri
     active: true,
     print: true,
     description: md`
-- Webpage for well known local bar, featuring integration with Instragram apis. Built the front end as well as server side image manipulation (PHP with ImageMagick) where photos tagged with the bar's name were processed, modified and composited for display on the webpage.
-- Promotional pages for integration with Facebook with custom interactions.
+- Built a webpage for well known local bar. Built the front end and server side image manipulation module (PHP + ImageMagick), where Instagram photos tagged with the bar's name were heavily processed for display on the webpage.
+- Built Promotional pages for integration with Facebook with custom interactions.
     `,
   },
   {
@@ -122,7 +122,7 @@ Developed an iPad kiosk app running on a device-local PHP server. Built for Thri
     active: true,
     print: true,
     description: md`
-Built an online financial questionnaire using Backbone.js and styled with Sass (using Bourbon). Required compatibility with browsers down to IE8 and needed to work across desktop and mobile devices. Worked fairly independently on a quick turnaround.
+Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required compatibility with browsers down to IE8 and needed to work across desktop and mobile devices. Worked fairly independently on a quick turnaround.
     `,
   },
   {
@@ -134,7 +134,7 @@ Built an online financial questionnaire using Backbone.js and styled with Sass (
     active: true,
     print: true,
     description: md`
-Interactive mobile web experience as part of a beer advertising campaign. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations with soundscapes with their friends. The campaign page needed to be accessible and performant across a broad range of mobile devices.
+Created an interactive mobile web experience. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations (with soundscapes) with their friends. The campaign needed to be accessible and performant across a broad range of mobile devices.
     `,
   },
   {
@@ -146,7 +146,11 @@ Interactive mobile web experience as part of a beer advertising campaign. Users 
     active: true,
     print: true,
     description: md`
-UI prototyping and front end build for a large scale web application. Involved with re-designing the application's user flows from the ground up creating wireframes, mockups and functional prototypes for testing and review, after which I was involved in the production build implementation.
+UI prototyping and front end build for a large scale web application.
+
+- Involved with re-designing the application's user flows from the ground up.
+- Created mockups and functional prototypes for testing and review
+- Joined production dev team as a junior.
     `,
   },
   {
@@ -158,7 +162,8 @@ UI prototyping and front end build for a large scale web application. Involved w
     active: true,
     print: true,
     description: md`
-A range of web-centric digital content creation, augmenting broader advertising campaigns. These were largely Flash banners, EDMs, and small-scale websites for a variety of clients. Sites often used Wordpress where clients required a CMS. While in this role I headed a small team in the creation of web assets and animations for an iPad based Sensis project. This involved producing numerous animations to tight deadlines, and ensuring that HTML, CSS, JavaScript and video assets integrated well with Sensis’ iPad application.
+- Created a broad range of web-centric digital content to augment advertising campaigns, including CMS (wordpress) powered sites, Flash interactives.
+- Headed a small team in the creation of web assets and animations for an iPad based project used internally by a large telco.
     `,
   },
 ]
