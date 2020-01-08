@@ -27,7 +27,8 @@ const experience: ExperienceContent[] = [
 In addition to day-to-day development work, my role involves:
 
 - Technical ownership of features and assisting in development sprint planning.
-- Guiding technical decisions for the front-end stack, as well as in the hiring / mentoring of new developers.
+- Guiding technical decisions for the front-end stack.
+- Assisting with hiring / mentoring of new developers.
 
 Stack:
 
@@ -73,7 +74,7 @@ Worked in team developing the new Mazda Digital Platform, which serves as the fl
     position: 'Freelance (Senior) Front-end Developer',
     period: 'March 2013 - February 2017',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 
