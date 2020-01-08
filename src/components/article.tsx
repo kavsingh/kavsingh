@@ -9,7 +9,7 @@ const Article: FunctionComponent<{
   title?: ReactNode
   meta?: ReactNode
   print?: boolean
-}> = ({ id, title, meta, children, print = false }) => (
+}> = ({ id, title, meta, children, print = true }) => (
   <Container id={id} print={print}>
     {title ? <Title>{title}</Title> : null}
     {meta ? <Meta>{meta}</Meta> : null}

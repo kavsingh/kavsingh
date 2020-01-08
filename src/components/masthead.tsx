@@ -23,8 +23,8 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
     }
   }, [])
 
-  const printLinks = links.filter(({ print }) => !!print)
-  const webLinks = links.filter(({ web }) => !!web)
+  const printLinks = links.filter(({ print }) => print)
+  const webLinks = links.filter(({ web }) => web)
 
   return (
     <Container>

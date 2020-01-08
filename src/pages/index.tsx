@@ -15,9 +15,11 @@ import Experience from '~/components/experience'
 import Education from '~/components/education'
 
 const IndexPage: FunctionComponentWithoutChildren = () => {
+  const { skills, links, name, profession } = about
+
   const skillsContent = (
     <Article title="">
-      <HTMLContent>{about.skills}</HTMLContent>
+      <HTMLContent>{skills}</HTMLContent>
     </Article>
   )
 
@@ -47,7 +49,7 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
         <title key="title">CV - Kav Singh</title>
       </Head>
       <Body>
-        <Masthead {...about} />
+        <Masthead {...{ links, name, profession }} />
         <Section title="Skills" content={skillsContent} />
         <Section title="Experience" content={experienceContent} />
         <Section title="Education" content={educationContent} />
