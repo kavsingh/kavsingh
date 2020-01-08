@@ -18,7 +18,7 @@ export interface AboutContent {
 
 const about: AboutContent = {
   name: 'Kanwaljeet Singh',
-  profession: 'Frontend Web Developer',
+  profession: 'Frontend Developer',
   links: [
     {
       type: 'email',
@@ -50,7 +50,7 @@ const about: AboutContent = {
     },
   ],
   description: md`
-Web developer from Australia building for web and mobile in Berlin. Over the years I have learnt:
+Developer from Australia building for web and mobile in Berlin. Over the years I have learnt:
 
 - JavaScript: React (Native), Redux, MobX, Backbone
 - CSS: CSS in JS, PostCss, Pre-processors

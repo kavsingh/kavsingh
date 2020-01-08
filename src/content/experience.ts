@@ -24,7 +24,7 @@ const experience: ExperienceContent[] = [
     description: md`
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
-- Feature ownership and assisting in work planning for dev teams.
+- Feature ownership and planning for dev teams.
 - Involved with guiding technical decisions for the front-end stack, and hiring / mentoring new developers.
 - App built with React Native + TypeScript.
 - Web portal built with Gatsby + GraphQL, using Contentful as our CMS.
@@ -42,9 +42,25 @@ const experience: ExperienceContent[] = [
     description: md`
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households.
 
-- Cordova app built on Backbone, deployed on iOS, on Android, and as a web app. Slowly transitioning to React + TypeScript.
+- Cordova app built on Backbone, deployed on iOS, on Android, and as a web app. (Slowly transitioning to React + TypeScript).
 - Mobile-first design, dealing with deployment fragmentation and making engineering / design decisions to address device and webview implementation quirks.
 - Working in a small team of developers allowed insight into the implementation of the Python (Django) API, and a strong voice in design decisions.
+    `,
+  },
+  {
+    slug: 'che-proximity-2017',
+    employer: 'CHE Proximity',
+    position: 'Senior Front-end Developer (Freelance)',
+    period: 'November 2016 - February 2017',
+    location: 'Melbourne, Australia',
+    active: true,
+    print: true,
+    description: md`
+Worked in team developing the new Mazda Digital Platform, which serves as the flagship [Mazda Australia site](https://mazda.com.au).
+
+- Built with React / Redux with SSR via EpiServer.
+- Introduced shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
+- Auxilliary campaign work mainly involving small scale promitional sites using various stacks (PHP, Pug, Sass, Less, PostCSS, etc)
     `,
   },
   {
@@ -57,21 +73,6 @@ const experience: ExperienceContent[] = [
     print: true,
     description: md`
 
-    `,
-  },
-  {
-    slug: 'che-proximity-2017',
-    employer: 'CHE Proximity',
-    position: 'Senior Front-end Developer (Freelance)',
-    period: 'November 2016 - February 2017',
-    location: 'Melbourne, Australia',
-    active: false,
-    print: true,
-    description: md`
-Worked in team developing the new Mazda Digital Platform, which serves as the flagship [Mazda Australia site](https://mazda.com.au).
-
-- Aside from feature implementation and bug fixes, my major contributions include implementing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
-- Built with React / Redux with SSR via EpiServer.
     `,
   },
   {

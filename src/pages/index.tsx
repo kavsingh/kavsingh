@@ -50,9 +50,12 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
       </Head>
       <Body>
         <Masthead {...{ links, name, profession }} />
-        <Section title="" content={descriptionContent} split={false} />
-        <Section title="Experience" content={experienceContent} />
-        <Section title="Education" content={educationContent} />
+        <Section
+          title={<AboutTitle>👋</AboutTitle>}
+          content={descriptionContent}
+        />
+        <Section title="Work" content={experienceContent} />
+        <Section title="Study" content={educationContent} />
       </Body>
     </>
   )
@@ -87,6 +90,10 @@ const Body = styled.div`
   @media print {
     max-width: 100%;
   }
+`
+
+const AboutTitle = styled.div`
+  font-size: 3.4em;
 `
 
 export default IndexPage

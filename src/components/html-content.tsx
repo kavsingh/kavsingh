@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 
-const HTMLContent = styled.div`
+import { ThemeProps } from '~/style/theme'
+
+const HTMLContent = styled.div<ThemeProps>`
   ul,
   p {
     margin: 0 0 0.6em;
@@ -18,7 +20,12 @@ const HTMLContent = styled.div`
     &::before {
       display: block;
       margin-right: 0.8em;
+      color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
       content: '\\2013';
+
+      @media print {
+        color: ${({ theme }) => theme.print.colors.bodyTextSecondary};
+      }
     }
   }
 

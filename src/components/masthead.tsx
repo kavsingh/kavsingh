@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/split-panes'
+import { breakpointLarge } from '~/style/breakpoints'
 
 import Button from './button'
 
@@ -96,6 +97,8 @@ const Content = styled.div`
 `
 
 const Links = styled.ul`
+  display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -103,9 +106,22 @@ const Links = styled.ul`
   a {
     color: currentColor;
   }
+
+  ${breakpointLarge} {
+    flex-direction: column;
+  }
 `
 
 const WebLinkContainer = styled.li`
+  a {
+    display: block;
+    padding: 1.4em 1.4em 1.4em 0;
+
+    ${breakpointLarge} {
+      padding: 0;
+    }
+  }
+
   @media print {
     display: none;
   }
@@ -129,7 +145,7 @@ const PrintLinkContainer = styled.li`
   }
 `
 const PrintButtonWrapper = styled.li<{ visible: boolean }>`
-  display: flex;
+  display: none;
   align-items: center;
   height: 1.4em;
   margin-bottom: -1.4em;
@@ -137,6 +153,10 @@ const PrintButtonWrapper = styled.li<{ visible: boolean }>`
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transition: opacity 200ms ease-out;
   pointer-events: ${({ visible }) => (visible ? 'initial' : 'none')};
+
+  ${breakpointLarge} {
+    display: flex;
+  }
 
   @media print {
     display: none;
