@@ -24,8 +24,9 @@ const experience: ExperienceContent[] = [
     description: md`
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
-- React Native + TypeScript app
-- Web project with Gatsby + GraphQL against Contentful CMS
+- App deployed to iOS and Android stores, built with React Native + TypeScript.
+- Web portal built with Gatsby + GraphQL, using Contentful as our CMS.
+- Strong commitment to testing: Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
     `,
   },
   {
@@ -55,8 +56,7 @@ const experience: ExperienceContent[] = [
     description: md`
 Worked in team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
 
-- React / Redux, bundled with Webpack, tested with Jest.
-- Server rendered React via EpiServer
+- React / Redux, SSR via EpiServer.
 - Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
     `,
   },
