@@ -48,12 +48,24 @@ const experience: ExperienceContent[] = [
     `,
   },
   {
+    slug: 'freelance',
+    employer: 'Various',
+    position: 'Freelance (Senior) Front-end Developer',
+    period: 'March 2013 - February 2017',
+    location: 'Melbourne, Australia',
+    active: true,
+    print: true,
+    description: md`
+
+    `,
+  },
+  {
     slug: 'che-proximity-2017',
     employer: 'CHE Proximity',
     position: 'Senior Front-end Developer (Freelance)',
     period: 'November 2016 - February 2017',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Worked in team developing the new Mazda Digital Platform, which serves as the flagship [Mazda Australia site](https://mazda.com.au).
@@ -68,7 +80,7 @@ Worked in team developing the new Mazda Digital Platform, which serves as the fl
     position: 'Front-end Developer (Freelance)',
     period: '2015 - 2016 (Recurring work)',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Worked on a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
@@ -83,7 +95,7 @@ Worked on a number of online education modules which required a high degree of i
     position: 'Front-end Developer (Freelance)',
     period: 'May 2015',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Helped build out front end api communication for exisiting web site. Worked with previously implemented stack - jQuery, Bootstrap et al.
@@ -95,7 +107,7 @@ Helped build out front end api communication for exisiting web site. Worked with
     position: 'Front-end Developer (Freelance)',
     period: 'June 2014',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server. The app ran continuously in a local apartment developer's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address.
@@ -107,7 +119,7 @@ Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server.
     position: 'Front-end Developer (Freelance)',
     period: 'June - July 2013',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Built a webpage for well known local bar.
@@ -122,7 +134,7 @@ Built a webpage for well known local bar.
     position: 'Front-end Developer (Freelance)',
     period: 'June 2013',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required compatibility with browsers down to IE8 and needed to work across desktop and mobile devices. Worked fairly independently on a quick turnaround.
@@ -134,7 +146,7 @@ Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required c
     position: 'Front-end Developer (Freelance)',
     period: 'March - April 2013',
     location: 'Melbourne, Australia',
-    active: true,
+    active: false,
     print: true,
     description: md`
 Built an interactive mobile web experience. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations (with soundscapes) with their friends. The campaign needed to be accessible and performant across a broad range of mobile devices.
