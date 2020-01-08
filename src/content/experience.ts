@@ -62,7 +62,7 @@ Stack:
     active: true,
     print: true,
     description: md`
-Worked in team developing the new Mazda Digital Platform, which serves as the flagship [Mazda Australia site](https://mazda.com.au).
+Worked in team developing the new Mazda Digital Platform, which allowed dealers to assemble their own promotional campaigns, and customers to preview customised vehicles.
 
 - Built with React / Redux with SSR via EpiServer.
 - My contributions include introducing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
