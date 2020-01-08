@@ -6,6 +6,7 @@ import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/split-panes'
 import { breakpointLarge } from '~/style/breakpoints'
+import { ThemeProps } from '~/style/theme'
 
 import Button from './button'
 
@@ -66,7 +67,7 @@ const Container = styled.div`
   width: 100%;
 `
 
-const Header = styled.header`
+const Header = styled.header<ThemeProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,6 +77,11 @@ const Header = styled.header`
   h2 {
     margin: 0 0 0.16em;
     padding: 0;
+    color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
+
+    @media print {
+      color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
+    }
   }
 
   h1 {

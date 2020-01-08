@@ -34,10 +34,15 @@ const Container = styled.section<ThemeProps>`
   }
 `
 
-const Title = styled.h1`
+const Title = styled.h1<ThemeProps>`
   margin: 0 0 1em;
+  color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
   font-weight: 600;
   font-size: 1.1em;
+
+  @media print {
+    color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
+  }
 `
 
 const Content = styled.div`

@@ -13,6 +13,11 @@ export default class HTMLDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
           />
+          <link
+            key="font-nunito"
+            href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+            rel="stylesheet"
+          ></link>
           <link key="manifest" rel="manifest" href="static/manifest.json" />
         </Head>
         <body>

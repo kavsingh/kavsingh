@@ -7,6 +7,7 @@ import {
 
 interface ThemeColors {
   bodyText: string
+  bodyTextEmphasis: string
   bodyTextSecondary: string
   keyline: string
   pageBackground: string
@@ -29,6 +30,7 @@ export interface ThemeProps {
 const print: MediaTypeTheme = {
   colors: {
     bodyText: 'rgba(17, 17, 17, 1)',
+    bodyTextEmphasis: 'rgba(0, 0, 0, 1)',
     bodyTextSecondary: 'rgba(102, 102, 102, 1)',
     keyline: 'rgba(255, 238, 238, 1)',
     pageBackground: 'rgba(255, 255, 255, 1)',
@@ -41,6 +43,7 @@ export const lightTheme: Theme = {
   screen: {
     colors: {
       bodyText: 'rgba(51, 51, 51, 1)',
+      bodyTextEmphasis: 'rgba(10, 10, 10, 1)',
       bodyTextSecondary: 'rgba(102, 102, 102, 1)',
       keyline: 'rgba(255, 238, 238, 1)',
       pageBackground: 'rgba(255, 255, 255, 1)',
@@ -54,6 +57,7 @@ export const darkTheme: Theme = {
   screen: {
     colors: {
       bodyText: 'rgba(222, 222, 222, 1)',
+      bodyTextEmphasis: 'rgba(248, 248, 248, 1)',
       bodyTextSecondary: 'rgba(136, 136, 136, 1)',
       keyline: 'rgba(53, 54, 58, 1)',
       pageBackground: 'rgba(34, 34, 34, 1)',

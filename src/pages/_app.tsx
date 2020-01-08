@@ -24,9 +24,9 @@ const globalStyles = (theme: Theme) => css`
 
   html {
     box-sizing: border-box;
-    font: 14px/1.3 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
+    font: 14px/1.3 'Nunito', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+      'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: ${theme.screen.colors.pageBackground};
   }
 

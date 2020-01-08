@@ -25,9 +25,14 @@ const Container = styled.article<{ print: boolean }>`
   }
 `
 
-const Title = styled.h1`
+const Title = styled.h1<ThemeProps>`
   margin: 0 0 0.2em;
+  color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
   font-size: 1.1em;
+
+  @media print {
+    color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
+  }
 `
 
 const Meta = styled.h2<ThemeProps>`
