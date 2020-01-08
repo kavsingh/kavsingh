@@ -4,9 +4,11 @@ import styled from '@emotion/styled'
 
 import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { breakpointLarge } from '~/style/breakpoints'
+import { ThemeProps } from '~/style/theme'
 import about from '~/content/about'
 import experience from '~/content/experience'
 import education from '~/content/education'
+import ContentList from '~/layouts/content-list'
 import HTMLContent from '~/components/html-content'
 import Section from '~/components/section'
 import Article from '~/components/article'
@@ -24,23 +26,23 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
   )
 
   const experienceContent = (
-    <>
+    <ContentList>
       {experience
         .filter(({ active }) => active)
         .map(exp => (
           <Experience {...exp} key={exp.slug} />
         ))}
-    </>
+    </ContentList>
   )
 
   const educationContent = (
-    <>
+    <ContentList>
       {education
         .filter(({ active }) => active)
         .map(edu => (
           <Education {...edu} key={edu.slug} />
         ))}
-    </>
+    </ContentList>
   )
 
   return (
@@ -61,30 +63,14 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
   )
 }
 
-const Body = styled.div`
+const Body = styled.div<ThemeProps>`
   width: 100%;
   max-width: 56rem;
   margin: 0 auto;
   padding: 2em;
 
-  section {
-    margin-bottom: 3em;
-
-    &:first-of-type {
-      margin-top: 3em;
-    }
-  }
-
   ${breakpointLarge} {
-    padding: 4em 2em;
-
-    section {
-      margin-bottom: 4em;
-
-      &:first-of-type {
-        margin-top: 4em;
-      }
-    }
+    padding: ${({ theme }) => theme.screen.layout.spacingVertical} 2em;
   }
 
   @media print {

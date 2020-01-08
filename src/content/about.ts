@@ -18,7 +18,7 @@ export interface AboutContent {
 
 const about: AboutContent = {
   name: 'Kanwaljeet Singh',
-  profession: 'Frontend Developer',
+  profession: 'Front-end Developer',
   links: [
     {
       type: 'email',

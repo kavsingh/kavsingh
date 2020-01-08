@@ -63,8 +63,13 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
 
 export default Masthead
 
-const Container = styled.div`
+const Container = styled.div<ThemeProps>`
   width: 100%;
+  padding-bottom: ${({ theme }) => theme.screen.layout.spacingVertical};
+
+  @media print {
+    padding-bottom: ${({ theme }) => theme.print.layout.spacingVertical};
+  }
 `
 
 const Header = styled.header<ThemeProps>`

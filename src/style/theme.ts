@@ -13,8 +13,13 @@ interface ThemeColors {
   pageBackground: string
 }
 
+interface ThemeLayout {
+  spacingVertical: string
+}
+
 interface MediaTypeTheme {
   colors: ThemeColors
+  layout: ThemeLayout
 }
 
 export interface Theme {
@@ -28,6 +33,9 @@ export interface ThemeProps {
 }
 
 const print: MediaTypeTheme = {
+  layout: {
+    spacingVertical: '3em',
+  },
   colors: {
     bodyText: 'rgba(17, 17, 17, 1)',
     bodyTextEmphasis: 'rgba(0, 0, 0, 1)',
@@ -37,10 +45,15 @@ const print: MediaTypeTheme = {
   },
 }
 
+const screenLayout: ThemeLayout = {
+  spacingVertical: '4em',
+}
+
 export const lightTheme: Theme = {
   print,
   name: 'light',
   screen: {
+    layout: screenLayout,
     colors: {
       bodyText: 'rgba(51, 51, 51, 1)',
       bodyTextEmphasis: 'rgba(10, 10, 10, 1)',
@@ -55,6 +68,7 @@ export const darkTheme: Theme = {
   print,
   name: 'dark',
   screen: {
+    layout: screenLayout,
     colors: {
       bodyText: 'rgba(222, 222, 222, 1)',
       bodyTextEmphasis: 'rgba(248, 248, 248, 1)',

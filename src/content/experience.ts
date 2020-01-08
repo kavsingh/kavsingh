@@ -32,8 +32,8 @@ In addition to day-to-day development work, my role involves:
 Stack:
 
 - App built with React Native + TypeScript.
-- Web portal built with Gatsby + GraphQL, using Contentful as our CMS.
-- Commitment to testing. The team uses Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
+- Web portal built with Gatsby + GraphQL, CMS on Contentful.
+- Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
     `,
   },
   {
@@ -47,7 +47,7 @@ Stack:
     description: md`
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households.
 
-- Cordova app built on Backbone, deployed on iOS, on Android, and as a web app. (Slowly transitioning to React + TypeScript).
+- Cordova app built on Backbone, deployed on iOS, Android, and as a web-app. (Slowly transitioning to Capacitor, React and TypeScript).
 - Mobile-first design, dealing with deployment fragmentation and making engineering / design decisions to address device and webview implementation quirks.
 - Working in a small team of developers allowed insight into the implementation of the Python (Django) API, and a strong voice in design decisions.
     `,
@@ -65,7 +65,6 @@ Worked in team developing the new Mazda Digital Platform, which serves as the fl
 
 - Built with React / Redux with SSR via EpiServer.
 - My contributions include introducing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
-- Auxillary campaign work mainly involving small scale promotional sites using various stacks (PHP, Pug, Sass, Less, PostCSS, etc)
     `,
   },
   {
@@ -89,7 +88,7 @@ Worked in team developing the new Mazda Digital Platform, which serves as the fl
     active: false,
     print: true,
     description: md`
-Worked on a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
+Built a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
 
 - Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
 - Courses were often hosted on legacy LMS providers which sometimes meant projects had to build to multiple deploy targets.
@@ -167,7 +166,7 @@ Built an interactive mobile web experience. Users were able to view 3D panoramas
     active: true,
     print: true,
     description: md`
-UI prototyping and front end build for a large scale web application.
+UI prototyping and front end build for a startup stage web application.
 
 - Involved with re-designing the application's user flows from the ground up.
 - Created mockups and functional prototypes for testing and review.
@@ -182,8 +181,7 @@ UI prototyping and front end build for a large scale web application.
     active: true,
     print: true,
     description: md`
-- Created a broad range of web-centric digital content to augment advertising campaigns, including CMS (WordPress) powered sites, interactive experiences with Flash and later JS.
-- Headed a small team in the creation of web assets and animations for an iPad based project used internally by a large local telecommunication co.
+Created a broad range of online digital content to augment advertising campaigns, including CMS (WordPress) powered sites, interactive experiences with Flash (later JS), and email campaigns.
     `,
   },
 ]

@@ -14,14 +14,14 @@ const HTMLContent = styled.div<ThemeProps>`
 
   li {
     display: flex;
-    margin: 0 0 0.2em;
+    margin: 0 0 0.3em;
     list-style-type: none;
 
     &::before {
       display: block;
       margin-right: 0.8em;
       color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
-      content: '\\00B7';
+      content: '\\2022';
 
       @media print {
         color: ${({ theme }) => theme.print.colors.bodyTextSecondary};

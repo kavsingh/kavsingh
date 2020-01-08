@@ -26,10 +26,11 @@ const Section: FunctionComponent<{
 
 const Container = styled.section<ThemeProps>`
   width: 100%;
-  padding-top: 2.4em;
+  padding: ${({ theme }) => theme.screen.layout.spacingVertical} 0;
   border-top: 1px solid ${({ theme }) => theme.screen.colors.keyline};
 
   @media print {
+    padding: ${({ theme }) => theme.print.layout.spacingVertical} 0;
     border-top-color: ${({ theme }) => theme.print.colors.keyline};
   }
 `
@@ -45,10 +46,6 @@ const Title = styled.h1<ThemeProps>`
   }
 `
 
-const Content = styled.div`
-  > *:not(:last-child) {
-    margin-bottom: 4.2em;
-  }
-`
+const Content = styled.div``
 
 export default Section
