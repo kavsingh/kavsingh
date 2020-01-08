@@ -34,9 +34,6 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
           <h2>{profession}</h2>
         </Header>
         <Content>
-          <ProfilePhoto>
-            <img src="static/pic.png" alt="Kav Singh" />
-          </ProfilePhoto>
           <Links>
             {webLinks.map(({ url, label, type }) => (
               <WebLinkContainer key={`${type}-web`}>
@@ -96,16 +93,6 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-`
-
-const ProfilePhoto = styled.div`
-  height: 8em;
-  margin-right: 1em;
-
-  & > img {
-    width: auto;
-    height: 100%;
-  }
 `
 
 const Links = styled.ul`
