@@ -24,9 +24,11 @@ const experience: ExperienceContent[] = [
     description: md`
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
-- App deployed to iOS and Android stores, built with React Native + TypeScript.
+- Feature ownership and assisting in work planning for dev teams.
+- Involved with guiding technical decisions for the front-end stack, and hiring / mentoring new developers.
+- App built with React Native + TypeScript.
 - Web portal built with Gatsby + GraphQL, using Contentful as our CMS.
-- Strong commitment to testing: Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
+- Commitment to testing: Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
     `,
   },
   {
@@ -38,11 +40,11 @@ const experience: ExperienceContent[] = [
     active: true,
     print: true,
     description: md`
-[OurHome](http://ourhomeapp.com) is an app to help families organise their households. It is available on iOS, Android, and as a web app.
+[OurHome](http://ourhomeapp.com) is an app to help families organise their households.
 
-- Cordova app built on Backbone. Code has evolved over time to incorporate ideas from modern libraries. Slowly transitioning to React + TypeScript.
+- Cordova app built on Backbone, deployed on iOS, on Android, and as a web app. Slowly transitioning to React + TypeScript.
 - Mobile-first design, dealing with deployment fragmentation and making engineering / design decisions to address device and webview implementation quirks.
-- Working in a small team of developers has allowed insight into the implementation of the Python (Django) API.
+- Working in a small team of developers allowed insight into the implementation of the Python (Django) API, and a strong voice in design decisions.
     `,
   },
   {
@@ -54,10 +56,10 @@ const experience: ExperienceContent[] = [
     active: true,
     print: true,
     description: md`
-Worked in team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
+Worked in team developing the new Mazda Digital Platform, which serves as the flagship [Mazda Australia site](https://mazda.com.au).
 
-- React / Redux, SSR via EpiServer.
-- Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
+- Aside from feature implementation and bug fixes, my major contributions include implementing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
+- Built with React / Redux with SSR via EpiServer.
     `,
   },
   {
@@ -108,7 +110,9 @@ Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server.
     active: true,
     print: true,
     description: md`
-- Built a webpage for well known local bar. Built the front end and server side image manipulation module (PHP + ImageMagick), where Instagram photos tagged with the bar's name were heavily processed for display on the webpage.
+Built a webpage for well known local bar.
+
+- Implemented the front-end and server side image manipulation module (PHP + ImageMagick), where Instagram photos tagged with the bar's name were heavily processed for display on the webpage.
 - Built Promotional pages for integration with Facebook with custom interactions.
     `,
   },
@@ -133,7 +137,7 @@ Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required c
     active: true,
     print: true,
     description: md`
-Created an interactive mobile web experience. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations (with soundscapes) with their friends. The campaign needed to be accessible and performant across a broad range of mobile devices.
+Built an interactive mobile web experience. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations (with soundscapes) with their friends. The campaign needed to be accessible and performant across a broad range of mobile devices.
     `,
   },
   {
@@ -148,8 +152,7 @@ Created an interactive mobile web experience. Users were able to view 3D panoram
 UI prototyping and front end build for a large scale web application.
 
 - Involved with re-designing the application's user flows from the ground up.
-- Created mockups and functional prototypes for testing and review
-- Joined production dev team as a junior.
+- Created mockups and functional prototypes for testing and review.
     `,
   },
   {

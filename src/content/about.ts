@@ -13,7 +13,7 @@ export interface AboutContent {
   name: string
   profession: string
   links: AboutLink[]
-  skills: ReactNode
+  description: ReactNode
 }
 
 const about: AboutContent = {
@@ -49,13 +49,12 @@ const about: AboutContent = {
       url: '//kavsingh.com',
     },
   ],
-  skills: md`
-- JavaScript / React Native, React, Redux, MobX, Backbone, jQuery
-- CSS / Sass, Less, Stylus, PostCss, CSS in JS
-- HTML / HTML5, Pug (Jade)
-- experience with Node.js, PHP and Python.
+  description: md`
+Web developer from Australia building for web and mobile in Berlin. Over the years I have learnt:
 
-My studies in Animation / Interactive Media have also provided grounding in drawing, design, sound and movement, as well as abilities in tools including Photoshop, Illustrator, After Effects, Maya and Ableton Live.
+- JavaScript: React (Native), Redux, MobX, Backbone
+- CSS: CSS in JS, PostCss, Pre-processors
+- Experience with Node.js, PHP and Python.
   `,
 }
 

@@ -15,18 +15,18 @@ import Experience from '~/components/experience'
 import Education from '~/components/education'
 
 const IndexPage: FunctionComponentWithoutChildren = () => {
-  const { skills, links, name, profession } = about
+  const { description, links, name, profession } = about
 
-  const skillsContent = (
+  const descriptionContent = (
     <Article title="">
-      <HTMLContent>{skills}</HTMLContent>
+      <HTMLContent>{description}</HTMLContent>
     </Article>
   )
 
   const experienceContent = (
     <>
       {experience
-        .filter(({ active }) => !!active)
+        .filter(({ active }) => active)
         .map(exp => (
           <Experience {...exp} key={exp.slug} />
         ))}
@@ -36,7 +36,7 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
   const educationContent = (
     <>
       {education
-        .filter(({ active }) => !!active)
+        .filter(({ active }) => active)
         .map(edu => (
           <Education {...edu} key={edu.slug} />
         ))}
@@ -50,7 +50,7 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
       </Head>
       <Body>
         <Masthead {...{ links, name, profession }} />
-        <Section title="Skills" content={skillsContent} />
+        <Section title="" content={descriptionContent} split={false} />
         <Section title="Experience" content={experienceContent} />
         <Section title="Education" content={educationContent} />
       </Body>

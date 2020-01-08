@@ -7,12 +7,20 @@ import { ThemeProps } from '~/style/theme'
 const Section: FunctionComponent<{
   title: ReactNode
   content: ReactNode
-}> = ({ title, content }) => (
+  split?: boolean
+}> = ({ title, content, split = true }) => (
   <Container>
-    <SplitPanes>
-      <Title>{title}</Title>
-      <Content>{content}</Content>
-    </SplitPanes>
+    {split ? (
+      <SplitPanes>
+        <Title>{title}</Title>
+        <Content>{content}</Content>
+      </SplitPanes>
+    ) : (
+      <>
+        <Title>{title}</Title>
+        <Content>{content}</Content>
+      </>
+    )}
   </Container>
 )
 
