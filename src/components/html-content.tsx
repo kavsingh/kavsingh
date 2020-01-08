@@ -21,7 +21,7 @@ const HTMLContent = styled.div<ThemeProps>`
       display: block;
       margin-right: 0.8em;
       color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
-      content: '\\2013';
+      content: '\\00B7';
 
       @media print {
         color: ${({ theme }) => theme.print.colors.bodyTextSecondary};

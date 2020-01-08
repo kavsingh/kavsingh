@@ -24,8 +24,13 @@ const experience: ExperienceContent[] = [
     description: md`
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
-- Seniors are expected to take on feature ownership and guide development planning for teams.
-- Involved with guiding technical decisions for the front-end stack, as well as in the hiring / mentoring of new developers.
+In addition to day-to-day development work, my role involves:
+
+- Technical ownership of features and assisting in development sprint planning.
+- Guiding technical decisions for the front-end stack, as well as in the hiring / mentoring of new developers.
+
+Stack:
+
 - App built with React Native + TypeScript.
 - Web portal built with Gatsby + GraphQL, using Contentful as our CMS.
 - Commitment to testing. The team uses Jest for unit tests, Detox for mobile e2e, Puppeteer for web e2e.
@@ -60,11 +65,11 @@ Worked in team developing the new Mazda Digital Platform, which serves as the fl
 
 - Built with React / Redux with SSR via EpiServer.
 - My contributions include introducing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
-- Auxilliary campaign work mainly involving small scale promitional sites using various stacks (PHP, Pug, Sass, Less, PostCSS, etc)
+- Auxillary campaign work mainly involving small scale promotional sites using various stacks (PHP, Pug, Sass, Less, PostCSS, etc)
     `,
   },
   {
-    slug: 'freelance',
+    slug: 'freelance-2013-2017',
     employer: 'Various',
     position: 'Freelance (Senior) Front-end Developer',
     period: 'March 2013 - February 2017',
@@ -99,7 +104,7 @@ Worked on a number of online education modules which required a high degree of i
     active: false,
     print: true,
     description: md`
-Helped build out front end api communication for exisiting web site. Worked with previously implemented stack - jQuery, Bootstrap et al.
+Helped build out front end api communication for existing web site. Worked with previously implemented stack - jQuery, Bootstrap et al.
     `,
   },
   {
@@ -111,7 +116,7 @@ Helped build out front end api communication for exisiting web site. Worked with
     active: false,
     print: true,
     description: md`
-Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server. The app ran continuously in a local apartment developer's sales showroom, allowing users to collect a set of images and floorplans which they could then email to any address.
+Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server. The app ran continuously in a local apartment developer's sales showroom, allowing users to collect a set of images and floor plans which they could then email to any address.
     `,
   },
   {
@@ -177,8 +182,8 @@ UI prototyping and front end build for a large scale web application.
     active: true,
     print: true,
     description: md`
-- Created a broad range of web-centric digital content to augment advertising campaigns, including CMS (wordpress) powered sites, Flash interactives.
-- Headed a small team in the creation of web assets and animations for an iPad based project used internally by a large telco.
+- Created a broad range of web-centric digital content to augment advertising campaigns, including CMS (WordPress) powered sites, interactive experiences with Flash and later JS.
+- Headed a small team in the creation of web assets and animations for an iPad based project used internally by a large local telecommunication co.
     `,
   },
 ]
