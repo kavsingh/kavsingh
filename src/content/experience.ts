@@ -39,8 +39,7 @@ const experience: ExperienceContent[] = [
     description: md`
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households. It is available on iOS, Android, and as a web app.
 
-- Cordova app built on Backbone. Code has evolved over time to incorporate ideas from modern libraries. Slowly transitioning to React.
-- Oversight of visual finish with strong say in design decisions, and involvement with responding to user feedback.
+- Cordova app built on Backbone. Code has evolved over time to incorporate ideas from modern libraries. Slowly transitioning to React + TypeScript.
 - Mobile-first design, dealing with deployment fragmentation and making engineering / design decisions to address device and webview implementation quirks.
 - Working in a small team of developers has allowed insight into the implementation of the Python (Django) API.
     `,
@@ -54,9 +53,9 @@ const experience: ExperienceContent[] = [
     active: true,
     print: true,
     description: md`
-In addition to maintenance work on campaign sites across stacks (from PHP to Node, SASS to PostCss, Gulp to Webpack), I worked in a front-end team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
+Worked in team developing the new Mazda Digital Platform. It serves as the flagship [Mazda Australia site](https://mazda.com.au) and allows dealers and content creators to assemble their own campaign and promotion pages.
 
-- ES2016+ using React and Redux, bundled with Webpack, tested with Jest.
+- React / Redux, bundled with Webpack, tested with Jest.
 - Server rendered React via EpiServer
 - Aside from feature implementation and bug fixes, my major contributions include integrating Redux for state management across multiple React mount points, and implementing higher order components to reuse common behaviours.
     `,
