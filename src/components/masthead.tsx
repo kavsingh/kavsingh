@@ -118,6 +118,7 @@ const WebLinkContainer = styled.li`
     padding: 1.4em 1.4em 1.4em 0;
 
     ${breakpointLarge} {
+      margin-bottom: 0.2em;
       padding: 0;
     }
   }

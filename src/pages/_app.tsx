@@ -32,7 +32,6 @@ const globalStyles = (theme: Theme) => css`
 
   body {
     color: ${theme.screen.colors.bodyText};
-    -webkit-font-smoothing: subpixel-antialiased;
   }
 
   @page {

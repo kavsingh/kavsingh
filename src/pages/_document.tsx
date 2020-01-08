@@ -13,7 +13,6 @@ export default class HTMLDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
           />
-          <link key="icon" rel="icon" href="static/icon.png" type="image/png" />
           <link key="manifest" rel="manifest" href="static/manifest.json" />
         </Head>
         <body>
