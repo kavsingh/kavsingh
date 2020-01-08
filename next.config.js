@@ -6,6 +6,7 @@ const nextConfig = {
     ignoreDevErrors: true,
     ignoreBuildErrors: false,
   },
+  experimental: { modern: true },
 }
 
 module.exports = withOffline(nextConfig)
