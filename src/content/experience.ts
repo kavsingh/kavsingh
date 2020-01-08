@@ -14,6 +14,21 @@ export interface ExperienceContent {
 
 const experience: ExperienceContent[] = [
   {
+    slug: '8fit',
+    employer: '8fit',
+    position: 'Senior Engineer',
+    period: 'December 2017 - Present',
+    location: 'Berlin, Germany',
+    active: true,
+    print: true,
+    description: md`
+[8fit](https://8fit.com) - Health and fitness app based in Berlin.
+
+- React Native + TypeScript app
+- Web project with Gatsby + GraphQL against Contentful CMS
+    `,
+  },
+  {
     slug: 'our-home',
     employer: 'OurHome',
     position: 'Co-Founder / CDO / Front-end Developer',
