@@ -1,15 +1,8 @@
 {
-  "name": "Kav Singh",
-  "short_name": "Kav Singh",
+  "name": "Kav Singh - CV",
+  "short_name": "Kav Singh - CV",
   "start_url": "/",
   "display": "browser",
-  "theme_color": "#fff",
-  "background_color": "#fff",
-  "icons": [
-    {
-      "src": "icon.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    }
-  ]
+  "theme_color": "#222",
+  "background_color": "#222"
 }
