@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const Left = styled.div`
   ${breakpointLarge} {
-    flex: 0 0 28%;
+    flex: 0 0 26%;
     max-width: 30rem;
     padding-right: 2em;
   }

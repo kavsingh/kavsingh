@@ -31,17 +31,20 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
   return (
     <Container>
       <SplitPanes>
-        <Header>
-          <h1>{name}</h1>
-          <h2>{profession}</h2>
-        </Header>
+        <Name>{name}</Name>
         <Content>
+          <Profession>{profession}</Profession>
           <Links>
             {webLinks.map(({ url, label, type }) => (
               <WebLinkContainer key={`${type}-web`}>
                 <a href={url}>{label}</a>
               </WebLinkContainer>
             ))}
+            <PrintButtonWrapper key="print" visible={printAvailable}>
+              <Button onClick={handlePrintClick} aria-label="Print CV">
+                <PrintIcon />
+              </Button>
+            </PrintButtonWrapper>
             {printLinks.map(({ url, label, type }) => (
               <PrintLinkContainer key={`${type}-print`}>
                 <a href={url}>
@@ -49,11 +52,6 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
                 </a>
               </PrintLinkContainer>
             ))}
-            <PrintButtonWrapper key="print" visible={printAvailable}>
-              <Button onClick={handlePrintClick} aria-label="Print CV">
-                <PrintIcon />
-              </Button>
-            </PrintButtonWrapper>
           </Links>
         </Content>
       </SplitPanes>
@@ -65,51 +63,47 @@ export default Masthead
 
 const Container = styled.div<ThemeProps>`
   width: 100%;
-  padding-bottom: ${({ theme }) => theme.screen.layout.spacingVertical};
+  padding-bottom: 2em;
+
+  ${breakpointLarge} {
+    padding-bottom: ${({ theme }) => theme.screen.layout.spacingVertical};
+  }
 
   @media print {
     padding-bottom: ${({ theme }) => theme.print.layout.spacingVertical};
   }
 `
 
-const Header = styled.header<ThemeProps>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+const Name = styled.h1<ThemeProps>`
+  margin: 0 0 0.6em;
+  padding: 0;
+  color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
+  font-weight: 600;
+  font-size: 1.4em;
 
-  h1,
-  h2 {
-    margin: 0 0 0.16em;
-    padding: 0;
-    color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
-
-    @media print {
-      color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
-    }
+  @media print {
+    color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
   }
+`
 
-  h1 {
-    font-weight: 600;
-    font-size: 1.5em;
-  }
+const Profession = styled.h2<ThemeProps>`
+  margin: 0 0 0.6em;
+  padding: 0;
+  color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
+  font-weight: 400;
+  font-size: 1.2em;
 
-  h2 {
-    color: #666;
-    font-weight: 400;
-    font-size: 1em;
+  @media print {
+    color: ${({ theme }) => theme.print.colors.bodyTextSecondary};
   }
 `
 
 const Content = styled.div`
-  display: flex;
-  align-items: center;
   width: 100%;
 `
 
 const Links = styled.ul`
   display: flex;
-  flex-direction: row;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -118,21 +112,13 @@ const Links = styled.ul`
     color: currentColor;
   }
 
-  ${breakpointLarge} {
+  @media print {
     flex-direction: column;
   }
 `
 
 const WebLinkContainer = styled.li`
-  a {
-    display: block;
-    padding: 1.4em 1.4em 1.4em 0;
-
-    ${breakpointLarge} {
-      margin-bottom: 0.2em;
-      padding: 0;
-    }
-  }
+  margin-right: 1.2em;
 
   @media print {
     display: none;
@@ -140,8 +126,6 @@ const WebLinkContainer = styled.li`
 `
 
 const PrintLinkContainer = styled.li`
-  margin-bottom: 0.2em;
-
   a {
     text-decoration: none;
 
@@ -156,18 +140,20 @@ const PrintLinkContainer = styled.li`
     display: none;
   }
 `
-const PrintButtonWrapper = styled.li<{ visible: boolean }>`
+const PrintButtonWrapper = styled.li<ThemeProps & { visible: boolean }>`
   display: none;
-  align-items: center;
-  height: 1.4em;
-  margin-bottom: -1.4em;
+  color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
   font-size: 1.2em;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
-  transition: opacity 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
   pointer-events: ${({ visible }) => (visible ? 'initial' : 'none')};
 
+  :hover {
+    color: currentColor;
+  }
+
   ${breakpointLarge} {
-    display: flex;
+    display: block;
   }
 
   @media print {

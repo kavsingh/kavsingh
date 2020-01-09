@@ -50,7 +50,7 @@ const about: AboutContent = {
     },
   ],
   profile: md`
-Developer from Australia building for web and mobile in Berlin. I'm enthusiastic about learning new web technologies and using them to build rich user experiences.
+Developer building for web and mobile in Berlin. I'm enthusiastic about learning new web technologies and using them to build rich user experiences.
 
 Over the years I have developed skills in:
 
