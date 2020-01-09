@@ -27,7 +27,6 @@ const Section: FunctionComponent<{
 const Container = styled.section<ThemeProps>`
   width: 100%;
   padding: ${({ theme }) => theme.screen.layout.spacingVertical} 0;
-  border-top: 1px solid ${({ theme }) => theme.screen.colors.keyline};
 
   @media print {
     padding: ${({ theme }) => theme.print.layout.spacingVertical} 0;
