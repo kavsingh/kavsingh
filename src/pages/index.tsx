@@ -15,6 +15,7 @@ import Article from '~/components/article'
 import Masthead from '~/components/masthead'
 import Experience from '~/components/experience'
 import Education from '~/components/education'
+import HorizontalDivider from '~/components/horizontal-divider'
 
 const IndexPage: FunctionComponentWithoutChildren = () => {
   const { profile, links, name, profession } = about
@@ -52,11 +53,14 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
       </Head>
       <Body>
         <Masthead {...{ name, profession, links }} />
+        <HorizontalDivider />
         <Section
           title={<ProfileTitle>👋</ProfileTitle>}
           content={profileContent}
         />
+        <HorizontalDivider />
         <Section title="Work" content={experienceContent} />
+        <HorizontalDivider />
         <Section title="Study" content={educationContent} />
       </Body>
     </>
