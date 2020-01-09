@@ -13,7 +13,7 @@ export interface AboutContent {
   name: string
   profession: string
   links: AboutLink[]
-  description: ReactNode
+  profile: ReactNode
 }
 
 const about: AboutContent = {
@@ -49,12 +49,24 @@ const about: AboutContent = {
       url: '//kavsingh.com',
     },
   ],
-  description: md`
-Developer from Australia building for web and mobile in Berlin. Over the years I have learnt:
+  profile: md`
+Developer from Australia building for web and mobile in Berlin. I'm enthusiastic about learning new web technologies and using them to build rich user experiences.
 
-- JavaScript: React (Native), Redux, MobX, Backbone
-- CSS: CSS in JS, PostCss, Pre-processors
-- Experience with Node.js, PHP and Python.
+Over the years I have developed skills in:
+
+- JavaScript | TypeScript: React (Native), Redux, MobX, Backbone
+- CSS: CSS in JS, PostCss, pre-processors
+- Server side: Node.js, PHP, some Python
+
+I've dabbled in:
+
+- Coding for interactive installations (OpenFrameworks, Arduino)
+- Animation and sound design
+
+And would like to learn more about:
+
+- WebVR, WebAudio, and 3d apis
+- Functional-friendly languages (Elm, ReasonML, Rust)
   `,
 }
 
