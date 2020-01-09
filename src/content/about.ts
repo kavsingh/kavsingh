@@ -54,19 +54,9 @@ Developer from Australia building for web and mobile in Berlin. I'm enthusiastic
 
 Over the years I have developed skills in:
 
-- JavaScript | TypeScript: React (Native), Redux, MobX, Backbone
+- JavaScript | TypeScript: Vanilla and frameworks, especially React (Native), Redux, MobX, Backbone
 - CSS: CSS in JS, PostCss, pre-processors
-- Server side: Node.js, PHP, some Python
-
-I've dabbled in:
-
-- Coding for interactive installations (OpenFrameworks, Arduino)
-- Animation and sound design
-
-And would like to learn more about:
-
-- WebVR, WebAudio, and 3d apis
-- Functional-friendly languages (Elm, ReasonML, Rust)
+- Some server side: Node.js, PHP, a little bit of Python
   `,
 }
 
