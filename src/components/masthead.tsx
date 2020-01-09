@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { MdPrint as PrintIcon } from 'react-icons/md'
+import React from 'react'
 import styled from '@emotion/styled'
 
 import { FunctionComponentWithoutChildren } from '~/typings/component'
@@ -8,23 +7,9 @@ import SplitPanes from '~/layouts/split-panes'
 import { breakpointLarge } from '~/style/breakpoints'
 import { ThemeProps } from '~/style/theme'
 
-import Button from './button'
-
 const Masthead: FunctionComponentWithoutChildren<Partial<
   Omit<AboutContent, 'skills'>
 >> = ({ name = '', profession = '', links = [] }) => {
-  const [printAvailable, setPrintAvailable] = useState(false)
-
-  const handlePrintClick = useCallback(() => {
-    if (printAvailable) window.print()
-  }, [printAvailable])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && typeof window.print === 'function') {
-      setPrintAvailable(true)
-    }
-  }, [])
-
   const printLinks = links.filter(({ print }) => print)
   const webLinks = links.filter(({ web }) => web)
 
@@ -40,11 +25,6 @@ const Masthead: FunctionComponentWithoutChildren<Partial<
                 <a href={url}>{label}</a>
               </WebLinkContainer>
             ))}
-            <PrintButtonWrapper key="print" visible={printAvailable}>
-              <Button onClick={handlePrintClick} aria-label="Print CV">
-                <PrintIcon />
-              </Button>
-            </PrintButtonWrapper>
             {printLinks.map(({ url, label, type }) => (
               <PrintLinkContainer key={`${type}-print`}>
                 <a href={url}>
@@ -137,26 +117,6 @@ const PrintLinkContainer = styled.li`
   }
 
   @media screen {
-    display: none;
-  }
-`
-const PrintButtonWrapper = styled.li<ThemeProps & { visible: boolean }>`
-  display: none;
-  color: ${({ theme }) => theme.screen.colors.bodyTextSecondary};
-  font-size: 1.2em;
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  pointer-events: ${({ visible }) => (visible ? 'initial' : 'none')};
-
-  :hover {
-    color: currentColor;
-  }
-
-  ${breakpointLarge} {
-    display: block;
-  }
-
-  @media print {
     display: none;
   }
 `
