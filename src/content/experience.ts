@@ -56,28 +56,31 @@ Stack:
   {
     slug: 'che-proximity-2017',
     employer: 'CHE Proximity',
-    position: 'Senior Front-end Developer (Freelance)',
+    position: 'Senior Front-end Developer, Freelance',
     period: 'November 2016 - February 2017',
     location: 'Melbourne, Australia',
     active: true,
     print: true,
     description: md`
-Worked in team developing the new Mazda Digital Platform, which allowed dealers to assemble their own promotional campaigns, and customers to preview customised vehicles.
+Worked in a team developing the new Mazda Digital Platform, which allowed dealers to assemble their own promotional campaigns, and customers to build and preview customised vehicles.
 
 - Built with React / Redux with SSR via EpiServer.
 - My contributions include introducing shared state management patterns (Redux + Sagas) that worked with the SSR system's multiple app mount points.
     `,
   },
   {
-    slug: 'freelance-2013-2017',
+    slug: 'freelance-2013-2016',
     employer: 'Various',
-    position: 'Freelance (Senior) Front-end Developer',
-    period: 'March 2013 - February 2017',
+    position: 'Front-end Developer, Freelance',
+    period: 'March 2013 - November 2016',
     location: 'Melbourne, Australia',
-    active: false,
+    active: true,
     print: true,
     description: md`
-
+- Close collaboration with a diverse range of teams of different sizes, structures and processes.
+- Brought projects from conception to completion, sometimes on small timelines.
+- Worked on a variety of existing tech stacks with a broad mix of technologies, including: React, PHP, Pug, NodeJS, Backbone, JQuery, Sass, Less, PostCss, Gulp, Webpack.
+- Some projects had particular niche deployment requirements, including running on legacy Learning Management Systems, iPad kiosk apps with local servers, and simple 3d experiences on mobile devices.
     `,
   },
   {
