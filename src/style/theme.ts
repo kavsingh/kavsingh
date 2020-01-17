@@ -34,7 +34,7 @@ export interface ThemeProps {
 
 const print: MediaTypeTheme = {
   layout: {
-    spacingVertical: '1.6em',
+    spacingVertical: '2em',
   },
   colors: {
     bodyText: 'rgba(17, 17, 17, 1)',

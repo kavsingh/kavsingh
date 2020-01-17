@@ -29,6 +29,7 @@ In addition to day-to-day development work, my role involves:
 - Technical ownership of features and assisting in development sprint planning.
 - Guiding technical decisions for the front-end stack.
 - Assisting with hiring / mentoring of new developers.
+- Improving infrastructure and tooling.
 
 Stack:
 
