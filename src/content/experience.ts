@@ -17,14 +17,14 @@ const experience: ExperienceContent[] = [
     slug: '8fit',
     employer: '8fit',
     position: 'Senior Engineer',
-    period: 'December 2017 - Present',
+    period: 'December 2017 - January 2020',
     location: 'Berlin, Germany',
     active: true,
     print: true,
     description: md`
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
-In addition to day-to-day development work, my role involves:
+In addition to day-to-day development work, my role involved:
 
 - Technical ownership of features and assisting in development sprint planning.
 - Guiding technical decisions for the front-end stack.
