@@ -81,10 +81,17 @@ export const darkTheme: Theme = {
 
 export const defaultTheme = darkTheme
 
+/*
+TODO: Revert to this once theme initial load shenanigans figured out
 export const getThemeForColorScheme = (colorScheme: ColorSchemePreference) => {
   if (colorScheme === 'no-preference') return defaultTheme
 
   return colorScheme === 'light' ? lightTheme : darkTheme
+}
+*/
+
+export const getThemeForColorScheme = (_colorScheme: ColorSchemePreference) => {
+  return defaultTheme
 }
 
 export const getInitialTheme = () =>
