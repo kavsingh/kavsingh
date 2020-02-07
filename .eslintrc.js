@@ -12,7 +12,7 @@ const devDependencies = {
 
 const unusedVarsConfig = [
   'warn',
-  { ignoreRestSiblings: true, varsIgnorePattern: '^_' },
+  { argsIgnorePattern: '^_', varsIgnorePattern: '[iI]gnored' },
 ]
 
 const camelcaseConfig = ['error', { properties: 'never' }]
