@@ -2,6 +2,7 @@ module.exports = {
   presets: ['next/babel'],
   plugins: [
     'markdown-in-js/babel',
+    'emotion',
     [
       'babel-plugin-module-resolver',
       {

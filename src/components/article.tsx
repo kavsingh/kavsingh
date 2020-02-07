@@ -1,6 +1,5 @@
 import React, { ReactNode, FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import { withTheme } from 'emotion-theming'
 
 import { ThemeProps } from '~/style/theme'
 
@@ -16,6 +15,8 @@ const Article: FunctionComponent<{
     <Content>{children}</Content>
   </Container>
 )
+
+export default Article
 
 const Container = styled.article<{ print: boolean }>`
   page-break-inside: avoid;
@@ -47,5 +48,3 @@ const Meta = styled.h2<ThemeProps>`
 `
 
 const Content = styled.div``
-
-export default withTheme(Article)
