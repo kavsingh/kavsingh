@@ -56,7 +56,7 @@ Over the years I have developed skills in:
 
 - JavaScript | TypeScript: Vanilla and frameworks, especially React (Native), Redux, MobX, Backbone
 - CSS: CSS in JS, PostCss, pre-processors
-- Some server side: Node.js, PHP, a little bit of Python
+- Some server side (non Production): Node.js, PHP
   `,
 }
 
