@@ -1,10 +1,12 @@
-import React, { ReactNode, FunctionComponent } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
+import type { ReactNode } from 'react'
 
 import SplitPanes from '~/layouts/split-panes'
-import { ThemeProps } from '~/style/theme'
+import type { ThemeProps } from '~/style/theme'
+import type { FCWithoutChildren } from '~/typings/component'
 
-const Section: FunctionComponent<{
+const Section: FCWithoutChildren<{
   title: ReactNode
   content: ReactNode
   split?: boolean

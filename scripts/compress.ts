@@ -11,7 +11,7 @@ const writeFile = promisify(fs.writeFile)
 
 const readDir = promisify<string, string[]>(recursiveReadDir)
 
-const dist = path.resolve(__dirname, '../../out')
+const dist = path.resolve(__dirname, '../out')
 // Provided by NearlyFreeSpeech:
 // https://members.nearlyfreespeech.net/wiki/HowTo/GzipStatic
 const dotHtAccess = `
@@ -45,6 +45,6 @@ const writeHtAccess = (destPath: string) => writeFile(destPath, dotHtAccess)
 readDir(dist)
   .then(filter(shouldCompress))
   .then(pipe(map(compressAsset), Promise.all.bind(Promise)))
-  .then(compressed => console.log(`${compressed.length} files compressed`))
+  .then((compressed) => console.log(`${compressed.length} files compressed`))
   .then(() => writeHtAccess(`${dist}/.htaccess`))
   .catch(console.error)

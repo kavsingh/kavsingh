@@ -2,9 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
 
-import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { breakpointLarge } from '~/style/breakpoints'
-import { ThemeProps } from '~/style/theme'
 import about from '~/content/about'
 import experience from '~/content/experience'
 import education from '~/content/education'
@@ -16,8 +14,10 @@ import Masthead from '~/components/masthead'
 import Experience from '~/components/experience'
 import Education from '~/components/education'
 import HorizontalDivider from '~/components/horizontal-divider'
+import type { ThemeProps } from '~/style/theme'
+import type { FCWithoutChildren } from '~/typings/component'
 
-const IndexPage: FunctionComponentWithoutChildren = () => {
+const IndexPage: FCWithoutChildren = () => {
   const { profile, links, name, profession } = about
 
   const profileContent = (
@@ -30,7 +30,7 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
     <ContentList>
       {experience
         .filter(({ active }) => active)
-        .map(exp => (
+        .map((exp) => (
           <Experience {...exp} key={exp.slug} />
         ))}
     </ContentList>
@@ -40,7 +40,7 @@ const IndexPage: FunctionComponentWithoutChildren = () => {
     <ContentList>
       {education
         .filter(({ active }) => active)
-        .map(edu => (
+        .map((edu) => (
           <Education {...edu} key={edu.slug} />
         ))}
     </ContentList>

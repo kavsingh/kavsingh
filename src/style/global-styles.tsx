@@ -1,9 +1,9 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
 
-import { FunctionComponentWithoutChildren } from '~/typings/component'
+import type { FCWithoutChildren } from '~/typings/component'
 
-import { Theme } from './theme'
+import type { Theme } from './theme'
 
 const globalStyles = (theme: Theme) => css`
   *,
@@ -49,8 +49,6 @@ const globalStyles = (theme: Theme) => css`
   }
 `
 
-const GlobalStyles: FunctionComponentWithoutChildren = () => (
-  <Global styles={globalStyles} />
-)
+const GlobalStyles: FCWithoutChildren = () => <Global styles={globalStyles} />
 
 export default GlobalStyles

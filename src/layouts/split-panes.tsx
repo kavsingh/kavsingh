@@ -1,5 +1,6 @@
-import React, { Children, isValidElement, FunctionComponent } from 'react'
+import React, { Children, isValidElement } from 'react'
 import styled from '@emotion/styled'
+import type { FunctionComponent } from 'react'
 
 import { breakpointLarge } from '~/style/breakpoints'
 

@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { FunctionComponentWithoutChildren } from '~/typings/component'
 import { AboutContent } from '~/content/about'
 import SplitPanes from '~/layouts/split-panes'
 import { breakpointLarge } from '~/style/breakpoints'
-import { ThemeProps } from '~/style/theme'
+import type { FCWithoutChildren } from '~/typings/component'
+import type { ThemeProps } from '~/style/theme'
 
-const Masthead: FunctionComponentWithoutChildren<Partial<
-  Omit<AboutContent, 'skills'>
->> = ({ name = '', profession = '', links = [] }) => {
+const Masthead: FCWithoutChildren<Partial<Omit<AboutContent, 'skills'>>> = ({
+  name = '',
+  profession = '',
+  links = [],
+}) => {
   const printLinks = links.filter(({ print }) => print)
   const webLinks = links.filter(({ web }) => web)
 

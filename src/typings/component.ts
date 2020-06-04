@@ -1,7 +1,9 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 
-export type ComponentPropsWithoutChildren<P> = P & { children?: never }
+export type ComponentPropsWithoutChildren<P = Record<string, unknown>> = P & {
+  children?: never
+}
 
-export type FunctionComponentWithoutChildren<P = {}> = FunctionComponent<
+export type FCWithoutChildren<P = Record<string, unknown>> = FunctionComponent<
   ComponentPropsWithoutChildren<P>
 >

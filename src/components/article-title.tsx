@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { FunctionComponentWithoutChildren } from '~/typings/component'
+import type { FCWithoutChildren } from '~/typings/component'
 
-const ArticleTitle: FunctionComponentWithoutChildren<{
+const ArticleTitle: FCWithoutChildren<{
   title: string
   subtitle: string
   seperator?: string

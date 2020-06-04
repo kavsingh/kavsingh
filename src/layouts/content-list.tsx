@@ -1,7 +1,8 @@
-import React, { FunctionComponent, Children, ReactNode } from 'react'
+import React, { Children } from 'react'
 import styled from '@emotion/styled'
+import type { FunctionComponent, ReactNode } from 'react'
 
-import { ThemeProps } from '~/style/theme'
+import type { ThemeProps } from '~/style/theme'
 
 const ContentList: FunctionComponent = ({ children }) => {
   const childCount = Children.count(children)

@@ -1,9 +1,0 @@
-if [[ $autoenv_event == 'enter' ]]; then
-  export TS_NODE_PROJECT=tsconfig.ts-node.json
-  export TS_NODE_LOG_ERROR=true
-  export TS_NODE_TRANSPILE_ONLY=true
-else
-  unset TS_NODE_PROJECT
-  unset TS_NODE_LOG_ERROR
-  unset TS_NODE_TRANSPILE_ONLY
-fi

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { ThemeProps } from '~/style/theme'
+import type { ThemeProps } from '~/style/theme'
 
 const HorizontalDivider = styled.div<ThemeProps>`
   align-self: stretch;

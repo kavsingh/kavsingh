@@ -1,7 +1,8 @@
-import React, { ReactNode, FunctionComponent } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
+import type { ReactNode, FunctionComponent } from 'react'
 
-import { ThemeProps } from '~/style/theme'
+import type { ThemeProps } from '~/style/theme'
 
 const Article: FunctionComponent<{
   id?: string

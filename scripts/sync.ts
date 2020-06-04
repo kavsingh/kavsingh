@@ -9,7 +9,7 @@ const { DEPLOY_DOMAIN, DEPLOY_USER, DEPLOY_PATH } = process.env
 
 rsync(
   {
-    src: path.join(__dirname, '../../out/'),
+    src: path.join(__dirname, '../out/'),
     dest: `${DEPLOY_USER}@${DEPLOY_DOMAIN}:${DEPLOY_PATH}`,
     ssh: true,
     recursive: true,
@@ -23,7 +23,7 @@ rsync(
       process.stdout.write(data)
     },
   },
-  error => {
+  (error) => {
     if (error) console.error(error.message)
   },
 )

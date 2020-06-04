@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
 import md from 'markdown-in-js'
+import type { ReactNode } from 'react'
 
 export interface ExperienceContent {
   slug: string

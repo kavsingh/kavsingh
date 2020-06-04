@@ -15,8 +15,6 @@ const unusedVarsConfig = [
   { argsIgnorePattern: '^_', varsIgnorePattern: '[iI]gnored' },
 ]
 
-const camelcaseConfig = ['error', { properties: 'never' }]
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -39,7 +37,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended',
     'prettier',
     'prettier/react',
@@ -49,6 +46,7 @@ module.exports = {
     'curly': ['error', 'multi-line', 'consistent'],
     'no-console': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'filenames/match-regex': ['error', '^[a-z-.]+$', true],
     'filenames/match-exported': ['error', 'kebab'],
@@ -79,7 +77,6 @@ module.exports = {
     {
       files: ['*.js'],
       rules: {
-        'camelcase': camelcaseConfig,
         'no-unused-vars': unusedVarsConfig,
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
@@ -88,9 +85,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        'camelcase': 'off',
         'no-unused-vars': 'off',
-        '@typescript-eslint/camelcase': camelcaseConfig,
         '@typescript-eslint/no-unused-vars': unusedVarsConfig,
       },
     },
