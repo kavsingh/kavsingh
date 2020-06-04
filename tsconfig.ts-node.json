@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "isolatedModules": false
-  },
-  "exclude": ["**/node_modules/**"]
+    "isolatedModules": false,
+    // target node 12
+    "target": "es2019"
+  }
 }
