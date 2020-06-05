@@ -14,6 +14,20 @@ export interface ExperienceContent {
 
 const experience: ExperienceContent[] = [
   {
+    slug: 'ni',
+    employer: 'Native Instruments',
+    position: 'Software Engineer',
+    period: 'May 2020 - present',
+    location: 'Berlin, Germany',
+    active: true,
+    print: true,
+    description: md`
+[Native Instruments](https://www.native-instruments.com) is a music hardware and software company based in Berlin.
+
+Working with a smart and lovely team on NI's web platform services.
+    `,
+  },
+  {
     slug: '8fit',
     employer: '8fit',
     position: 'Senior Engineer',
