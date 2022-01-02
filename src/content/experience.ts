@@ -24,7 +24,7 @@ const experience: ExperienceContent[] = [
     description: md`
 [Native Instruments](https://www.native-instruments.com) is a music hardware and software company based in Berlin.
 
-Working with a smart and lovely team on NI's web platform services.
+Working with a lovely team on NI's platform services.
     `,
   },
   {
