@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from 'react'
 
 import { defaultTheme, themes } from './theme'
 
-import type { FC, Dispatch, SetStateAction } from 'react'
+import type { FC } from 'react'
 
 export const ThemeContext = createContext<ThemeContextValue>({
   theme: defaultTheme,
@@ -32,6 +32,14 @@ export const ThemeProvider: FC = ({ children }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    Object.values(themes).forEach((t) => {
+      document.body.classList.toggle(t, t === theme)
+    })
+  }, [theme])
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
@@ -51,5 +59,5 @@ const prefersDarkQuery =
 
 interface ThemeContextValue {
   theme: string
-  setTheme: Dispatch<SetStateAction<string>>
+  setTheme: (theme: string) => void
 }
