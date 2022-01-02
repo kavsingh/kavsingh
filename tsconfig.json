@@ -1,41 +1,41 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "baseUrl": ".",
-    "experimentalDecorators": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noStrictGenericChecks": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     },
-    "plugins": [{ "name": "typescript-styled-plugin", "validate": false }],
-    "preserveConstEnums": true,
-    "pretty": true,
-    "removeComments": false,
-    "rootDir": "./",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
     "target": "esnext",
-    "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "exclude": ["**/node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "**/node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "./src",
+    "./scripts",
+    "./*.ts"
+  ]
 }

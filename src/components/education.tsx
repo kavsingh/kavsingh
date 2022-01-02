@@ -1,13 +1,11 @@
-import React from 'react'
-
-import { EducationContent } from '~/content/education'
-import type { FCWithoutChildren } from '~/typings/component'
-
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-const Education: FCWithoutChildren<EducationContent> = ({
+import type { VoidFunctionComponent } from 'react'
+import type { EducationContent } from '~/content/education'
+
+const Education: VoidFunctionComponent<EducationContent> = ({
   subject,
   institution,
   period,

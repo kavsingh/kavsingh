@@ -1,15 +1,10 @@
-import fs from 'fs'
+import { createReadStream, createWriteStream } from 'fs'
+import { writeFile } from 'fs/promises'
 import path from 'path'
 import zlib from 'zlib'
-import { promisify } from 'util'
-import { createReadStream, createWriteStream } from 'fs'
 
 import { __, filter, includes, map, pipe } from 'lodash/fp'
-import recursiveReadDir from 'recursive-readdir'
-
-const writeFile = promisify(fs.writeFile)
-
-const readDir = promisify<string, string[]>(recursiveReadDir)
+import readDir from 'recursive-readdir'
 
 const dist = path.resolve(__dirname, '../out')
 // Provided by NearlyFreeSpeech:

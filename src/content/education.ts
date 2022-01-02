@@ -1,6 +1,3 @@
-import md from 'markdown-in-js'
-import type { ReactNode } from 'react'
-
 export interface EducationContent {
   slug: string
   institution: string
@@ -10,7 +7,7 @@ export interface EducationContent {
   location: string
   active: boolean
   print: boolean
-  description: ReactNode
+  description: string
 }
 
 const education: EducationContent[] = [
@@ -23,7 +20,7 @@ const education: EducationContent[] = [
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 Graduated with distinction. Final project was awarded Best Interactive for the graduating year.
     `,
   },
@@ -36,7 +33,7 @@ Graduated with distinction. Final project was awarded Best Interactive for the g
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 Completed modules in functional programming, object oriented programming and basic marketing.
     `,
   },

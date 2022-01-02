@@ -1,12 +1,18 @@
-const withOffline = require('next-offline')
+// @ts-check
 
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
+
+const withVanillaExtract = createVanillaExtractPlugin()
+
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
-  exportPathMap: () => ({ '/': { page: '/' } }),
+  exportPathMap: () => ({ '/': { page: '/home' } }),
   typescript: {
     ignoreDevErrors: true,
     ignoreBuildErrors: false,
   },
-  experimental: { modern: true },
 }
 
-module.exports = withOffline(nextConfig)
+module.exports = withVanillaExtract(nextConfig)

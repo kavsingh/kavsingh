@@ -10,45 +10,32 @@ const devDependencies = {
   peerDependencies: false,
 }
 
-const unusedVarsConfig = [
-  'warn',
-  { argsIgnorePattern: '^_', varsIgnorePattern: '[iI]gnored' },
-]
-
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    tsconfigRootDir: './',
-    jsx: true,
-  },
+  root: true,
+  env: { es6: true, node: true, browser: false },
   settings: {
-    react: { version: 'detect' },
+    'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
+    'import/resolver': {
+      'eslint-import-resolver-typescript': { project: './tsconfig.json' },
+      'eslint-import-resolver-custom-alias': {
+        alias: { '~': './src' },
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      },
+    },
   },
-  env: { node: true, browser: false, es6: true },
-  plugins: [
-    '@typescript-eslint',
-    'filenames',
-    'import',
-    'react',
-    'react-hooks',
-    'emotion',
-    'prettier',
-  ],
+  plugins: ['filenames'],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:@next/next/recommended',
+    'plugin:prettier/recommended',
   ],
   rules: {
-    'curly': ['error', 'multi-line', 'consistent'],
+    'curly': ['warn', 'multi-line', 'consistent'],
     'no-console': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    'filenames/match-regex': ['error', '^[a-z-.]+$', true],
+    'no-throw-literal': 'error',
+    'filenames/match-regex': ['error', '^[a-z0-9-.]+$', true],
     'filenames/match-exported': ['error', 'kebab'],
     'import/no-cycle': 'error',
     'import/no-self-import': 'error',
@@ -63,59 +50,70 @@ module.exports = {
           'external',
           'internal',
           ['parent', 'sibling', 'index'],
+          'type',
         ],
         'pathGroups': [{ pattern: '~/**', group: 'internal' }],
+        'pathGroupsExcludedImportTypes': ['type'],
         'newlines-between': 'always',
       },
     ],
-    'react/prop-types': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
     'prettier/prettier': 'warn',
   },
   overrides: [
     {
-      files: ['*.js'],
-      rules: {
-        'no-unused-vars': unusedVarsConfig,
-        '@typescript-eslint/camelcase': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-      },
-    },
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': unusedVarsConfig,
-      },
-    },
-    {
-      files: ['src/**/*'],
-      env: { browser: true },
-      rules: {
-        'no-console': 'error',
-        '@typescript-eslint/no-var-requires': 'error',
-        'import/no-extraneous-dependencies': ['error', srcDependencies],
-        'emotion/jsx-import': 'off', // handled by babel plugin
-        'emotion/no-vanilla': 'error',
-        'emotion/import-from-emotion': 'error',
-        'emotion/styled-import': 'error',
-        'emotion/syntax-preference': ['error', 'string'],
-      },
-    },
-    {
-      files: [
-        '*.config.*',
-        'src/pages/_document.tsx',
-        'src/pages/_app.tsx',
-        'src/pages/index.tsx',
+      files: ['*.ts?(x)'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: { project: './tsconfig.json' },
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
+      rules: {
+        'camelcase': 'off',
+        'no-shadow': 'off',
+        'no-throw-literal': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/consistent-type-imports': [
+          'error',
+          { disallowTypeAnnotations: false },
+        ],
+        '@typescript-eslint/member-ordering': ['warn'],
+        '@typescript-eslint/no-shadow': [
+          'error',
+          {
+            ignoreTypeValueShadow: false,
+            ignoreFunctionTypeParameterNameValueShadow: true,
+          },
+        ],
+        '@typescript-eslint/no-throw-literal': 'error',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+        ],
+      },
+    },
+    {
+      files: ['./*', 'src/pages/_app.tsx', 'src/pages/_document.tsx'],
       rules: {
         'filenames/match-exported': 'off',
       },
     },
+    {
+      files: ['src/**/*'],
+      env: { node: false, browser: true },
+      settings: { react: { version: 'detect' } },
+      extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
+      rules: {
+        'no-console': 'error',
+        'import/no-extraneous-dependencies': ['error', srcDependencies],
+        'react/jsx-filename-extension': [
+          'error',
+          { extensions: ['.tsx', '.jsx'] },
+        ],
+        'react/jsx-uses-react': 'off',
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+      },
+    },
   ],
-  globals: {
-    process: 'readonly',
-  },
 }

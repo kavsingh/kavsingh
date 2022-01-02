@@ -1,16 +1,9 @@
-import styled from '@emotion/styled'
+import { containerStyle } from './horizontal-divider.css'
 
-import type { ThemeProps } from '~/style/theme'
+import type { VoidFunctionComponent } from 'react'
 
-const HorizontalDivider = styled.div<ThemeProps>`
-  align-self: stretch;
-  width: 100%;
-  height: 1px;
-  background-color: transparent;
-
-  @media print {
-    background-color: ${({ theme }) => theme.print.colors.keyline};
-  }
-`
+const HorizontalDivider: VoidFunctionComponent = () => (
+  <div className={containerStyle} />
+)
 
 export default HorizontalDivider

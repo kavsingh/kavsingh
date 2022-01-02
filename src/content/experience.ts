@@ -1,6 +1,3 @@
-import md from 'markdown-in-js'
-import type { ReactNode } from 'react'
-
 export interface ExperienceContent {
   slug: string
   employer: string
@@ -9,7 +6,7 @@ export interface ExperienceContent {
   location: string
   active: boolean
   print: boolean
-  description: ReactNode
+  description: string
 }
 
 const experience: ExperienceContent[] = [
@@ -21,7 +18,7 @@ const experience: ExperienceContent[] = [
     location: 'Berlin, Germany',
     active: true,
     print: true,
-    description: md`
+    description: `
 [Native Instruments](https://www.native-instruments.com) is a music hardware and software company based in Berlin.
 
 Working with a lovely team on NI's platform services.
@@ -35,7 +32,7 @@ Working with a lovely team on NI's platform services.
     location: 'Berlin, Germany',
     active: true,
     print: true,
-    description: md`
+    description: `
 [8fit](https://8fit.com) is a health and fitness app based in Berlin.
 
 In addition to day-to-day development work, my role involved:
@@ -60,7 +57,7 @@ Stack:
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 [OurHome](http://ourhomeapp.com) is an app to help families organise their households.
 
 - Cordova app built on Backbone, deployed on iOS, Android, and as a web-app. (Slowly transitioning to Capacitor, React and TypeScript).
@@ -76,7 +73,7 @@ Stack:
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 Worked in a team developing the new Mazda Digital Platform, which allowed dealers to assemble their own promotional campaigns, and customers to build and preview customised vehicles.
 
 - Built with React / Redux with SSR via EpiServer.
@@ -91,7 +88,7 @@ Worked in a team developing the new Mazda Digital Platform, which allowed dealer
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 - Close collaboration with a diverse range of teams of different sizes, structures and processes.
 - Brought projects from conception to completion, sometimes on small timelines.
 - Worked on a variety of existing tech stacks with a broad mix of technologies, including: React, PHP, Pug, NodeJS, Backbone, JQuery, Sass, Less, PostCss, Gulp, Webpack.
@@ -106,7 +103,7 @@ Worked in a team developing the new Mazda Digital Platform, which allowed dealer
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Built a number of online education modules which required a high degree of interactivity while offering responsive layouts which worked across devices.
 
 - Worked closely with education and UI designers to ensure that designs were technically feasible without compromising on learning outcomes.
@@ -121,7 +118,7 @@ Built a number of online education modules which required a high degree of inter
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Helped build out front end api communication for existing web site. Worked with previously implemented stack - jQuery, Bootstrap et al.
     `,
   },
@@ -133,7 +130,7 @@ Helped build out front end api communication for existing web site. Worked with 
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server. The app ran continuously in a local apartment developer's sales showroom, allowing users to collect a set of images and floor plans which they could then email to any address.
     `,
   },
@@ -145,7 +142,7 @@ Developed an iPad kiosk app running a Backbone SPA on a device-local PHP server.
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Built a webpage for well known local bar.
 
 - Implemented the front-end and server side image manipulation module (PHP + ImageMagick), where Instagram photos tagged with the bar's name were heavily processed for display on the webpage.
@@ -160,7 +157,7 @@ Built a webpage for well known local bar.
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required compatibility with browsers down to IE8 and needed to work across desktop and mobile devices. Worked fairly independently on a quick turnaround.
     `,
   },
@@ -172,7 +169,7 @@ Built an online financial questionnaire (Backbone.js + Sass/Bourbon). Required c
     location: 'Melbourne, Australia',
     active: false,
     print: true,
-    description: md`
+    description: `
 Built an interactive mobile web experience. Users were able to view 3D panoramas of dream holiday locations on their mobile devices, and share these locations (with soundscapes) with their friends. The campaign needed to be accessible and performant across a broad range of mobile devices.
     `,
   },
@@ -184,7 +181,7 @@ Built an interactive mobile web experience. Users were able to view 3D panoramas
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 UI prototyping and front end build for a startup stage web application.
 
 - Involved with re-designing the application's user flows from the ground up.
@@ -199,7 +196,7 @@ UI prototyping and front end build for a startup stage web application.
     location: 'Melbourne, Australia',
     active: true,
     print: true,
-    description: md`
+    description: `
 Created a broad range of online digital content to augment advertising campaigns, including CMS (WordPress) powered sites, interactive experiences with Flash (later JS), and email campaigns.
     `,
   },

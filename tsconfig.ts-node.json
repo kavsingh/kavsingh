@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "isolatedModules": false,
-    // target node 12
-    "target": "es2019"
+    // target node 16
+    "target": "es2021"
   }
 }

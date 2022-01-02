@@ -1,13 +1,11 @@
-import React from 'react'
-
-import { ExperienceContent } from '~/content/experience'
-import type { FCWithoutChildren } from '~/typings/component'
-
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-const Experience: FCWithoutChildren<ExperienceContent> = ({
+import type { VoidFunctionComponent } from 'react'
+import type { ExperienceContent } from '~/content/experience'
+
+const Experience: VoidFunctionComponent<ExperienceContent> = ({
   employer,
   position,
   period,

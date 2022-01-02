@@ -1,52 +1,27 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import type { ReactNode } from 'react'
-
 import SplitPanes from '~/layouts/split-panes'
-import type { ThemeProps } from '~/style/theme'
-import type { FCWithoutChildren } from '~/typings/component'
 
-const Section: FCWithoutChildren<{
+import { containerStyle, titleStyle } from './section.css'
+
+import type { ReactNode, VoidFunctionComponent } from 'react'
+
+const Section: VoidFunctionComponent<{
   title: ReactNode
   content: ReactNode
   split?: boolean
 }> = ({ title, content, split = true }) => (
-  <Container>
+  <section className={containerStyle}>
     {split ? (
       <SplitPanes>
-        <Title>{title}</Title>
-        <Content>{content}</Content>
+        <h2 className={titleStyle}>{title}</h2>
+        <div>{content}</div>
       </SplitPanes>
     ) : (
       <>
-        <Title>{title}</Title>
-        <Content>{content}</Content>
+        <h2 className={titleStyle}>{title}</h2>
+        <div>{content}</div>
       </>
     )}
-  </Container>
+  </section>
 )
-
-const Container = styled.section<ThemeProps>`
-  width: 100%;
-  padding: ${({ theme }) => theme.screen.layout.spacingVertical} 0;
-
-  @media print {
-    padding: ${({ theme }) => theme.print.layout.spacingVertical} 0;
-    border-top-color: ${({ theme }) => theme.print.colors.keyline};
-  }
-`
-
-const Title = styled.h1<ThemeProps>`
-  margin: 0 0 1em;
-  color: ${({ theme }) => theme.screen.colors.bodyTextEmphasis};
-  font-weight: 600;
-  font-size: 1.1em;
-
-  @media print {
-    color: ${({ theme }) => theme.print.colors.bodyTextEmphasis};
-  }
-`
-
-const Content = styled.div``
 
 export default Section

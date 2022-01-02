@@ -1,41 +1,22 @@
-import React, { Children, isValidElement } from 'react'
-import styled from '@emotion/styled'
-import type { FunctionComponent } from 'react'
+import { Children, isValidElement } from 'react'
 
-import { breakpointLarge } from '~/style/breakpoints'
+import {
+  containerStyle,
+  leftPaneStyle,
+  rightPaneStyle,
+} from './split-panes.css'
 
-const SplitPanes: FunctionComponent = ({ children }) => {
+import type { FC } from 'react'
+
+const SplitPanes: FC = ({ children }) => {
   const [first, ...rest] = Children.toArray(children).filter(isValidElement)
 
   return (
-    <Container>
-      <Left>{first}</Left>
-      <Right>{rest}</Right>
-    </Container>
+    <div className={containerStyle}>
+      <div className={leftPaneStyle}>{first}</div>
+      <div className={rightPaneStyle}>{rest}</div>
+    </div>
   )
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  ${breakpointLarge} {
-    flex-direction: row;
-  }
-`
-
-const Left = styled.div`
-  ${breakpointLarge} {
-    flex: 0 0 24%;
-    max-width: 30rem;
-  }
-`
-
-const Right = styled.div`
-  ${breakpointLarge} {
-    flex: 1 0;
-  }
-`
 
 export default SplitPanes
