@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import about from '~/content/about'
 import { ThemeProvider } from '~/style/theme-context'
 import '~/style/global-style.css'
 
@@ -9,7 +10,8 @@ import type { AppProps } from 'next/app'
 const App: VoidFunctionComponent<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
-      <title key="title">CV - Kav Singh</title>
+      <title key="title">CV - {about.name}</title>
+      <meta key="description" name="description" content={about.profile} />
       <meta
         key="viewport"
         name="viewport"
