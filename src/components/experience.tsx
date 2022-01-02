@@ -1,13 +1,13 @@
-import React from 'react'
-
-import { ExperienceContent } from '~/content/experience'
-import type { FCWithoutChildren } from '~/typings/component'
+import ReactMarkdown from 'react-markdown'
 
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-const Experience: FCWithoutChildren<ExperienceContent> = ({
+import type { VoidFunctionComponent } from 'react'
+import type { ExperienceContent } from '~/content/experience'
+
+const Experience: VoidFunctionComponent<ExperienceContent> = ({
   employer,
   position,
   period,
@@ -22,7 +22,9 @@ const Experience: FCWithoutChildren<ExperienceContent> = ({
     meta={`${period}, ${location}`}
     print={print}
   >
-    <HTMLContent>{description}</HTMLContent>
+    <HTMLContent>
+      <ReactMarkdown>{description}</ReactMarkdown>
+    </HTMLContent>
   </Article>
 )
 

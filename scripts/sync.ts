@@ -1,11 +1,17 @@
 import path from 'path'
 
-import dotenv from 'dotenv'
+import { config } from 'dotenv'
 import rsync from 'rsyncwrapper'
 
-dotenv.config()
+const envResult = config()
 
-const { DEPLOY_DOMAIN, DEPLOY_USER, DEPLOY_PATH } = process.env
+if (envResult.error) throw envResult.error
+
+const { DEPLOY_DOMAIN, DEPLOY_USER, DEPLOY_PATH } = envResult.parsed ?? {}
+
+if (!(DEPLOY_DOMAIN && DEPLOY_USER && DEPLOY_PATH)) {
+  throw new Error('Missing env vars')
+}
 
 rsync(
   {

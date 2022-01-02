@@ -1,6 +1,3 @@
-import md from 'markdown-in-js'
-import type { ReactNode } from 'react'
-
 interface AboutLink {
   type: string
   label: string
@@ -13,7 +10,7 @@ export interface AboutContent {
   name: string
   profession: string
   links: AboutLink[]
-  profile: ReactNode
+  profile: string
 }
 
 const about: AboutContent = {
@@ -49,7 +46,7 @@ const about: AboutContent = {
       url: '//kavsingh.com',
     },
   ],
-  profile: md`
+  profile: `
 Developer building for web and mobile in Berlin. I'm enthusiastic about learning new web technologies and using them to build rich user experiences.
 
 Over the years I have developed skills in:

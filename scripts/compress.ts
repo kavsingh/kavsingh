@@ -1,15 +1,9 @@
-import fs from 'fs'
+import { createReadStream, createWriteStream } from 'fs'
+import { writeFile } from 'fs/promises'
 import path from 'path'
 import zlib from 'zlib'
-import { promisify } from 'util'
-import { createReadStream, createWriteStream } from 'fs'
 
-import { __, filter, includes, map, pipe } from 'lodash/fp'
-import recursiveReadDir from 'recursive-readdir'
-
-const writeFile = promisify(fs.writeFile)
-
-const readDir = promisify<string, string[]>(recursiveReadDir)
+import readDir from 'recursive-readdir'
 
 const dist = path.resolve(__dirname, '../out')
 // Provided by NearlyFreeSpeech:
@@ -22,10 +16,8 @@ RewriteCond %{REQUEST_FILENAME}.gz -f
 RewriteRule ^(.*)$ $1.gz [L]
 `
 
-const shouldCompress = pipe(
-  path.extname.bind(path),
-  includes(__, ['.js', '.css', '.html', '.png', '.json']),
-)
+const shouldCompress = (filename: string) =>
+  ['.js', '.css', '.html', '.png', '.json'].includes(path.extname(filename))
 
 const compressAsset = (assetPath: string) => {
   const input = createReadStream(assetPath)
@@ -43,8 +35,8 @@ const compressAsset = (assetPath: string) => {
 const writeHtAccess = (destPath: string) => writeFile(destPath, dotHtAccess)
 
 readDir(dist)
-  .then(filter(shouldCompress))
-  .then(pipe(map(compressAsset), Promise.all.bind(Promise)))
+  .then((files) => files.filter(shouldCompress))
+  .then((files) => Promise.all(files.map(compressAsset)))
   .then((compressed) => console.log(`${compressed.length} files compressed`))
   .then(() => writeHtAccess(`${dist}/.htaccess`))
   .catch(console.error)

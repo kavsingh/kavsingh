@@ -1,31 +1,22 @@
-import React, { Children } from 'react'
-import styled from '@emotion/styled'
-import type { FunctionComponent, ReactNode } from 'react'
+import { Children, Fragment } from 'react'
 
-import type { ThemeProps } from '~/style/theme'
+import { spacerStyle } from './content-list.css'
 
-const ContentList: FunctionComponent = ({ children }) => {
-  const childCount = Children.count(children)
+import type { FC } from 'react'
 
-  return (
-    <>
-      {Children.toArray(children).reduce(
-        (acc: ReactNode[], child, index) =>
-          acc.concat(
-            index !== childCount - 1 ? [child, <Spacer key={index} />] : child,
-          ),
-        [],
-      )}
-    </>
-  )
-}
-
-const Spacer = styled.div<ThemeProps>`
-  height: ${({ theme }) => theme.screen.layout.spacingVertical};
-
-  @media print {
-    height: ${({ theme }) => theme.print.layout.spacingVertical};
-  }
-`
+const ContentList: FC = ({ children }) => (
+  <>
+    {Children.toArray(children).map((child, i) =>
+      i > 0 ? (
+        <Fragment key={`fragment-${i}`}>
+          <div className={spacerStyle} />
+          {child}
+        </Fragment>
+      ) : (
+        child
+      ),
+    )}
+  </>
+)
 
 export default ContentList

@@ -9,7 +9,7 @@
     "url": "git@github.com:kavsingh/kavsingh.git"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
   "main": "server.js",
   "scripts": {
@@ -19,56 +19,44 @@
     "build": "next build && next export",
     "compress": "./ts scripts/compress",
     "sync": "./ts scripts/sync",
-    "deploy": "npm-run-all build compress sync",
-    "lint:ts": "tsc && eslint .",
-    "lint:style": "stylelint src/**/*.tsx",
-    "lint": "yarn lint:ts && yarn lint:style",
-    "servestatic": "cd out && ws --spa"
+    "deploy": "build compress sync",
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "servestatic": "serve out"
   },
   "license": "ISC",
   "dependencies": {
-    "@emotion/core": "11.0.0",
-    "@emotion/styled": "11.6.0",
-    "emotion-theming": "11.0.0",
-    "markdown-in-js": "1.1.4",
+    "@vanilla-extract/css": "1.6.8",
+    "classnames": "2.3.1",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "4.3.1",
-    "rgb-hex": "4.0.0"
+    "react-markdown": "7.1.2"
   },
   "devDependencies": {
-    "@babel/node": "7.16.7",
-    "@types/lodash": "4.14.178",
-    "@types/next": "9.0.0",
+    "@next/eslint-plugin-next": "12.0.7",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@types/recursive-readdir": "2.2.0",
-    "@types/styled-jsx": "2.2.9",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
-    "babel-eslint": "10.1.0",
-    "babel-plugin-emotion": "11.0.0",
-    "babel-plugin-module-resolver": "4.1.0",
+    "@vanilla-extract/babel-plugin": "1.1.4",
+    "@vanilla-extract/next-plugin": "2.0.1",
     "dotenv": "10.0.0",
     "eslint": "8.6.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-import-resolver-babel-module": "5.3.1",
-    "eslint-plugin-emotion": "11.0.0",
+    "eslint-import-resolver-custom-alias": "1.3.0",
+    "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-filenames": "1.3.2",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "local-web-server": "5.1.1",
-    "lodash": "4.17.21",
-    "next-offline": "5.0.5",
-    "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
     "recursive-readdir": "2.2.2",
     "rsyncwrapper": "3.0.1",
+    "serve": "13.0.2",
     "ts-node": "10.4.0",
-    "typescript": "4.5.4",
-    "typescript-styled-plugin": "0.18.2"
+    "typescript": "4.5.4"
   }
 }

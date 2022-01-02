@@ -1,18 +1,14 @@
 /* eslint-disable class-methods-use-this */
 
-import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+import { defaultTheme } from '~/style/theme'
 
 export default class HTMLDocument extends Document {
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
-          <meta
-            key="viewport"
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
-          />
           <link
             key="font-nunito"
             href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
@@ -20,11 +16,11 @@ export default class HTMLDocument extends Document {
           ></link>
           <link key="manifest" rel="manifest" href="static/manifest.json" />
         </Head>
-        <body>
+        <body className={defaultTheme}>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

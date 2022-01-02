@@ -1,28 +1,27 @@
-import React from 'react'
 import Head from 'next/head'
-import { AppType } from 'next/dist/next-server/lib/utils'
-import { ThemeProvider } from 'emotion-theming'
 
-import { usePreferredColorScheme } from '~/lib/color-scheme'
-import GlobalStyles from '~/style/global-styles'
-import { getThemeForColorScheme, extractThemeColor } from '~/style/theme'
+import about from '~/content/about'
+import { ThemeProvider } from '~/style/theme-context'
+import '~/style/global-style.css'
 
-const App: AppType = ({ Component, pageProps }) => {
-  const preferredColorScheme = usePreferredColorScheme()
-  const theme = getThemeForColorScheme(preferredColorScheme)
-  const themeColor = extractThemeColor(theme)
+import type { VoidFunctionComponent } from 'react'
+import type { AppProps } from 'next/app'
 
-  return (
-    <>
-      <Head>
-        <meta key="theme-color" name="theme-color" content={themeColor} />
-      </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  )
-}
+const App: VoidFunctionComponent<AppProps> = ({ Component, pageProps }) => (
+  <>
+    <Head>
+      <title key="title">CV - {about.name}</title>
+      <meta key="description" name="description" content={about.profile} />
+      <meta
+        key="viewport"
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
+      />
+    </Head>
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  </>
+)
 
 export default App

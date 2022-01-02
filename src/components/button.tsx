@@ -1,20 +1,15 @@
-import styled from '@emotion/styled'
+import classNames from 'classnames'
 
-const Button = styled.button`
-  margin: 0;
-  padding: 0;
-  border: none;
-  color: inherit;
-  font: inherit;
-  text-align: inherit;
-  background: transparent;
-  outline: none;
-  cursor: pointer;
+import { containerStyle } from './button.css'
 
-  &:focus,
-  &:active {
-    outline: none;
-  }
-`
+import type { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
+
+const Button: FC<
+  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+> = ({ children, className, ...props }) => (
+  <button className={classNames(containerStyle, className)} {...props}>
+    {children}
+  </button>
+)
 
 export default Button

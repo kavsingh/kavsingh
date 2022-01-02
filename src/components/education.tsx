@@ -1,13 +1,13 @@
-import React from 'react'
-
-import { EducationContent } from '~/content/education'
-import type { FCWithoutChildren } from '~/typings/component'
+import ReactMarkdown from 'react-markdown'
 
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
 
-const Education: FCWithoutChildren<EducationContent> = ({
+import type { VoidFunctionComponent } from 'react'
+import type { EducationContent } from '~/content/education'
+
+const Education: VoidFunctionComponent<EducationContent> = ({
   subject,
   institution,
   period,
@@ -23,7 +23,9 @@ const Education: FCWithoutChildren<EducationContent> = ({
     meta={`${status}, ${period}, ${location}`}
     print={print}
   >
-    <HTMLContent>{description}</HTMLContent>
+    <HTMLContent>
+      <ReactMarkdown>{description}</ReactMarkdown>
+    </HTMLContent>
   </Article>
 )
 

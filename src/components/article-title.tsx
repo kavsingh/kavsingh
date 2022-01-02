@@ -1,31 +1,17 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import { seperatorStyle, subtitleStyle, titleStyle } from './article-title.css'
 
-import type { FCWithoutChildren } from '~/typings/component'
+import type { VoidFunctionComponent } from 'react'
 
-const ArticleTitle: FCWithoutChildren<{
+const ArticleTitle: VoidFunctionComponent<{
   title: string
   subtitle: string
   seperator?: string
 }> = ({ title, subtitle, seperator = '@' }) => (
   <>
-    <Title>{title}</Title>
-    <Seperator>{seperator}</Seperator>
-    <Subtitle>{subtitle}</Subtitle>
+    <span className={titleStyle}>{title}</span>
+    <span className={seperatorStyle}>{seperator}</span>
+    <span className={subtitleStyle}>{subtitle}</span>
   </>
 )
-
-const Title = styled.span`
-  font-weight: 600;
-`
-
-const Seperator = styled.span`
-  margin: 0 0.4em;
-  font-weight: 400;
-`
-
-const Subtitle = styled.span`
-  font-weight: 400;
-`
 
 export default ArticleTitle
