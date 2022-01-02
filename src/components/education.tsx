@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown'
+
 import Article from './article'
 import ArticleTitle from './article-title'
 import HTMLContent from './html-content'
@@ -21,7 +23,9 @@ const Education: VoidFunctionComponent<EducationContent> = ({
     meta={`${status}, ${period}, ${location}`}
     print={print}
   >
-    <HTMLContent>{description}</HTMLContent>
+    <HTMLContent>
+      <ReactMarkdown>{description}</ReactMarkdown>
+    </HTMLContent>
   </Article>
 )
 

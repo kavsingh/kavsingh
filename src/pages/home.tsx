@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown'
+
 import about from '~/content/about'
 import experience from '~/content/experience'
 import education from '~/content/education'
@@ -18,7 +20,9 @@ const Home: VoidFunctionComponent = () => {
 
   const profileContent = (
     <Article title="">
-      <HTMLContent>{profile}</HTMLContent>
+      <HTMLContent>
+        <ReactMarkdown>{profile}</ReactMarkdown>
+      </HTMLContent>
     </Article>
   )
 
