@@ -1,7 +1,11 @@
 import classNames from 'classnames'
 
-import { containerStyle, metaStyle, noPrintStyle } from './article.css'
-import { titleStyle } from './article-title.css'
+import {
+  containerStyle,
+  titleStyle,
+  metaStyle,
+  noPrintStyle,
+} from './article.css'
 
 import type { ReactNode, FC } from 'react'
 
