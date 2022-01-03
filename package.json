@@ -19,7 +19,7 @@
     "build": "next build && next export",
     "compress": "./ts scripts/compress",
     "sync": "./ts scripts/sync",
-    "deploy": "build compress sync",
+    "deploy": "yarn build && yarn compress && yarn sync",
     "lint": "eslint .",
     "typecheck": "tsc",
     "servestatic": "serve out"
