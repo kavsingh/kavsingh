@@ -1,9 +1,7 @@
-/node_modules
-out/
-.next/
 .DS_Store
+node_modules/
+dist/
+*.log*
 *.log
-*.log.*
 .env
-./sw.js
 *.tsbuildinfo

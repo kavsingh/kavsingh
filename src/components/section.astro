@@ -1,0 +1,22 @@
+---
+import Panels from '../layouts/panels.astro';
+---
+<section>
+	<Panels>
+		<h2 slot="left"><slot name="title"/></h2>
+		<slot slot="right" name="content" />
+	</Panels>
+</section>
+
+<style>
+	section {
+		padding-inline: 0;
+	}
+
+	h2 {
+		margin: 0 0 1em;
+		color: var(--color-text-600);
+		font-weight: 600;
+		font-size: 1.1em;
+	}
+</style>

@@ -1,38 +1,41 @@
 {
-  "editor.rulers": [
-    80
-  ],
-  "editor.formatOnSave": true,
-  "eslint.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "files.watcherExclude": {
-    "**/node_modules": true,
-    "**/coverage/": true,
-    "**/dist/": true,
-    "**/distStatic/": true
-  },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/coverage/": true,
-    "**/dist/": true,
-    "**/distStatic/": true
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+	"editor.rulers": [
+		80
+	],
+	"editor.formatOnSave": true,
+	"eslint.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+	"files.watcherExclude": {
+		"**/node_modules": true,
+		"**/coverage/": true,
+		"**/dist/": true,
+		"**/distStatic/": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/coverage/": true,
+		"**/dist/": true,
+		"**/distStatic/": true
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

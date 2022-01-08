@@ -1,0 +1,24 @@
+---
+import MarkdownStyled from './markdown-styled.astro'
+import Article from './article.astro'
+import ArticleTitle from './article-title.astro'
+
+import type { EducationContent } from "../content/education";
+
+export type Props = EducationContent;
+
+const {
+	institution,
+	program,
+    status,
+	period,
+	location,
+	description,
+	print,
+} = Astro.props as Props;
+---
+<Article showPrint={print}>
+	<ArticleTitle title={program} subtitle={institution} slot="title" />
+	<span slot="meta">{status}, {period}, {location}</span>
+	<MarkdownStyled>{description}</MarkdownStyled>
+</Article>

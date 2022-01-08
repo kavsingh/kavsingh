@@ -1,0 +1,66 @@
+---
+import about from "../content/about";
+import experience from "../content/experience";
+import education from "../content/education";
+import Stack from "../layouts/stack.astro";
+import Page from "../layouts/page.astro";
+import MarkdownStyled from "../components/markdown-styled.astro";
+import Masthead from "../components/masthead.astro";
+import Section from "../components/section.astro";
+import Experience from "../components/experience.astro";
+import Education from "../components/education.astro";
+
+const { name, profile } = about;
+const title = `CV - ${name}`;
+const description = profile.trim().split(/\n/)[0] ?? '';
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
+	/>
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link
+		key="font-nunito"
+		href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+	<Page>
+		<Masthead />
+		<Stack gap={3}>
+			<Section>
+				<span class="hello" title="hello" slot="title">👋</span>
+				<MarkdownStyled slot="content">{profile}</MarkdownStyled>
+			</Section>
+			<Section>
+				<span slot="title">Work</span>
+				<Stack slot="content">
+					{experience
+						.filter(({ active }) => !!active)
+						.map((content) => (<Experience {...content} />))
+					}
+				</Stack>
+			</Section>
+			<Section>
+				<span slot="title">Study</span>
+				<Stack slot="content">
+					{education.map((content) => (<Education {...content} />))}
+				</Stack>
+			</Section>
+		</Stack>
+	</Page>
+</body>
+</html>
+
+<style>
+	.hello {
+		font-size: 3.4rem;
+	}
+</style>
