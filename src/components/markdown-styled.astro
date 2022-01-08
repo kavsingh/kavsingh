@@ -1,0 +1,42 @@
+---
+import { Markdown } from 'astro/components';
+---
+<Markdown><slot /></Markdown>
+
+<style>
+	ul, p {
+		margin: 0 0 0.6em;
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		display: flex;
+		margin: 0 0 0.3em;
+		list-style-type: none;
+	}
+
+	li::before {
+		display: block;
+		margin-right: 0.8em;
+		color: var(--color-text-300);
+		content: '\2022';
+	}
+
+	a {
+		color: currentColor;
+	}
+
+	@media print {
+		a {
+			text-decoration: none;
+		}
+
+		a::after {
+			margin-left: 0.4em;
+      		content: "[ "attr(href)" ]";
+		}
+	}
+</style>

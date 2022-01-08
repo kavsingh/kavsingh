@@ -1,62 +1,39 @@
 {
-  "name": "kavsingh",
-  "version": "1.1.0",
-  "description": "Personal site of Kav Singh",
-  "private": true,
-  "author": "Kav Singh <flakisms@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:kavsingh/kavsingh.git"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev",
-    "prebuild": "rm -rf ./.next && rm -rf ./out",
-    "build": "next build && next export",
-    "compress": "./ts scripts/compress",
-    "sync": "./ts scripts/sync",
-    "deploy": "yarn build && yarn compress && yarn sync",
-    "lint": "eslint .",
-    "typecheck": "tsc",
-    "servestatic": "serve out"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "@vanilla-extract/css": "1.6.8",
-    "classnames": "2.3.1",
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-markdown": "7.1.2"
-  },
-  "devDependencies": {
-    "@next/eslint-plugin-next": "12.0.7",
-    "@types/react": "17.0.38",
-    "@types/react-dom": "17.0.11",
-    "@types/recursive-readdir": "2.2.0",
-    "@typescript-eslint/eslint-plugin": "5.9.0",
-    "@typescript-eslint/parser": "5.9.0",
-    "@vanilla-extract/babel-plugin": "1.1.4",
-    "@vanilla-extract/next-plugin": "2.0.1",
-    "dotenv": "10.0.0",
-    "eslint": "8.6.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-import-resolver-custom-alias": "1.3.0",
-    "eslint-import-resolver-typescript": "2.5.0",
-    "eslint-plugin-filenames": "1.3.2",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.28.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "prettier": "2.5.1",
-    "recursive-readdir": "2.2.2",
-    "rsyncwrapper": "3.0.1",
-    "serve": "13.0.2",
-    "ts-node": "10.4.0",
-    "typescript": "4.5.4"
-  }
+	"name": "kavsingh",
+	"version": "2.0.0",
+	"description": "Personal site of Kav Singh",
+	"private": true,
+	"author": "Kav Singh <flakisms@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:kavsingh/kavsingh.git"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "rm -rf ./dist && astro build",
+		"preview": "astro preview",
+		"compress": "./ts scripts/compress",
+		"sync": "./ts scripts/sync",
+		"deploy": "pnpm build && pnpm compress && pnpm sync",
+		"lint": "eslint .",
+		"typecheck": "tsc"
+	},
+	"devDependencies": {
+		"@types/node": "17.0.8",
+		"@types/recursive-readdir": "2.2.0",
+		"@typescript-eslint/eslint-plugin": "5.9.0",
+		"@typescript-eslint/parser": "5.9.0",
+		"astro": "0.22.9",
+		"dotenv": "10.0.0",
+		"eslint": "8.6.0",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-filenames": "1.3.2",
+		"eslint-plugin-prettier": "4.0.0",
+		"prettier": "2.5.1",
+		"recursive-readdir": "2.2.2",
+		"rsyncwrapper": "3.0.1",
+		"ts-node": "10.4.0",
+		"typescript": "4.5.4"
+	}
 }

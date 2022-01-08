@@ -1,42 +1,42 @@
-export interface EducationContent {
-  slug: string
-  institution: string
-  subject: string
-  period: string
-  status: 'graduated' | 'attended'
-  location: string
-  active: boolean
-  print: boolean
-  description: string
-}
-
 const education: EducationContent[] = [
-  {
-    slug: 'rmit-university',
-    institution: 'RMIT University',
-    subject: 'BA (Animation and Interactive Media)',
-    period: '2006 - 2008',
-    status: 'graduated',
-    location: 'Melbourne, Australia',
-    active: true,
-    print: true,
-    description: `
+	{
+		slug: "rmit-university",
+		institution: "RMIT University",
+		program: "BA (Animation and Interactive Media)",
+		period: "2006 - 2008",
+		status: "Graduated",
+		location: "Melbourne, Australia",
+		active: true,
+		print: true,
+		description: `
 Graduated with distinction. Final project was awarded Best Interactive for the graduating year.
     `,
-  },
-  {
-    slug: 'university-of-melbourne',
-    institution: 'University of Melbourne',
-    subject: 'BEng. (Software) / BComm.',
-    period: '2000 - 2002',
-    status: 'attended',
-    location: 'Melbourne, Australia',
-    active: true,
-    print: true,
-    description: `
+	},
+	{
+		slug: "university-of-melbourne",
+		institution: "University of Melbourne",
+		program: "BEng. (Software) / BComm.",
+		period: "2000 - 2002",
+		status: "Attended",
+		location: "Melbourne, Australia",
+		active: true,
+		print: true,
+		description: `
 Completed modules in functional programming, object oriented programming and basic marketing.
     `,
-  },
-]
+	},
+];
 
-export default education
+export default education;
+
+export interface EducationContent {
+	slug: string;
+	institution: string;
+	program: string;
+	period: string;
+	status: "Graduated" | "Attended";
+	location: string;
+	active: boolean;
+	print: boolean;
+	description: string;
+}

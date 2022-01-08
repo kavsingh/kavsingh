@@ -1,9 +1,9 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "isolatedModules": false,
-    // target node 16
-    "target": "es2021"
-  }
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"isolatedModules": false,
+		// target node 16
+		"target": "es2021"
+	}
 }

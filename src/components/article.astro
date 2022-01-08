@@ -1,0 +1,38 @@
+---
+export interface Props {
+	showPrint?: boolean;
+	slot?: string;
+}
+
+const { showPrint = true } = Astro.props as Props;
+---
+<article class={showPrint ? '' : 'no-print'}>
+	<h3><slot name="title"/></h3>
+	<h4><slot name="meta" /></h4>
+	<slot />
+</article>
+
+<style>
+	article {
+		page-break-inside: avoid;
+	}
+
+	h3 {
+		margin: 0 0 0.2em;
+		font-size: 1.1em;
+ 		color: var(--color-text-600);
+	}
+
+	h4 {
+		margin: 0 0 0.8em;
+		font-size: 0.88em;
+		color: var(--color-text-300);
+		font-weight: 400;
+	}
+
+	@media print {
+		.no-print {
+			display: none;
+		}
+	}
+</style>
