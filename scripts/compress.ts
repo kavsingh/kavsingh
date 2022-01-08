@@ -14,10 +14,6 @@ const dotHtAccess = `
 Header add Vary accept-encoding
 RewriteEngine on
 
-RewriteCond %{HTTP:Accept-Encoding} br
-RewriteCond %{REQUEST_FILENAME}.br -f
-RewriteRule ^(.*)$ $1.br [L]
-
 RewriteCond %{HTTP:Accept-Encoding} gzip
 RewriteCond %{REQUEST_FILENAME}.gz -f
 RewriteRule ^(.*)$ $1.gz [L]
