@@ -3,26 +3,24 @@ import aboutContent from '../content/about';
 import Panels from '../layouts/panels.astro';
 
 const { links, name, profession } = aboutContent;
-const printLinks = links.filter(({ print }) => print)
-const webLinks = links.filter(({ web }) => web)
 ---
 <header>
 	<Panels>
 		<h1 slot="left">{name}</h1>
 		<h2 slot="right">{profession}</h2>
 		<ul slot="right">
-			{webLinks.map(({ url, label }) => (
-				<li class="masthead_web-link">
-					<a href={url}>{label}</a>
-				</li>
-			))}
-			{printLinks.map(({ url, label }) => (
-				<li class="masthead_print-link">
-					<a href={url}>
-						<strong>{label}</strong> {url.replace(/(^\w+:|^)\/\//, '')}
-					</a>
-				</li>
-			))}
+			{links.map(({ url, label, print, web }) => {
+				const printUrl = url.replace(/(^\w+:|^)\/\//, '');
+				const className = [print && 'print', web && 'web']
+					.filter(Boolean)
+					.join(' ');
+
+				return (
+					<li class={className}>
+						<a href={url} data-print-url={printUrl}>{label}</a>
+					</li>
+				);
+			})}
 		</ul>
 	</Panels>
 </header>
@@ -56,22 +54,12 @@ const webLinks = links.filter(({ web }) => web)
 		list-style-type: none;
 	}
 
-	ul a {
-		color: currentColor;
-	}
-
-	.masthead_web-link {
+	ul li {
 		margin-right: 1.2em;
 	}
 
-	.masthead_print-link a {
-		text-decoration: none;
-	}
-
-	.masthead_print-link a strong {
-		display: inline-block;
-		margin-right: 0.2em;
-		font-weight: 500,
+	ul a {
+		color: currentColor;
 	}
 
 	@media screen and (min-width: 36rem) {
@@ -81,7 +69,7 @@ const webLinks = links.filter(({ web }) => web)
 	}
 
 	@media screen {
-		.masthead_print-link {
+		ul li:not(.web) {
 			display: none;
 		}
 	}
@@ -91,8 +79,20 @@ const webLinks = links.filter(({ web }) => web)
 			flex-direction: column;
 		}
 
-		.masthead_web-link {
+		ul li {
+			margin-right: 0;
+		}
+
+		ul li:not(.print) {
 			display: none;
+		}
+
+		ul a {
+			text-decoration: none;
+		}
+
+		ul a::after {
+			content: " - "attr(data-print-url);
 		}
 	}
 </style>
