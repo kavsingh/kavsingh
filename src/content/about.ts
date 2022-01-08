@@ -1,6 +1,6 @@
 const about: AboutContent = {
 	name: "Kanwaljeet Singh",
-	profession: "Software Developer",
+	profession: "Web Developer",
 	links: [
 		{
 			type: "email",
