@@ -27,6 +27,19 @@ const { gap = 2 } = Astro.props as Props;
 	}
 
 	.stack--3 {
-		gap: var(--spacing-3);
+		gap: var(--spacing-2);
+	}
+
+
+	@media screen and (min-width: 36rem) {
+		.stack--3 {
+			gap: var(--spacing-3);
+		}
+	}
+
+	@media print {
+		.stack--3 {
+			gap: var(--spacing-3);
+		}
 	}
 </style>

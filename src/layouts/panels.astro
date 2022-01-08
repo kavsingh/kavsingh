@@ -4,19 +4,15 @@
 </div>
 
 <style>
-	.panels {
-		display: flex;
-		flex-direction: column;
-	}
-
 	@media screen and (min-width: 36rem) {
 		.panels {
-			flex-direction: row;
+			display: flex;
+			gap: var(--spacing-1);
 		}
 
 		.panels_left {
 			flex: 0 0 24%;
-			max-width: 30rem;
+			max-width: 30ch;
 		}
 
 		.panels_right {
