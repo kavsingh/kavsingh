@@ -16,8 +16,7 @@
 		"compress": "./ts scripts/compress",
 		"sync": "./ts scripts/sync",
 		"deploy": "pnpm build && pnpm compress && pnpm sync",
-		"lint": "eslint .",
-		"typecheck": "tsc"
+		"codecheck": "tsc && eslint ."
 	},
 	"devDependencies": {
 		"@types/node": "17.0.21",
