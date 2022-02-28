@@ -1,44 +1,133 @@
 ---
-import about from "../content/about";
+import about from '../content/about';
 import experience from "../content/experience";
 import education from "../content/education";
-import Stack from "../layouts/stack.astro";
-import Page from "../layouts/page.astro";
-import MarkdownStyled from "../components/markdown-styled.astro";
-import Masthead from "../components/masthead.astro";
-import Section from "../components/section.astro";
-import Experience from "../components/experience.astro";
-import Education from "../components/education.astro";
+import MarkdownStyled from '../components/markdown-styled.astro'
+import ContactLinks from '../components/contact-links.astro'
+import Experience from '../components/experience.astro'
+import Education from '../components/education.astro'
 
-const { profile } = about;
+const { name, profession, profile } = about;
+const title = `CV - ${name}`;
+const description = profile.trim().split(/\n/)[0] ?? '';
 ---
-<Page>
-	<Masthead />
-	<Stack gap={3}>
-		<Section>
-			<span class="hello" title="hello" slot="title">👋</span>
-			<MarkdownStyled slot="content">{profile}</MarkdownStyled>
-		</Section>
-		<Section>
-			<span slot="title">Work</span>
-			<Stack slot="content">
-				{experience
-					.filter(({ active }) => !!active)
-					.map((content) => (<Experience {...content} />))
-				}
-			</Stack>
-		</Section>
-		<Section>
-			<span slot="title">Study</span>
-			<Stack slot="content">
-				{education.map((content) => (<Education {...content} />))}
-			</Stack>
-		</Section>
-	</Stack>
-</Page>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
+	/>
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+<main>
+	<header>
+		<h1>{name}</h1>
+		<div>
+			<h2>{profession}</h2>
+			<ContactLinks />
+		</div>
+	</header>
+	<section aria-labelledby="about-title">
+		<h2 id="about-title">👋</h2>
+		<div>
+			<MarkdownStyled>{profile}</MarkdownStyled>
+		</div>
+	</section>
+	<section aria-labelledby="work-title">
+		<h2 id="work-title">Work</h2>
+		<div>
+			{experience
+				.filter(({ active }) => !!active)
+				.map((content) => (<Experience {...content} />))
+			}
+		</div>
+	</section>
+	<section aria-labelledby="study-title">
+		<h2 id="study-title">Study</h2>
+		<div>
+			{education
+				.filter(({ active }) => !!active)
+				.map((content) => (<Education {...content} />))
+			}
+		</div>
+	</section>
+</main>
+</body>
+</html>
 
 <style>
-	.hello {
+	main {
+		max-width: 56rem;
+		margin: 0 auto;
+		padding-block: var(--spacing-1);
+		padding-inline: var(--spacing-1);
+		display: grid;
+		grid-template-columns: fit-content(30%) 1fr;
+		row-gap: var(--spacing-2);
+		column-gap: var(--spacing-2);
+	}
+
+	header, section, article {
+		display: contents;
+	}
+
+	header h1, header h2 {
+		margin: 0 0 0.6em;
+		padding: 0;
+	}
+
+	header h1 {
+		color: var(--color-text-600);
+		font-weight: 600;
+		font-size: 1.4em;
+	}
+
+	header h2 {
+		color: var(--color-text-300);
+		font-weight: 400;
+		font-size: 1.2em;
+	}
+
+	section {
+		padding: 0;
+	}
+
+	section > h2 {
+		margin: 0 0 1em;
+		color: var(--color-text-600);
+		font-weight: 600;
+		font-size: 1.1em;
+	}
+
+	section:not(:first-of-type) > div {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: var(--spacing-2);
+	}
+
+	#about-title {
 		font-size: 3.4rem;
+	}
+
+	@media screen and (min-width: 36rem) {
+		main {
+			padding-block: var(--spacing-2);
+			row-gap: var(--spacing-3);
+		}
+
+		header {
+			margin-bottom: var(--spacing-3);
+		}
+	}
+
+	@media print {
+		main {
+			max-width: none;
+		}
 	}
 </style>
