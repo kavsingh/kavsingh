@@ -104,14 +104,14 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 		font-size: 1.1em;
 	}
 
+	section:first-of-type > h2 {
+		font-size: 3.4rem;
+	}
+
 	section:not(:first-of-type) > div {
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: var(--spacing-2);
-	}
-
-	#about-title {
-		font-size: 3.4rem;
 	}
 
 	@media screen and (min-width: 36rem) {
