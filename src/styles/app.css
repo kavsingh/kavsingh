@@ -14,7 +14,7 @@
 
 @media screen and (prefers-color-scheme: dark) {
 	:root {
-		@apply bg-neutral-900 text-neutral-300;
+		@apply bg-black text-neutral-300;
 	}
 }
 
