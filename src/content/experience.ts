@@ -2,7 +2,7 @@ const experience: ExperienceContent[] = [
 	{
 		slug: "ni",
 		employer: "Native Instruments",
-		position: "Software Engineer",
+		position: "Senior Software Engineer",
 		period: "May 2020 - present",
 		location: "Berlin, Germany",
 		active: true,
