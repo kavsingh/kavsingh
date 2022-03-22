@@ -70,13 +70,8 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 		padding-block: var(--spacing-1);
 		padding-inline: var(--spacing-1);
 		display: grid;
-		grid-template-columns: fit-content(30%) 1fr;
+		grid-template-columns: 1fr;
 		row-gap: var(--spacing-2);
-		column-gap: var(--spacing-2);
-	}
-
-	header, section, article {
-		display: contents;
 	}
 
 	header h1, header h2 {
@@ -96,19 +91,16 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 		font-size: 1.2em;
 	}
 
-	section {
-		padding: 0;
-	}
-
 	section > h2 {
-		margin: 0 0 1em;
 		color: var(--color-text-600);
 		font-weight: 600;
 		font-size: 1.1em;
+		margin: 0 0 1em;
 	}
 
 	section:first-of-type > h2 {
 		font-size: 3.4rem;
+		margin: 0 0 0.4em;
 	}
 
 	section:not(:first-of-type) > div {
@@ -120,7 +112,13 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 	@media screen and (min-width: 36rem) {
 		main {
 			padding-block: var(--spacing-2);
+			grid-template-columns: fit-content(30%) 1fr;
 			row-gap: var(--spacing-3);
+			column-gap: var(--spacing-2);
+		}
+
+		header, section {
+			display: contents;
 		}
 
 		header {
