@@ -11,7 +11,7 @@
 @media screen and (prefers-color-scheme: dark) {
 	:root {
 		color: theme(colors.neutral.300);
-		background-color: theme(colors.neutral.900);
+		background-color: theme(colors.black);
 	}
 }
 
