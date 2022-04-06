@@ -1,7 +1,6 @@
-export default {
-	buildOptions: {
-		site: "https://kavsingh.com",
-		sitemap: true,
-	},
-	renderers: [],
-};
+import { defineConfig } from "astro/config";
+
+export default defineConfig({
+	site: "https://kavsingh.com",
+	sitemap: true,
+});

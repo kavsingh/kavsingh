@@ -63,7 +63,7 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 </body>
 </html>
 
-<style global>
+<style is:global>
 @import '../styles/global.css';
 </style>
 
@@ -108,9 +108,9 @@ const description = profile.trim().split(/\n/)[0] ?? '';
 	}
 
 	section:not(:first-of-type) > div {
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: var(--spacing-2);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-2);
 	}
 
 	@media screen and (min-width: 36rem) {

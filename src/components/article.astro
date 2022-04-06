@@ -13,10 +13,6 @@ const { showPrint = true } = Astro.props as Props;
 </article>
 
 <style>
-	article {
-		page-break-inside: avoid;
-	}
-
 	h3 {
 		margin: 0 0 0.2em;
 		font-size: 1.1em;
@@ -31,6 +27,10 @@ const { showPrint = true } = Astro.props as Props;
 	}
 
 	@media print {
+		article {
+			break-inside: avoid-page;
+		}
+
 		.no-print {
 			display: none;
 		}
