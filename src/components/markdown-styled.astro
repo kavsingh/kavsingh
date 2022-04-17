@@ -5,7 +5,7 @@ import { Markdown } from 'astro/components';
 
 <style>
 	ul, p {
-		margin: 0 0 0.6em;
+		margin-block: 0 0.6em;
 	}
 
 	ul {
@@ -14,12 +14,12 @@ import { Markdown } from 'astro/components';
 
 	li {
 		display: flex;
-		margin: 0 0 0.3em;
+		margin-block: 0 0.3em;
 	}
 
 	li::before {
 		display: block;
-		margin-right: 0.8em;
+		margin-inline-end: 0.8em;
 		color: var(--color-text-300);
 		content: '•';
 		font-weight: 600;
@@ -35,7 +35,7 @@ import { Markdown } from 'astro/components';
 		}
 
 		a::after {
-			margin-left: 0.4em;
+			margin-inline-start: 0.4em;
       		content: "[ "attr(href)" ]";
 		}
 	}
