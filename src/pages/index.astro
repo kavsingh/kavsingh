@@ -36,7 +36,9 @@ const description = profile.trim().split(/\n/)[0]?.trim() ?? '';
 		</div>
 	</header>
 	<section aria-labelledby="about-title">
-		<h2 id="about-title">👋</h2>
+		<h2 id="about-title">
+			<span role="img" aria-label="About">👋</span>
+		</h2>
 		<div>
 			<MarkdownStyled>{profile}</MarkdownStyled>
 		</div>
