@@ -9,7 +9,7 @@ import Education from '../components/education.astro'
 
 const { name, profession, profile } = about;
 const title = `CV - ${name}`;
-const description = profile.trim().split(/\n/)[0] ?? '';
+const description = profile.trim().split(/\n/)[0]?.trim() ?? '';
 ---
 <html lang="en">
 <head>
