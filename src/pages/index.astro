@@ -10,16 +10,16 @@ import Education from '../components/education.astro'
 const { name, profession, profile } = about;
 const title = `CV - ${name}`;
 const description = profile.trim().split(/\n/)[0]?.trim() ?? '';
+const csp = import.meta.env.DEV
+	? "default-src * 'unsafe-inline';"
+	: "default-src 'none'; style-src 'self'; img-src 'self';"
 ---
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta
-		http-equiv="Content-Security-Policy"
-		content="default-src 'none'; style-src 'self'; img-src 'self';"
-	/>
+	<meta http-equiv="Content-Security-Policy" content={csp} />
 	<meta
 		name="viewport"
 		content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
