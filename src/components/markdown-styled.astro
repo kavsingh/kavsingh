@@ -1,10 +1,14 @@
 ---
-import { Markdown } from 'astro/components';
+import { Markdown } from "astro/components";
 ---
-<Markdown><slot /></Markdown>
+
+<Markdown>
+	<slot />
+</Markdown>
 
 <style>
-	ul, p {
+	ul,
+	p {
 		margin-block: 0 0.6em;
 	}
 
@@ -21,7 +25,7 @@ import { Markdown } from 'astro/components';
 		display: block;
 		margin-inline-end: 0.8em;
 		color: var(--color-text-300);
-		content: '•';
+		content: "•";
 		font-weight: 600;
 	}
 
@@ -36,7 +40,7 @@ import { Markdown } from 'astro/components';
 
 		a::after {
 			margin-inline-start: 0.4em;
-      		content: "[ "attr(href)" ]";
+			content: "[ " attr(href) " ]";
 		}
 	}
 </style>

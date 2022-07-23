@@ -1,18 +1,21 @@
 ---
-import aboutContent from '../content/about';
+import aboutContent from "../content/about";
 
 const { links } = aboutContent;
 ---
+
 <ul>
 	{links.map(({ url, label, print, web }) => {
-		const printUrl = url.replace(/(^\w+:|^)\/\//, '');
-		const className = [print && 'print', web && 'web']
+		const printUrl = url.replace(/(^\w+:|^)\/\//, "");
+		const className = [print && "print", web && "web"]
 			.filter(Boolean)
-			.join(' ');
+			.join(" ");
 
 		return (
 			<li class={className}>
-				<a href={url} data-print-url={printUrl}>{label}</a>
+				<a href={url} data-print-url={printUrl}>
+					{label}
+				</a>
 			</li>
 		);
 	})}
@@ -58,7 +61,7 @@ const { links } = aboutContent;
 		}
 
 		a::after {
-			content: " - "attr(data-print-url);
+			content: " - " attr(data-print-url);
 		}
 	}
 </style>

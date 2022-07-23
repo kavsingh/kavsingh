@@ -6,8 +6,9 @@ export interface Props {
 
 const { showPrint = true } = Astro.props as Props;
 ---
-<article class={showPrint ? '' : 'no-print'}>
-	<h3><slot name="title"/></h3>
+
+<article class={showPrint ? "" : "no-print"}>
+	<h3><slot name="title" /></h3>
 	<h4><slot name="meta" /></h4>
 	<slot />
 </article>
@@ -16,7 +17,7 @@ const { showPrint = true } = Astro.props as Props;
 	h3 {
 		margin-block: 0 0.2em;
 		font-size: 1.1em;
- 		color: var(--color-text-600);
+		color: var(--color-text-600);
 	}
 
 	h4 {

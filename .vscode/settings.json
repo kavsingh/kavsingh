@@ -2,6 +2,13 @@
 	"editor.rulers": [80],
 	"editor.formatOnSave": true,
 	"eslint.enable": true,
+	"eslint.format.enable": true,
+	"prettier.documentSelectors": [
+		"**/*.astro",
+		"**/*.ts",
+		"**/*.js",
+		"**/*.json"
+	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
 	},
@@ -21,16 +28,10 @@
 	"[astro]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[javascript]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
-	},
-	"[javascriptreact]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
-	},
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
-	"[typescriptreact]": {
+	"[javascript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[json]": {

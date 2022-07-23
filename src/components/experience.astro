@@ -1,21 +1,16 @@
 ---
-import MarkdownStyled from './markdown-styled.astro'
-import Article from './article.astro'
-import ArticleTitle from './article-title.astro'
+import MarkdownStyled from "./markdown-styled.astro";
+import Article from "./article.astro";
+import ArticleTitle from "./article-title.astro";
 
 import type { ExperienceContent } from "../content/experience";
 
 export type Props = ExperienceContent;
 
-const {
-	position,
-	employer,
-	period,
-	location,
-	description,
-	print,
-} = Astro.props as Props;
+const { position, employer, period, location, description, print } =
+	Astro.props as Props;
 ---
+
 <Article showPrint={print}>
 	<ArticleTitle title={position} subtitle={employer} slot="title" />
 	<span slot="meta">{period}, {location}</span>

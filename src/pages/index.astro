@@ -1,72 +1,71 @@
 ---
-import about from '../content/about';
+import about from "../content/about";
 import experience from "../content/experience";
 import education from "../content/education";
-import MarkdownStyled from '../components/markdown-styled.astro'
-import ContactLinks from '../components/contact-links.astro'
-import Experience from '../components/experience.astro'
-import Education from '../components/education.astro'
+import MarkdownStyled from "../components/markdown-styled.astro";
+import ContactLinks from "../components/contact-links.astro";
+import Experience from "../components/experience.astro";
+import Education from "../components/education.astro";
 
 const { name, profession, profile } = about;
 const title = `CV - ${name}`;
-const description = profile.trim().split(/\n/)[0]?.trim() ?? '';
+const description = profile.trim().split(/\n/)[0]?.trim() ?? "";
 const csp = import.meta.env.DEV
 	? "default-src * 'unsafe-inline';"
-	: "default-src 'none'; style-src 'self'; img-src 'self';"
+	: "default-src 'none'; style-src 'self'; img-src 'self';";
 ---
+
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>{title}</title>
-	<meta name="description" content={description} />
-	<meta http-equiv="Content-Security-Policy" content={csp} />
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
-	/>
-	<link rel="icon" type="image/png" href="/favicon.png" />
-</head>
-<body>
-<main>
-	<header>
-		<h1>{name}</h1>
-		<div>
-			<h2>{profession}</h2>
-			<ContactLinks />
-		</div>
-	</header>
-	<section aria-labelledby="about-title">
-		<h2 id="about-title">
-			<span role="img" aria-label="About">👋</span>
-		</h2>
-		<div>
-			<MarkdownStyled>{profile}</MarkdownStyled>
-		</div>
-	</section>
-	<section aria-labelledby="work-title">
-		<h2 id="work-title">Work</h2>
-		<div>
-			{experience
-				.filter(({ active }) => !!active)
-				.map((content) => (<Experience {...content} />))
-			}
-		</div>
-	</section>
-	<section aria-labelledby="study-title">
-		<h2 id="study-title">Study</h2>
-		<div>
-			{education
-				.filter(({ active }) => !!active)
-				.map((content) => (<Education {...content} />))
-			}
-		</div>
-	</section>
-</main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta http-equiv="Content-Security-Policy" content={csp} />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=5, minimal-ui"
+		/>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>{name}</h1>
+				<div>
+					<h2>{profession}</h2>
+					<ContactLinks />
+				</div>
+			</header>
+			<section aria-labelledby="about-title">
+				<h2 id="about-title">
+					<span role="img" aria-label="About">👋</span>
+				</h2>
+				<div>
+					<MarkdownStyled>{profile}</MarkdownStyled>
+				</div>
+			</section>
+			<section aria-labelledby="work-title">
+				<h2 id="work-title">Work</h2>
+				<div>
+					{experience
+						.filter(({ active }) => !!active)
+						.map((content) => <Experience {...content} />)}
+				</div>
+			</section>
+			<section aria-labelledby="study-title">
+				<h2 id="study-title">Study</h2>
+				<div>
+					{education
+						.filter(({ active }) => !!active)
+						.map((content) => <Education {...content} />)}
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
 
 <style is:global>
-@import '../styles/global.css';
+	@import "../styles/global.css";
 </style>
 
 <style>
@@ -80,7 +79,8 @@ const csp = import.meta.env.DEV
 		row-gap: var(--spacing-2);
 	}
 
-	header h1, header h2 {
+	header h1,
+	header h2 {
 		margin-block: 0 0.6em;
 		padding: 0;
 	}
@@ -123,7 +123,8 @@ const csp = import.meta.env.DEV
 			column-gap: var(--spacing-2);
 		}
 
-		header, section {
+		header,
+		section {
 			display: contents;
 		}
 
