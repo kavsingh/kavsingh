@@ -47,17 +47,21 @@ const csp = import.meta.env.DEV
 			<section aria-labelledby="work-title">
 				<h2 id="work-title">Work</h2>
 				<div>
-					{experience
-						.filter(({ active }) => !!active)
-						.map((content) => <Experience {...content} />)}
+					{
+						experience
+							.filter(({ active }) => !!active)
+							.map((content) => <Experience {...content} />)
+					}
 				</div>
 			</section>
 			<section aria-labelledby="study-title">
 				<h2 id="study-title">Study</h2>
 				<div>
-					{education
-						.filter(({ active }) => !!active)
-						.map((content) => <Education {...content} />)}
+					{
+						education
+							.filter(({ active }) => !!active)
+							.map((content) => <Education {...content} />)
+					}
 				</div>
 			</section>
 		</main>
