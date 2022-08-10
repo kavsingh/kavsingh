@@ -10,7 +10,6 @@ const { links } = aboutContent;
 		const className = [print && "print", web && "web"]
 			.filter(Boolean)
 			.join(" ");
-
 		return (
 			<li class={className}>
 				<a href={url} data-print-url={printUrl}>

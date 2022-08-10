@@ -3,6 +3,7 @@
 	"editor.formatOnSave": true,
 	"eslint.enable": true,
 	"eslint.format.enable": true,
+	"eslint.validate": ["astro"],
 	"prettier.documentSelectors": [
 		"**/*.astro",
 		"**/*.ts",
@@ -26,7 +27,7 @@
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"[astro]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
