@@ -22,8 +22,7 @@
 
 @media print {
 	:root {
-		--font-base: 10px/1.2 system-ui, -apple-system, BlinkMacSystemFont,
-			sans-serif;
+		--font-base: 11px/1.3 Avenir, Calibri, system-ui, sans-serif;
 
 		--color-text-300: #666;
 		--color-text-400: #111;
