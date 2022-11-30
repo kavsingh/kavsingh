@@ -1,3 +1,3 @@
-![CI status](https://github.com/ourhomeapp/app/workflows/CI/badge.svg)
+[![Code check](https://github.com/kavsingh/kavsingh/actions/workflows/code-check.yaml/badge.svg)](https://github.com/kavsingh/kavsingh/actions/workflows/code-check.yaml)
 
-website via [astro](https://astro.build/)
+personal page via [astro](https://astro.build/)
