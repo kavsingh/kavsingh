@@ -1,32 +1,10 @@
-const noUnusedVarsConfig = [
-	"error",
-	{ argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-];
-
 module.exports = {
 	root: true,
-	extends: ["eslint:recommended", "plugin:prettier/recommended"],
 	plugins: ["filenames"],
-	ignorePatterns: ["*.cjs"],
-	parserOptions: {
-		sourceType: "module",
-		ecmaVersion: 2020,
-		extraFileExtensions: [".mjs"],
-	},
-	env: {
-		browser: true,
-		es2017: true,
-		node: true,
-	},
+	env: { browser: true, es2022: true, node: true },
 	rules: {
-		"camelcase": "off",
-		"curly": ["warn", "multi-line", "consistent"],
-		"no-shadow": "error",
-		"no-throw-literal": "error",
-		"no-unused-vars": noUnusedVarsConfig,
 		"filenames/match-regex": ["error", "^[a-z0-9-.]+$", true],
 		"filenames/match-exported": ["error", "kebab"],
-		"prettier/prettier": "warn",
 	},
 	overrides: [
 		{
@@ -40,18 +18,16 @@ module.exports = {
 			extends: ["plugin:astro/recommended"],
 		},
 		{
-			files: ["*.ts"],
+			files: ["*.?(c)[jt]s?(x)"],
 			parser: "@typescript-eslint/parser",
-			parserOptions: {
-				extraFileExtensions: [".mjs"],
-				project: "./tsconfig.json",
-			},
+			parserOptions: { project: "./tsconfig.json" },
 			extends: [
 				"eslint:recommended",
-				"plugin:@typescript-eslint/recommended",
-				"plugin:@typescript-eslint/recommended-requiring-type-checking",
+				"plugin:@typescript-eslint/strict-type-checked",
+				"plugin:@typescript-eslint/stylistic-type-checked",
 				"plugin:prettier/recommended",
 			],
+			plugins: ["deprecation"],
 			rules: {
 				"no-shadow": "off",
 				"no-throw-literal": "off",
@@ -69,7 +45,24 @@ module.exports = {
 					},
 				],
 				"@typescript-eslint/no-throw-literal": "error",
-				"@typescript-eslint/no-unused-vars": noUnusedVarsConfig,
+				"@typescript-eslint/no-unused-vars": [
+					"error",
+					{ argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+				],
+				"deprecation/deprecation": "warn",
+				"prettier/prettier": "warn",
+			},
+		},
+		{
+			files: ["*.c[jt]s?(x)"],
+			parserOptions: { sourceType: "script" },
+			rules: { "@typescript-eslint/no-var-requires": "off" },
+		},
+		{
+			files: ["*.?(c)js?(x)"],
+			extends: ["plugin:@typescript-eslint/disable-type-checked"],
+			rules: {
+				"deprecation/deprecation": "off",
 			},
 		},
 	],

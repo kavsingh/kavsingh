@@ -1,12 +1,29 @@
 {
-	"extends": "@tsconfig/node18-strictest/tsconfig.json",
+	"extends": "@tsconfig/node20/tsconfig.json",
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"noEmit": true,
-		"sourceMap": true
+		"sourceMap": true,
+
+		// latest atro release does not support extends array
+		// manually add strictect config here
+		// TODO: replace with "@tsconfig/strictest/tsconfig.json" in extends
+		// array when supported
+		"strict": true,
+		"allowUnusedLabels": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
 	},
 	"exclude": ["**/node_modules"],
-	"include": ["./src", "./scripts", "./*.ts"]
+	"include": ["./src", "./scripts", "./*.ts", "./*.js", "./*.*.cjs"]
 }
