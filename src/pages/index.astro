@@ -30,7 +30,7 @@ const csp = import.meta.env.DEV
 		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body>
-		<main>
+		<main class="max-w-[56rem] mx-auto grid print:max-w-none">
 			<header>
 				<h1>Kanwaljeet Singh</h1>
 				<div>
@@ -72,11 +72,8 @@ const csp = import.meta.env.DEV
 
 <style>
 	main {
-		max-inline-size: 56rem;
-		margin-inline: auto;
 		padding-block: var(--spacing-1);
 		padding-inline: var(--spacing-1);
-		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: var(--spacing-2);
 	}
@@ -136,10 +133,6 @@ const csp = import.meta.env.DEV
 	}
 
 	@media print {
-		main {
-			max-inline-size: none;
-		}
-
 		article {
 			break-inside: avoid;
 		}
