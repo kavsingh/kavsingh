@@ -7,10 +7,4 @@ export interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-{title}{" "}<span class="subtitle">@ {subtitle}</span>
-
-<style>
-	.subtitle {
-		font-weight: 400;
-	}
-</style>
+{title}{" "}<span class="font-normal">@ {subtitle}</span>

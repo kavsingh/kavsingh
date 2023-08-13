@@ -20,13 +20,20 @@
 	.content :global(li::before) {
 		display: block;
 		margin-inline-end: 0.8em;
-		color: var(--color-text-300);
+		color: theme(colors.neutral.500);
 		content: "•";
 		font-weight: 600;
 	}
 
 	.content :global(a) {
 		color: currentColor;
+		text-decoration: underline !important;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		li::before {
+			color: theme(colors.neutral.400);
+		}
 	}
 
 	@media print {
