@@ -1,5 +1,5 @@
 {
-	"extends": "@tsconfig/node20/tsconfig.json",
+	"extends": "astro/tsconfigs/base",
 	"compilerOptions": {
 		"module": "esnext",
 		"moduleResolution": "bundler",
@@ -7,8 +7,7 @@
 		"jsx": "preserve",
 		"noEmit": true,
 		"sourceMap": true,
-
-		// latest atro release does not support extends array
+		// latest astro release does not support extends array
 		// manually add strictect config here
 		// TODO: replace with "@tsconfig/strictest/tsconfig.json" in extends
 		// array when supported

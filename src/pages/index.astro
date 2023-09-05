@@ -1,15 +1,14 @@
 ---
-import about from "../cv/about";
-import experience from "../cv/experience";
-import education from "../cv/education";
-import MarkdownStyled from "../components/markdown-styled.astro";
+import { getCollection } from "astro:content";
+
 import ContactLinks from "../components/contact-links.astro";
 import Experience from "../components/experience.astro";
 import Education from "../components/education.astro";
+import Content from "../components/content.astro";
+import { sortIds } from "../utils/sort";
 
-const { name, profession, profile } = about;
-const title = `CV - ${name}`;
-const description = profile.trim().split(/\n/)[0]?.trim() ?? "";
+const experienceCollection = (await getCollection("experience")).sort(sortIds);
+const educationCollection = (await getCollection("education")).sort(sortIds);
 const csp = import.meta.env.DEV
 	? "default-src * 'unsafe-inline';"
 	: "default-src 'none'; style-src 'self'; img-src 'self';";
@@ -18,8 +17,11 @@ const csp = import.meta.env.DEV
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
+		<title>CV - Kanwaljeet Singh</title>
+		<meta
+			name="description"
+			content="Developer building for web and mobile in Berlin"
+		/>
 		<meta http-equiv="Content-Security-Policy" content={csp} />
 		<meta
 			name="viewport"
@@ -30,9 +32,9 @@ const csp = import.meta.env.DEV
 	<body>
 		<main>
 			<header>
-				<h1>{name}</h1>
+				<h1>Kanwaljeet Singh</h1>
 				<div>
-					<h2>{profession}</h2>
+					<h2>Web Developer</h2>
 					<ContactLinks />
 				</div>
 			</header>
@@ -40,28 +42,24 @@ const csp = import.meta.env.DEV
 				<h2 id="about-title">
 					<span role="img" aria-label="About">👋</span>
 				</h2>
-				<div>
-					<MarkdownStyled>{profile}</MarkdownStyled>
-				</div>
+				<Content>
+					<p>
+						Developer building for web and mobile in Berlin. I'm enthusiastic
+						about learning new web technologies and using them to build rich
+						user experiences.
+					</p>
+				</Content>
 			</section>
 			<section aria-labelledby="work-title">
 				<h2 id="work-title">Work</h2>
 				<div>
-					{
-						experience
-							.filter(({ active }) => !!active)
-							.map((content) => <Experience {...content} />)
-					}
+					{experienceCollection.map((entry) => <Experience entry={entry} />)}
 				</div>
 			</section>
 			<section aria-labelledby="study-title">
 				<h2 id="study-title">Study</h2>
 				<div>
-					{
-						education
-							.filter(({ active }) => !!active)
-							.map((content) => <Education {...content} />)
-					}
+					{educationCollection.map((entry) => <Education entry={entry} />)}
 				</div>
 			</section>
 		</main>

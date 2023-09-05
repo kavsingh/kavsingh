@@ -28,13 +28,16 @@
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"[astro]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"

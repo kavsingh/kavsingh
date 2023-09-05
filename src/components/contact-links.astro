@@ -1,7 +1,34 @@
 ---
-import aboutContent from "../cv/about";
-
-const { links } = aboutContent;
+const links = [
+	{
+		type: "email",
+		label: "Email",
+		url: "mailto://flakisms@gmail.com",
+		web: true,
+		print: true,
+	},
+	{
+		type: "github",
+		label: "Github",
+		url: "https://github.com/kavsingh",
+		web: true,
+		print: true,
+	},
+	{
+		type: "linkedin",
+		label: "LinkedIn",
+		url: "https://linkedin.com/in/kav-singh",
+		web: true,
+		print: true,
+	},
+	{
+		type: "website",
+		label: "Website",
+		url: "//kavsingh.com",
+		web: false,
+		print: true,
+	},
+] as const;
 ---
 
 <ul>

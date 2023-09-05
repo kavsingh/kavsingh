@@ -1,16 +1,18 @@
 ---
+import Content from "./content.astro";
+
 export interface Props {
-	showPrint?: boolean;
-	slot?: string;
+	web: boolean;
+	print: boolean;
 }
 
-const { showPrint = true } = Astro.props as Props;
+const { web, print } = Astro.props as Props;
 ---
 
-<article class={showPrint ? "" : "no-print"}>
+<article data-hide-web={!web} data-hide-print={!print}>
 	<h3><slot name="title" /></h3>
 	<h4><slot name="meta" /></h4>
-	<slot />
+	<Content><slot /></Content>
 </article>
 
 <style>
@@ -27,8 +29,14 @@ const { showPrint = true } = Astro.props as Props;
 		font-weight: 400;
 	}
 
+	@media screen {
+		[data-hide-web] {
+			display: none;
+		}
+	}
+
 	@media print {
-		.no-print {
+		[data-hide-print] {
 			display: none;
 		}
 	}

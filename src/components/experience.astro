@@ -1,18 +1,18 @@
 ---
-import MarkdownStyled from "./markdown-styled.astro";
 import Article from "./article.astro";
 import ArticleTitle from "./article-title.astro";
 
-import type { ExperienceContent } from "../cv/experience";
+import type { CollectionEntry } from "astro:content";
 
-export type Props = ExperienceContent;
+export type Props = { entry: CollectionEntry<"experience"> };
 
-const { position, employer, period, location, description, print } =
-	Astro.props as Props;
+const { entry } = Astro.props;
+const { position, employer, period, location, web, print } = entry.data;
+const { Content } = await entry.render();
 ---
 
-<Article showPrint={print}>
+<Article web={web} print={print}>
 	<ArticleTitle title={position} subtitle={employer} slot="title" />
 	<span slot="meta">{period}, {location}</span>
-	<MarkdownStyled>{description}</MarkdownStyled>
+	<Content />
 </Article>

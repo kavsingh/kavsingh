@@ -1,27 +1,23 @@
----
-import Markdown from "@astrojs/markdown-component";
----
-
-<Markdown>
+<div class="content">
 	<slot />
-</Markdown>
+</div>
 
 <style>
-	ul,
-	p {
+	.content :global(ul),
+	.content :global(p) {
 		margin-block: 0 0.6em;
 	}
 
-	ul {
+	.content :global(ul) {
 		padding: 0;
 	}
 
-	li {
+	.content :global(li) {
 		display: flex;
 		margin-block: 0 0.3em;
 	}
 
-	li::before {
+	.content :global(li::before) {
 		display: block;
 		margin-inline-end: 0.8em;
 		color: var(--color-text-300);
@@ -29,16 +25,16 @@ import Markdown from "@astrojs/markdown-component";
 		font-weight: 600;
 	}
 
-	a {
+	.content :global(a) {
 		color: currentColor;
 	}
 
 	@media print {
-		a {
+		.content :global(a) {
 			text-decoration: none;
 		}
 
-		a::after {
+		.content :global(a::after) {
 			margin-inline-start: 0.4em;
 			content: "[ " attr(href) " ]";
 		}
