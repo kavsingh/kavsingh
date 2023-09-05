@@ -11,7 +11,7 @@ const experienceCollection = (await getCollection("experience")).sort(sortIds);
 const educationCollection = (await getCollection("education")).sort(sortIds);
 const csp = import.meta.env.DEV
 	? "default-src * 'unsafe-inline';"
-	: "default-src 'none'; style-src 'self'; img-src 'self';";
+	: "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self';";
 ---
 
 <html lang="en">
