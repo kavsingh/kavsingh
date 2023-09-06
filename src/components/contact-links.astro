@@ -31,14 +31,23 @@ const links = [
 ] as const;
 ---
 
-<ul>
+<ul class="flex list-none print:flex-col">
 	{
 		links.map(({ url, label, print, web }) => {
 			const printUrl = url.replace(/(^\w+:|^)\/\//, "");
 
 			return (
-				<li data-hide-web={!web} data-hide-print={!print}>
-					<a href={url} data-print-url={printUrl}>
+				<li
+					class:list={[
+						"me-4 print:me-0",
+						{ "screen:hidden": !web, "print:hidden": !print },
+					]}
+				>
+					<a
+						class="underline print:no-underline print:after:content-[attr(data-print-url)] print:after:ms-4"
+						href={url}
+						data-print-url={printUrl}
+					>
 						{label}
 					</a>
 				</li>
@@ -46,48 +55,3 @@ const links = [
 		})
 	}
 </ul>
-
-<style>
-	ul {
-		display: flex;
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-	}
-
-	li {
-		margin-inline-end: 1.2em;
-	}
-
-	a {
-		color: currentColor;
-	}
-
-	@media screen {
-		li[data-hide-web] {
-			display: none;
-		}
-	}
-
-	@media print {
-		ul {
-			flex-direction: column;
-		}
-
-		li {
-			margin-inline-end: 0;
-		}
-
-		li[data-hide-print] {
-			display: none;
-		}
-
-		a {
-			text-decoration: none;
-		}
-
-		a::after {
-			content: " - " attr(data-print-url);
-		}
-	}
-</style>

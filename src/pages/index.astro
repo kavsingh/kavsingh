@@ -5,6 +5,7 @@ import ContactLinks from "../components/contact-links.astro";
 import Experience from "../components/experience.astro";
 import Education from "../components/education.astro";
 import Content from "../components/content.astro";
+import CollectionSection from "../components/collection-section.astro";
 import { sortIds } from "../utils/sort";
 
 const experienceCollection = (await getCollection("experience")).sort(sortIds);
@@ -30,17 +31,26 @@ const csp = import.meta.env.DEV
 		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body>
-		<main>
-			<header>
-				<h1>Kanwaljeet Singh</h1>
+		<main
+			class="max-w-[56rem] mx-auto grid grid-cols-[1fr] gap-16 p-8 print:max-w-none print:p-4 sm:py-16 sm:gap-y-32 sm:grid-cols-[fit-content(30%)_1fr]"
+		>
+			<header class="sm:contents sm:mb-32">
+				<h1 class="my-2 p-0 font-semibold text-2xl text-black dark:text-white">
+					Kanwaljeet Singh
+				</h1>
 				<div>
-					<h2>Web Developer</h2>
+					<h2
+						class="my-2 p-0 font-normal text-lg text-neutral-500 dark:text-neutral-400"
+					>
+						Web Developer
+					</h2>
 					<ContactLinks />
 				</div>
 			</header>
-			<section aria-labelledby="about-title">
-				<h2 id="about-title">
-					<span role="img" aria-label="About">👋</span>
+			<section class="sm:contents" aria-labelledby="about-title">
+				<h2 class="text-5xl mb-4" id="about-title">
+					<span role="img" aria-hidden>👋</span>
+					<div class="sr-only">About</div>
 				</h2>
 				<Content>
 					<p>
@@ -50,98 +60,34 @@ const csp = import.meta.env.DEV
 					</p>
 				</Content>
 			</section>
-			<section aria-labelledby="work-title">
-				<h2 id="work-title">Work</h2>
-				<div>
-					{experienceCollection.map((entry) => <Experience entry={entry} />)}
-				</div>
-			</section>
-			<section aria-labelledby="study-title">
-				<h2 id="study-title">Study</h2>
-				<div>
-					{educationCollection.map((entry) => <Education entry={entry} />)}
-				</div>
-			</section>
+			<CollectionSection aria-labelledby="work-title">
+				<span id="work-title" slot="title">Work</span>
+				<ul>
+					{
+						experienceCollection.map((entry) => (
+							<li class="mb-8 sm:mb-16">
+								<Experience entry={entry} />
+							</li>
+						))
+					}
+				</ul>
+			</CollectionSection>
+			<CollectionSection aria-labelledby="study-title">
+				<span id="study-title" slot="title">Study</span>
+				<ul>
+					{
+						educationCollection.map((entry) => (
+							<li class="mb-8 sm:mb-16">
+								<Education entry={entry} />
+							</li>
+						))
+					}
+				</ul>
+			</CollectionSection>
 		</main>
 	</body>
 </html>
 
 <style is:global>
 	@import "../styles/global.css";
-</style>
-
-<style>
-	main {
-		max-inline-size: 56rem;
-		margin-inline: auto;
-		padding-block: var(--spacing-1);
-		padding-inline: var(--spacing-1);
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: var(--spacing-2);
-	}
-
-	header h1,
-	header h2 {
-		margin-block: 0 0.6em;
-		padding: 0;
-	}
-
-	header h1 {
-		color: var(--color-text-600);
-		font-weight: 600;
-		font-size: 1.4em;
-	}
-
-	header h2 {
-		color: var(--color-text-300);
-		font-weight: 400;
-		font-size: 1.2em;
-	}
-
-	section > h2 {
-		color: var(--color-text-600);
-		font-weight: 600;
-		font-size: 1.1em;
-		margin-block: 0 1em;
-	}
-
-	section:first-of-type > h2 {
-		font-size: 3.4rem;
-		margin-block: 0 0.4em;
-	}
-
-	section:not(:first-of-type) > div {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-2);
-	}
-
-	@media screen and (min-width: 36rem) {
-		main {
-			padding-block: var(--spacing-2);
-			grid-template-columns: fit-content(30%) 1fr;
-			row-gap: var(--spacing-3);
-			column-gap: var(--spacing-2);
-		}
-
-		header,
-		section {
-			display: contents;
-		}
-
-		header {
-			margin-block-end: var(--spacing-3);
-		}
-	}
-
-	@media print {
-		main {
-			max-inline-size: none;
-		}
-
-		article {
-			break-inside: avoid;
-		}
-	}
 </style>

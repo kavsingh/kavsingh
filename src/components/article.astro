@@ -9,35 +9,20 @@ export interface Props {
 const { web, print } = Astro.props;
 ---
 
-<article data-hide-web={!web} data-hide-print={!print}>
-	<h3><slot name="title" /></h3>
-	<h4><slot name="meta" /></h4>
+<article
+	class:list={[
+		"print:break-inside-avoid",
+		{ "screen:hidden": !web, "print:hidden": !print },
+	]}
+>
+	<h3 class="mb-3 text-lg font-semibold text-black dark:text-white">
+		<slot name="title" />{" "}<span
+			class="font-normal text-neutral-800 dark:text-neutral-200"
+			>@ <slot name="subtitle" /></span
+		>
+	</h3>
+	<h4 class="mb-3 text-sm text-neutral-500 dark:text-neutral-400">
+		<slot name="meta" />
+	</h4>
 	<Content><slot /></Content>
 </article>
-
-<style>
-	h3 {
-		margin-block: 0 0.2em;
-		font-size: 1.1em;
-		color: var(--color-text-600);
-	}
-
-	h4 {
-		margin-block: 0 0.8em;
-		font-size: 0.88em;
-		color: var(--color-text-300);
-		font-weight: 400;
-	}
-
-	@media screen {
-		[data-hide-web] {
-			display: none;
-		}
-	}
-
-	@media print {
-		[data-hide-print] {
-			display: none;
-		}
-	}
-</style>
