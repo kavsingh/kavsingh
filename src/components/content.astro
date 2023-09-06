@@ -5,7 +5,7 @@
 <style>
 	.content :global(ul),
 	.content :global(p) {
-		margin-block: 0 0.6em;
+		margin-block: 0 theme(spacing[2.5]);
 	}
 
 	.content :global(ul) {
@@ -14,15 +14,15 @@
 
 	.content :global(li) {
 		display: flex;
-		margin-block: 0 0.3em;
+		margin-block: 0 theme(spacing[1.5]);
 	}
 
 	.content :global(li::before) {
 		display: block;
-		margin-inline-end: 0.8em;
+		margin-inline-end: theme(spacing.3);
 		color: theme(colors.neutral.500);
 		content: "•";
-		font-weight: 600;
+		font-weight: theme(fontWeight.semibold);
 	}
 
 	.content :global(a) {
@@ -42,7 +42,7 @@
 		}
 
 		.content :global(a::after) {
-			margin-inline-start: 0.4em;
+			margin-inline-start: theme(spacing[1.5]);
 			content: "[ " attr(href) " ]";
 		}
 	}
