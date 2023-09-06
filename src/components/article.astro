@@ -6,7 +6,7 @@ export interface Props {
 	print: boolean;
 }
 
-const { web, print } = Astro.props as Props;
+const { web, print } = Astro.props;
 ---
 
 <article data-hide-web={!web} data-hide-print={!print}>
