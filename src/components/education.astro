@@ -1,6 +1,5 @@
 ---
 import Article from "./article.astro";
-import ArticleTitle from "./article-title.astro";
 
 import type { CollectionEntry } from "astro:content";
 
@@ -13,7 +12,8 @@ const { Content } = await entry.render();
 ---
 
 <Article web={web} print={print}>
-	<ArticleTitle title={program} subtitle={institution} slot="title" />
+	<span slot="title">{program}</span>
+	<span slot="subtitle">{institution}</span>
 	<span slot="meta">{status}, {period}, {location}</span>
 	<Content />
 </Article>

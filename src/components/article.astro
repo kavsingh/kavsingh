@@ -15,10 +15,13 @@ const { web, print } = Astro.props;
 		{ "screen:hidden": !web, "print:hidden": !print },
 	]}
 >
-	<h3 class="my-1 text-lg font-semibold text-black dark:text-white">
-		<slot name="title" />
+	<h3 class="mb-3 text-lg font-semibold text-black dark:text-white">
+		<slot name="title" />{" "}<span
+			class="font-normal text-neutral-800 dark:text-neutral-200"
+			>@ <slot name="subtitle" /></span
+		>
 	</h3>
-	<h4 class="my-3 text-sm text-neutral-500 dark:text-neutral-400">
+	<h4 class="mb-3 text-sm text-neutral-500 dark:text-neutral-400">
 		<slot name="meta" />
 	</h4>
 	<Content><slot /></Content>
