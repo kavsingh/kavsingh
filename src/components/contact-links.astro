@@ -35,12 +35,9 @@ const links = [
 	{
 		links.map(({ url, label, print, web }) => {
 			const printUrl = url.replace(/(^\w+:|^)\/\//, "");
-			const className = [print && "print", web && "web"]
-				.filter(Boolean)
-				.join(" ");
 
 			return (
-				<li class={className}>
+				<li data-hide-web={!web} data-hide-print={!print}>
 					<a href={url} data-print-url={printUrl}>
 						{label}
 					</a>
@@ -67,7 +64,7 @@ const links = [
 	}
 
 	@media screen {
-		li:not(.web) {
+		li[data-hide-web] {
 			display: none;
 		}
 	}
@@ -81,7 +78,7 @@ const links = [
 			margin-inline-end: 0;
 		}
 
-		li:not(.print) {
+		li[data-hide-print] {
 			display: none;
 		}
 
