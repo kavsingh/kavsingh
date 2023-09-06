@@ -5,7 +5,7 @@ import ContactLinks from "../components/contact-links.astro";
 import Experience from "../components/experience.astro";
 import Education from "../components/education.astro";
 import Content from "../components/content.astro";
-import ListSection from "../components/list-section.astro";
+import CollectionSection from "../components/collection-section.astro";
 import { sortIds } from "../utils/sort";
 
 const experienceCollection = (await getCollection("experience")).sort(sortIds);
@@ -60,9 +60,9 @@ const csp = import.meta.env.DEV
 					</p>
 				</Content>
 			</section>
-			<ListSection aria-labelledby="work-title">
+			<CollectionSection aria-labelledby="work-title">
 				<span id="work-title" slot="title">Work</span>
-				<ul slot="items">
+				<ul>
 					{
 						experienceCollection.map((entry) => (
 							<li class="mb-8 sm:mb-16">
@@ -71,10 +71,10 @@ const csp = import.meta.env.DEV
 						))
 					}
 				</ul>
-			</ListSection>
-			<ListSection aria-labelledby="study-title">
+			</CollectionSection>
+			<CollectionSection aria-labelledby="study-title">
 				<span id="study-title" slot="title">Study</span>
-				<ul slot="items">
+				<ul>
 					{
 						educationCollection.map((entry) => (
 							<li class="mb-8 sm:mb-16">
@@ -83,7 +83,7 @@ const csp = import.meta.env.DEV
 						))
 					}
 				</ul>
-			</ListSection>
+			</CollectionSection>
 		</main>
 	</body>
 </html>
