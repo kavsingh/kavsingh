@@ -1,27 +1,10 @@
 {
-	"extends": "astro/tsconfigs/base",
+	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"noEmit": true,
-		"sourceMap": true,
-		// latest astro release does not support extends array
-		// manually add strictect config here
-		// TODO: replace with "@tsconfig/strictest/tsconfig.json" in extends
-		// array when supported
-		"strict": true,
-		"allowUnusedLabels": false,
-		"noFallthroughCasesInSwitch": true,
-		"noImplicitOverride": true,
-		"noImplicitReturns": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noUncheckedIndexedAccess": true,
-		"checkJs": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		// leave the following to eslint
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"allowUnreachableCode": true
 	},
 	"exclude": ["**/node_modules"],
 	"include": ["./src", "./scripts", "./*.ts", "./*.js", "./*.*.cjs"]
