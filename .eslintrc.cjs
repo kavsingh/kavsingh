@@ -15,7 +15,7 @@ module.exports = {
 				parser: "@typescript-eslint/parser",
 				project: "./tsconfig.json",
 			},
-			extends: ["plugin:astro/recommended"],
+			extends: ["plugin:astro/recommended", "plugin:tailwindcss/recommended"],
 		},
 		{
 			files: ["*.?(c)[jt]s?(x)"],

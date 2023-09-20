@@ -32,15 +32,15 @@ const csp = import.meta.env.DEV
 	</head>
 	<body>
 		<main
-			class="max-w-[56rem] mx-auto grid grid-cols-[1fr] gap-16 p-8 print:max-w-none print:p-4 sm:py-16 sm:gap-y-32 sm:grid-cols-[fit-content(30%)_1fr]"
+			class="mx-auto grid max-w-[56rem] grid-cols-[1fr] gap-16 p-8 sm:grid-cols-[fit-content(30%)_1fr] sm:gap-y-32 sm:py-16 print:max-w-none print:p-4"
 		>
-			<header class="sm:contents sm:mb-32">
-				<h1 class="my-2 p-0 font-semibold text-2xl text-black dark:text-white">
+			<header class="sm:mb-32 sm:contents">
+				<h1 class="my-2 p-0 text-2xl font-semibold text-black dark:text-white">
 					Kanwaljeet Singh
 				</h1>
 				<div>
 					<h2
-						class="my-2 p-0 font-normal text-lg text-neutral-500 dark:text-neutral-400"
+						class="my-2 p-0 text-lg font-normal text-neutral-500 dark:text-neutral-400"
 					>
 						Web Developer
 					</h2>
@@ -48,7 +48,7 @@ const csp = import.meta.env.DEV
 				</div>
 			</header>
 			<section class="sm:contents" aria-labelledby="about-title">
-				<h2 class="text-5xl mb-4" id="about-title">
+				<h2 class="mb-4 text-5xl" id="about-title">
 					<span role="img" aria-hidden>👋</span>
 					<div class="sr-only">About</div>
 				</h2>
