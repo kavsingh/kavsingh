@@ -1,24 +1,23 @@
-{/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-<div class="content">
+<div>
 	<slot />
 </div>
 
 <style>
-	.content :global(ul),
-	.content :global(p) {
+	div :global(ul),
+	div :global(p) {
 		margin-block: 0 theme(spacing[2.5]);
 	}
 
-	.content :global(ul) {
+	div :global(ul) {
 		padding: 0;
 	}
 
-	.content :global(li) {
+	div :global(li) {
 		display: flex;
 		margin-block: 0 theme(spacing[1.5]);
 	}
 
-	.content :global(li::before) {
+	div :global(li::before) {
 		display: block;
 		margin-inline-end: theme(spacing.3);
 		color: theme(colors.neutral.500);
@@ -26,7 +25,7 @@
 		font-weight: theme(fontWeight.semibold);
 	}
 
-	.content :global(a) {
+	div :global(a) {
 		color: currentColor;
 		text-decoration: underline !important;
 	}
@@ -38,11 +37,11 @@
 	}
 
 	@media print {
-		.content :global(a) {
+		div :global(a) {
 			text-decoration: none;
 		}
 
-		.content :global(a::after) {
+		div :global(a::after) {
 			margin-inline-start: theme(spacing[1.5]);
 			content: "[ " attr(href) " ]";
 		}
