@@ -12,12 +12,13 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "rm -rf ./dist && astro build",
+		"build": "astro build",
 		"preview": "astro preview",
 		"codecheck": "tsc && eslint ."
 	},
 	"devDependencies": {
 		"@astrojs/tailwind": "5.0.0",
+		"@astrojs/vercel": "5.0.1",
 		"@types/node": "20.8.2",
 		"@typescript-eslint/eslint-plugin": "6.7.4",
 		"@typescript-eslint/parser": "6.7.4",
