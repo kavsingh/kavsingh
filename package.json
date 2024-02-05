@@ -1,41 +1,41 @@
 {
-  "name": "kavsingh",
-  "version": "2.0.0",
-  "description": "Personal site of Kav Singh",
-  "private": true,
-  "author": "Kav Singh <flakisms@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:kavsingh/kavsingh.git"
-  },
-  "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "codecheck": "tsc && eslint ."
-  },
-  "devDependencies": {
-    "@astrojs/tailwind": "5.1.0",
-    "@astrojs/vercel": "6.1.4",
-    "@types/node": "20.11.3",
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "6.19.0",
-    "astro": "4.1.2",
-    "eslint": "8.56.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-astro": "0.31.1",
-    "eslint-plugin-deprecation": "2.0.0",
-    "eslint-plugin-filenames": "1.3.2",
-    "eslint-plugin-prettier": "5.1.3",
-    "eslint-plugin-tailwindcss": "3.14.0",
-    "prettier": "3.2.2",
-    "prettier-plugin-astro": "0.12.3",
-    "tailwindcss": "3.4.1",
-    "typescript": "5.3.3"
-  },
-  "dependencies": {
-    "@vercel/speed-insights": "1.0.3"
-  }
+	"name": "kavsingh",
+	"version": "2.0.0",
+	"description": "Personal site of Kav Singh",
+	"private": true,
+	"author": "Kav Singh <flakisms@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:kavsingh/kavsingh.git"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"codecheck": "tsc && eslint ."
+	},
+	"devDependencies": {
+		"@astrojs/tailwind": "5.1.0",
+		"@astrojs/vercel": "7.1.1",
+		"@types/node": "20.11.16",
+		"@typescript-eslint/eslint-plugin": "6.20.0",
+		"@typescript-eslint/parser": "6.20.0",
+		"astro": "4.3.2",
+		"eslint": "8.56.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-astro": "0.31.4",
+		"eslint-plugin-deprecation": "2.0.0",
+		"eslint-plugin-filenames": "1.3.2",
+		"eslint-plugin-prettier": "5.1.3",
+		"eslint-plugin-tailwindcss": "3.14.1",
+		"prettier": "3.2.5",
+		"prettier-plugin-astro": "0.13.0",
+		"tailwindcss": "3.4.1",
+		"typescript": "5.3.3"
+	},
+	"dependencies": {
+		"@vercel/speed-insights": "1.0.9"
+	}
 }
