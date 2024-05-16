@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 
-// @ts-expect-error upstream types
 import SpeedInsights from "@vercel/speed-insights/astro";
 
 import ContactLinks from "../components/contact-links.astro";
@@ -41,7 +40,7 @@ const csp = import.meta.env.DEV
 	</head>
 	<body>
 		<main
-			class="mx-auto grid max-w-[56rem] grid-cols-[1fr] gap-16 p-8 sm:grid-cols-[fit-content(30%)_1fr] sm:gap-y-32 sm:py-16 print:max-w-none print:p-4"
+			class="mx-auto grid max-w-4xl grid-cols-[1fr] gap-16 p-8 sm:grid-cols-[fit-content(30%)_1fr] sm:gap-y-32 sm:py-16 print:max-w-none print:p-4"
 		>
 			<header class="sm:mb-32 sm:contents">
 				<h1 class="my-2 p-0 text-2xl font-semibold text-black dark:text-white">

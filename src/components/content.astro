@@ -5,45 +5,32 @@
 <style>
 	div :global(ul),
 	div :global(p) {
-		margin-block: 0 theme(spacing[2.5]);
+		@apply my-2.5;
 	}
 
 	div :global(ul) {
-		padding: 0;
+		@apply p-0;
 	}
 
 	div :global(li) {
-		display: flex;
-		margin-block: 0 theme(spacing[1.5]);
+		@apply my-1.5 flex;
 	}
 
 	div :global(li::before) {
-		display: block;
-		margin-inline-end: theme(spacing.3);
-		color: theme(colors.neutral.500);
-		content: "•";
-		font-weight: theme(fontWeight.semibold);
+		@apply me-3 block font-semibold text-neutral-500 content-['•'];
 	}
 
 	div :global(a) {
-		color: currentColor;
-		text-decoration: underline !important;
-	}
-
-	@media screen and (prefers-color-scheme: dark) {
-		li::before {
-			color: theme(colors.neutral.400);
-		}
+		@apply text-current underline;
 	}
 
 	@media print {
 		div :global(a) {
-			text-decoration: none;
+			@apply no-underline;
 		}
 
 		div :global(a::after) {
-			margin-inline-start: theme(spacing[1.5]);
-			content: "[ " attr(href) " ]";
+			@apply ms-1.5 content-['[_'attr(href)'_]'];
 		}
 	}
 </style>
