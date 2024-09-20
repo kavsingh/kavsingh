@@ -1,10 +1,10 @@
 ---
 import Content from "./content.astro";
 
-export interface Props {
+export type Props = {
 	web: boolean;
 	print: boolean;
-}
+};
 
 const { web, print } = Astro.props;
 ---

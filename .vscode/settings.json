@@ -1,21 +1,18 @@
 {
 	"editor.rulers": [80],
 	"editor.formatOnSave": true,
-	"eslint.enable": true,
-	"eslint.format.enable": true,
-	"eslint.validate": ["astro"],
-	"prettier.documentSelectors": [
-		"**/*.astro",
-		"**/*.ts",
-		"**/*.js",
-		"**/*.json",
-		"**/*.yaml"
-	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "always"
 	},
 	"editor.quickSuggestions": {
 		"strings": true
+	},
+
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/coverage/": true,
+		"**/dist/": true,
+		"**/distStatic/": true
 	},
 	"files.watcherExclude": {
 		"**/node_modules": true,
@@ -23,20 +20,27 @@
 		"**/dist/": true,
 		"**/distStatic/": true
 	},
-	"search.exclude": {
-		"**/node_modules": true,
-		"**/coverage/": true,
-		"**/dist/": true,
-		"**/distStatic/": true
-	},
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
-	"tailwindCSS.validate": true,
-	"tailwindCSS.includeLanguages": {
-		"astro": "html"
-	},
+
 	"typescript.tsdk": "node_modules/typescript/lib",
+
+	"eslint.enable": true,
+	"eslint.validate": ["astro"],
+	"eslint.format.enable": true,
+	"eslint.options": { "flags": ["unstable_ts_config"] },
+	"eslint.workingDirectories": [{ "mode": "auto" }],
+
+	"tailwindCSS.validate": true,
+	"tailwindCSS.includeLanguages": { "astro": "html" },
+	"files.associations": { "*.css": "tailwindcss" },
+
+	"prettier.documentSelectors": [
+		"**/*.astro",
+		"**/*.ts",
+		"**/*.js",
+		"**/*.json",
+		"**/*.yaml"
+	],
+
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
