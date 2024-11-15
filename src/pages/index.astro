@@ -7,6 +7,7 @@ import Education from "../components/education.astro";
 import Content from "../components/content.astro";
 import CollectionSection from "../components/collection-section.astro";
 import { sortIds } from "../utils/sort";
+import Posthog from "../components/posthog.astro";
 
 const experienceCollection = (await getCollection("experience")).sort(sortIds);
 const educationCollection = (await getCollection("education")).sort(sortIds);
@@ -88,6 +89,7 @@ const csp = import.meta.env.DEV
 				</ul>
 			</CollectionSection>
 		</main>
+		<Posthog />
 	</body>
 </html>
 

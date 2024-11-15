@@ -16,6 +16,9 @@
 		"preview": "astro preview",
 		"codecheck": "tsc && eslint"
 	},
+	"dependencies": {
+		"posthog-js": "1.186.1"
+	},
 	"devDependencies": {
 		"@astrojs/tailwind": "5.1.2",
 		"@eslint/js": "9.15.0",
