@@ -1,0 +1,37 @@
+name: Publish
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: "main"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - run: bun codecheck
+
+      - run: bun run build
+
+      - name: setup github pages
+        uses: actions/configure-pages@v4
+
+      - name: upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
