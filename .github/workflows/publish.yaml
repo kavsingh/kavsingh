@@ -1,14 +1,21 @@
 name: Publish
 
-# Controls when the workflow will run
 on:
   push:
     branches: "main"
-
   workflow_dispatch:
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
