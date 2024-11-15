@@ -26,7 +26,6 @@
 	"eslint.enable": true,
 	"eslint.validate": ["astro"],
 	"eslint.format.enable": true,
-	"eslint.options": { "flags": ["unstable_ts_config"] },
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 
 	"tailwindCSS.validate": true,

@@ -43,7 +43,6 @@ export default tsEslint.config(
 		plugins: { "@typescript-eslint": tsEslint.plugin },
 		rules: {
 			"camelcase": "off",
-			"curly": ["warn", "multi-line", "consistent"],
 			"no-console": "off",
 			"no-restricted-syntax": [
 				"warn",
@@ -94,11 +93,6 @@ export default tsEslint.config(
 	},
 
 	{
-		files: ["**/*.?([mc])js?(x)"],
-		extends: [tsEslint.configs.disableTypeChecked],
-	},
-
-	{
 		files: ["*.?([mc])[tj]s?(x)"],
 		rules: {
 			"filenames/match-exported": "off",
@@ -108,6 +102,9 @@ export default tsEslint.config(
 	prettierRecommended,
 
 	{
-		rules: { "prettier/prettier": "warn" },
+		rules: {
+			"curly": ["warn", "multi-line", "consistent"],
+			"prettier/prettier": "warn",
+		},
 	},
 );

@@ -43,21 +43,18 @@ const csp = import.meta.env.DEV
 			class="mx-auto grid max-w-4xl grid-cols-[1fr] gap-16 p-8 sm:grid-cols-[fit-content(30%)_1fr] sm:gap-y-32 sm:py-16 print:max-w-none print:p-4"
 		>
 			<header class="sm:mb-32 sm:contents">
-				<h1 class="my-2 p-0 text-2xl font-semibold text-black dark:text-white">
+				<h1
+					class="self-center p-0 text-2xl font-semibold text-black dark:text-white"
+				>
 					Kanwaljeet Singh
 				</h1>
-				<div>
-					<h2
-						class="my-2 p-0 text-lg font-normal text-neutral-500 dark:text-neutral-400"
-					>
-						Web Developer
-					</h2>
+				<div class="self-center">
 					<ContactLinks />
 				</div>
 			</header>
 			<section class="sm:contents" aria-labelledby="about-title">
 				<h2 class="mb-4 text-5xl" id="about-title">
-					<span role="img" aria-hidden>👋</span>
+					<span role="img" aria-hidden={true}>👋</span>
 					<div class="sr-only">About</div>
 				</h2>
 				<Content>
