@@ -16,7 +16,7 @@ const csp = import.meta.env.DEV
 	: [
 			"default-src 'none'",
 			"style-src 'self' 'unsafe-inline'",
-			"script-src 'self' 'unsafe-inline' '*.posthog.com'",
+			"script-src 'self' 'unsafe-inline' eu-assets.i.posthog.com eu.i.posthog.com",
 			"connect-src 'self'",
 			"img-src 'self'",
 		].join(";") + ";";
