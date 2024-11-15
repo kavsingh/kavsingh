@@ -14,25 +14,23 @@ export default tsEslint.config(
 	{
 		linterOptions: { reportUnusedDisableDirectives: true },
 		plugins: { "jsx-a11y": jsxA11y },
-		languageOptions: {
-			parserOptions: {
-				project: "./tsconfig.json",
-			},
-		},
 	},
 
 	js.configs.recommended,
 	filenames.configs.kebab,
-	...astro.configs["flat/recommended"],
-	...astro.configs["flat/jsx-a11y-strict"],
 
 	{
-		files: ["**/*.astro"],
-		extends: [...tailwind.configs["flat/recommended"]],
+		files: ["*.astro"],
+		extends: [
+			...astro.configs.recommended,
+			...astro.configs["jsx-a11y-strict"],
+			...tailwind.configs["flat/recommended"],
+		],
 	},
 
 	{
-		files: ["*.?([mc])[tj]s?(x)", "**/*.?([mc])[tj]s?(x)"],
+		files: ["*.?(m|c)[tj]s?(x)", "**/*.?(m|c)[tj]s?(x)"],
+		languageOptions: { parserOptions: { projectService: true } },
 		extends: [
 			...tsEslint.configs.strictTypeChecked,
 			...tsEslint.configs.stylisticTypeChecked,
@@ -93,7 +91,7 @@ export default tsEslint.config(
 	},
 
 	{
-		files: ["*.?([mc])[tj]s?(x)"],
+		files: ["*.?(m|c)[tj]s?(x)"],
 		rules: {
 			"filenames/match-exported": "off",
 		},
