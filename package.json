@@ -16,12 +16,8 @@
 		"preview": "astro preview",
 		"codecheck": "tsc && eslint"
 	},
-	"dependencies": {
-		"@vercel/speed-insights": "1.1.0"
-	},
 	"devDependencies": {
 		"@astrojs/tailwind": "5.1.2",
-		"@astrojs/vercel": "7.8.2",
 		"@eslint/js": "9.15.0",
 		"@kavsingh/eslint-plugin-filenames": "2.0.0-rc.0",
 		"@types/bun": "1.1.13",

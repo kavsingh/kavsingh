@@ -8,7 +8,7 @@ import * as tsEslint from "typescript-eslint";
 
 export default tsEslint.config(
 	{
-		ignores: [".vscode/*", ".vercel/*", ".astro/*", "dist/"],
+		ignores: [".vscode/*", ".astro/*", "dist/"],
 	},
 
 	{

@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 
-import SpeedInsights from "@vercel/speed-insights/astro";
-
 import ContactLinks from "../components/contact-links.astro";
 import Experience from "../components/experience.astro";
 import Education from "../components/education.astro";
@@ -90,7 +88,6 @@ const csp = import.meta.env.DEV
 				</ul>
 			</CollectionSection>
 		</main>
-		<SpeedInsights />
 	</body>
 </html>
 
