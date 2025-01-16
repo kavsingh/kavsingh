@@ -1,3 +1,3 @@
-[![Code check](https://github.com/kavsingh/kavsingh/actions/workflows/code-check.yaml/badge.svg)](https://github.com/kavsingh/kavsingh/actions/workflows/code-check.yaml)
+[![main](https://github.com/kavsingh/kavsingh/actions/workflows/verify.yaml/badge.svg)](https://github.com/kavsingh/kavsingh/actions/workflows/verify.yaml)
 
 personal page via [astro](https://astro.build/)
