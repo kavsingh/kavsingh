@@ -1,6 +1,7 @@
 name: Verify
 
-on: [push]
+on:
+  - push
 
 jobs:
   verify:

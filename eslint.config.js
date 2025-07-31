@@ -3,7 +3,6 @@ import filenames from "@kavsingh/eslint-plugin-filenames";
 import astro from "eslint-plugin-astro";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import prettierRecommended from "eslint-plugin-prettier/recommended";
-import tailwind from "eslint-plugin-tailwindcss";
 import * as tsEslint from "typescript-eslint";
 
 export default tsEslint.config(
@@ -24,7 +23,6 @@ export default tsEslint.config(
 		extends: [
 			...astro.configs.recommended,
 			...astro.configs["jsx-a11y-strict"],
-			...tailwind.configs["flat/recommended"],
 		],
 	},
 

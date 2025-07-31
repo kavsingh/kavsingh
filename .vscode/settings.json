@@ -28,9 +28,10 @@
 	"eslint.format.enable": true,
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 
+	"files.associations": { "*.css": "tailwindcss" },
 	"tailwindCSS.validate": true,
 	"tailwindCSS.includeLanguages": { "astro": "html" },
-	"files.associations": { "*.css": "tailwindcss" },
+	"tailwindCSS.experimental.configFile": { "src/styles/app.css": "src/**/*" },
 
 	"prettier.documentSelectors": [
 		"**/*.astro",

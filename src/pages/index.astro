@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
+import "../styles/app.css";
+
 import ContactLinks from "../components/contact-links.astro";
 import Experience from "../components/experience.astro";
 import Education from "../components/education.astro";
@@ -22,6 +24,7 @@ const csp = import.meta.env.DEV
 		].join(";") + ";";
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -92,7 +95,3 @@ const csp = import.meta.env.DEV
 		<Posthog />
 	</body>
 </html>
-
-<style is:global>
-	@import "../styles/global.css";
-</style>

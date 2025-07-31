@@ -1,36 +1,3 @@
-<div>
+<div class="content">
 	<slot />
 </div>
-
-<style>
-	div :global(ul),
-	div :global(p) {
-		@apply my-2.5;
-	}
-
-	div :global(ul) {
-		@apply p-0;
-	}
-
-	div :global(li) {
-		@apply my-1.5 flex;
-	}
-
-	div :global(li::before) {
-		@apply me-3 block font-semibold text-neutral-500 content-['•'];
-	}
-
-	div :global(a) {
-		@apply text-current underline;
-	}
-
-	@media print {
-		div :global(a) {
-			@apply no-underline;
-		}
-
-		div :global(a::after) {
-			@apply ms-1.5 content-['[_'attr(href)'_]'];
-		}
-	}
-</style>

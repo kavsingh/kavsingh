@@ -2,11 +2,12 @@ name: Publish
 
 on:
   push:
-    branches: "main"
+    branches:
+      - main
   workflow_dispatch:
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 permissions:
@@ -37,7 +38,7 @@ jobs:
       - name: upload
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: ./dist
 
       - name: deploy
         id: deployment
