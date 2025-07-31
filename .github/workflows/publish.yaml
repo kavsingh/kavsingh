@@ -16,9 +16,13 @@ permissions:
   id-token: write
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
+  verify:
+    uses: ./.github/workflows/verify.yaml
+    secrets: inherit
 
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -28,18 +32,12 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
-      - run: bun run lint
-
       - run: bun run build
 
-      - name: setup github pages
-        uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v4
 
-      - name: upload
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
