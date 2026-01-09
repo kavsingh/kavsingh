@@ -1,42 +1,28 @@
 import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import filenames from "@kavsingh/eslint-plugin-filenames";
+import tailwindcss from "eslint-plugin-better-tailwindcss";
 import astro from "eslint-plugin-astro";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import prettierRecommended from "eslint-plugin-prettier/recommended";
+import prettier from "eslint-plugin-prettier/recommended";
 import * as tsEslint from "typescript-eslint";
 
-export default tsEslint.config(
+export default defineConfig(
 	{
 		ignores: [".vscode/*", ".astro/*", "dist/"],
 	},
 
 	{
 		linterOptions: { reportUnusedDisableDirectives: true },
-		plugins: { "jsx-a11y": jsxA11y },
+		languageOptions: { parserOptions: { projectService: true } },
 	},
 
 	js.configs.recommended,
 	filenames.configs.kebab,
+	tsEslint.configs.strictTypeChecked,
+	tsEslint.configs.stylisticTypeChecked,
 
 	{
-		files: ["*.astro"],
-		extends: [
-			...astro.configs.recommended,
-			...astro.configs["jsx-a11y-strict"],
-		],
-	},
-
-	{
-		files: ["*.?(m|c)[tj]s?(x)", "**/*.?(m|c)[tj]s?(x)"],
-		languageOptions: { parserOptions: { projectService: true } },
-		extends: [
-			...tsEslint.configs.strictTypeChecked,
-			...tsEslint.configs.stylisticTypeChecked,
-		],
-	},
-
-	{
-		plugins: { "@typescript-eslint": tsEslint.plugin },
 		rules: {
 			"camelcase": "off",
 			"no-console": "off",
@@ -95,7 +81,41 @@ export default tsEslint.config(
 		},
 	},
 
-	prettierRecommended,
+	astro.configs.recommended,
+
+	// `client-side-ts` extracts <script> tags from Astro components.
+	{
+		files: ["**/*.astro"],
+		processor: astro.processors["client-side-ts"],
+	},
+
+	// disable type-checked rules in Astro components.
+	// https://github.com/ota-meshi/eslint-plugin-astro/issues/447
+	// @TODO: how to enable?
+	{
+		files: ["**/*.astro", "**/*.astro/*.ts"],
+		extends: [tsEslint.configs.disableTypeChecked],
+		languageOptions: { parserOptions: { projectService: false } },
+	},
+
+	{
+		files: ["src/**/*.astro", "src/**/*.?(m|c)[tj]s?(x)"],
+		extends: [jsxA11y.flatConfigs.recommended],
+		plugins: { "better-tailwindcss": tailwindcss },
+		settings: { "better-tailwindcss": { entryPoint: "src/styles/app.css" } },
+		rules: {
+			...tailwindcss.configs.recommended?.rules,
+			"better-tailwindcss/enforce-consistent-line-wrapping": "off",
+			"better-tailwindcss/enforce-shorthand-classes": "warn",
+			"better-tailwindcss/no-conflicting-classes": "error",
+			"better-tailwindcss/no-unregistered-classes": [
+				"error",
+				{ detectComponentClasses: true },
+			],
+		},
+	},
+
+	prettier,
 
 	{
 		rules: {

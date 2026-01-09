@@ -24,7 +24,7 @@
 	"typescript.tsdk": "node_modules/typescript/lib",
 
 	"eslint.enable": true,
-	"eslint.validate": ["astro"],
+	"eslint.validate": ["typescript", "javascript", "astro"],
 	"eslint.format.enable": true,
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 

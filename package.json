@@ -9,7 +9,7 @@
 		"url": "git@github.com:kavsingh/kavsingh.git"
 	},
 	"type": "module",
-	"packageManager": "bun@1.2.19",
+	"packageManager": "bun@1.3.5",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -18,32 +18,35 @@
 		"lint": "tsc && eslint"
 	},
 	"dependencies": {
-		"posthog-js": "1.258.3"
+		"posthog-js": "1.313.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "9.32.0",
-		"@kavsingh/eslint-plugin-filenames": "2.0.0-rc.1",
-		"@tailwindcss/vite": "4.1.11",
-		"@types/bun": "1.2.19",
+		"@eslint/js": "9.39.2",
+		"@kavsingh/eslint-plugin-filenames": "2.0.0-rc.3",
+		"@socketsecurity/bun-security-scanner": "1.1.2",
+		"@tailwindcss/vite": "4.1.18",
+		"@types/bun": "1.3.5",
 		"@types/eslint": "9.6.1",
-		"@types/eslint-plugin-jsx-a11y": "6.10.0",
+		"@types/eslint-plugin-jsx-a11y": "6.10.1",
 		"@types/eslint-plugin-tailwindcss": "3.17.0",
-		"astro": "5.12.6",
-		"eslint": "9.32.0",
+		"astro": "5.16.6",
+		"eslint": "9.39.2",
 		"eslint-config-prettier": "10.1.8",
-		"eslint-plugin-astro": "1.3.1",
+		"eslint-plugin-astro": "1.5.0",
+		"eslint-plugin-better-tailwindcss": "3.8.0",
 		"eslint-plugin-jsx-a11y": "6.10.2",
-		"eslint-plugin-prettier": "5.5.3",
-		"globals": "16.3.0",
-		"prettier": "3.6.2",
+		"eslint-plugin-prettier": "5.5.4",
+		"globals": "17.0.0",
+		"prettier": "3.7.4",
 		"prettier-plugin-astro": "0.14.1",
-		"prettier-plugin-tailwindcss": "0.6.14",
-		"tailwindcss": "4.1.11",
-		"typescript": "5.9.2",
-		"typescript-eslint": "8.38.0"
+		"tailwindcss": "4.1.18",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.52.0"
 	},
 	"trustedDependencies": [
 		"@tailwindcss/oxide",
-		"core-js"
+		"core-js",
+		"esbuild",
+		"sharp"
 	]
 }

@@ -1,6 +1,9 @@
 {
 	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+
 		// leave the following to eslint
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
