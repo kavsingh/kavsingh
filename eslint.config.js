@@ -100,15 +100,17 @@ export default defineConfig(
 
 	{
 		files: ["src/**/*.astro", "src/**/*.?(m|c)[tj]s?(x)"],
-		extends: [jsxA11y.flatConfigs.recommended],
-		plugins: { "better-tailwindcss": tailwindcss },
+		extends: [
+			jsxA11y.flatConfigs.recommended,
+			// @ts-expect-error upstream types
+			tailwindcss.configs.recommended,
+		],
 		settings: { "better-tailwindcss": { entryPoint: "src/styles/app.css" } },
 		rules: {
-			...tailwindcss.configs.recommended?.rules,
 			"better-tailwindcss/enforce-consistent-line-wrapping": "off",
+			"better-tailwindcss/enforce-consistent-important-position": "warn",
 			"better-tailwindcss/enforce-shorthand-classes": "warn",
-			"better-tailwindcss/no-conflicting-classes": "error",
-			"better-tailwindcss/no-unregistered-classes": [
+			"better-tailwindcss/no-unknown-classes": [
 				"error",
 				{ detectComponentClasses: true },
 			],
