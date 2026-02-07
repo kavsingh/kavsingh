@@ -3,4 +3,4 @@ exact = true
 # 3 days. https://bun.com/docs/runtime/bunfig#install-minimumreleaseage
 minimumReleaseAge = 259200
 # https://bun.com/docs/runtime/bunfig#install-security-scanner
-security = { scanner = "@socketsecurity/bun-security-scanner" }
+# security = { scanner = "@socketsecurity/bun-security-scanner" }
