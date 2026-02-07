@@ -100,11 +100,7 @@ export default defineConfig(
 
 	{
 		files: ["src/**/*.astro", "src/**/*.?(m|c)[tj]s?(x)"],
-		extends: [
-			jsxA11y.flatConfigs.recommended,
-			// @ts-expect-error upstream types
-			tailwindcss.configs.recommended,
-		],
+		extends: [jsxA11y.flatConfigs.recommended, tailwindcss.configs.recommended],
 		settings: { "better-tailwindcss": { entryPoint: "src/styles/app.css" } },
 		rules: {
 			"better-tailwindcss/enforce-consistent-line-wrapping": "off",
