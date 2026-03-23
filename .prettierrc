@@ -1,0 +1,8 @@
+{
+	"useTabs": true,
+	"plugins": ["prettier-plugin-astro"],
+	"overrides": [
+		{ "files": "*.astro", "options": { "parser": "astro" } },
+		{ "files": ["*.json", "*.jsonc"], "options": { "trailingComma": "none" } }
+	]
+}

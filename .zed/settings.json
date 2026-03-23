@@ -1,0 +1,48 @@
+{
+	"format_on_save": "on",
+	"hard_tabs": true,
+	"formatter": "prettier",
+
+	"lsp": {
+		"eslint": {
+			"settings": {
+				"validate": ["TypeScript", "JavaScript", "Astro"],
+				"workingDirectories": [{ "mode": "auto" }]
+			}
+		},
+
+		"tailwindcss-language-server": {
+			"settings": {
+				"validate": true,
+				"experimental": {
+					"configFile": { "src/styles/app.css": "src/styles/**/*" }
+				}
+			}
+		}
+	},
+
+	"languages": {
+		"TypeScript": {
+			"language_servers": ["vtsls", "eslint"],
+			"code_actions_on_format": { "source.fixAll.eslint": true }
+		},
+
+		"JavaScript": {
+			"language_servers": ["vtsls", "eslint"],
+			"code_actions_on_format": { "source.fixAll.eslint": true }
+		},
+
+		"Astro": {
+			"language_servers": ["astro-language-server", "vtsls", "eslint"],
+			"code_actions_on_format": { "source.fixAll.eslint": true }
+		},
+
+		"CSS": {
+			"language_servers": [
+				"tailwindcss-intellisense-css",
+				"tailwindcss-language-server",
+				"!vscode-css-language-server"
+			]
+		}
+	}
+}

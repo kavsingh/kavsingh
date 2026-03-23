@@ -24,7 +24,7 @@ export default defineConfig(
 
 	{
 		rules: {
-			"camelcase": "off",
+			camelcase: "off",
 			"no-console": "off",
 			"no-restricted-syntax": [
 				"warn",
@@ -100,12 +100,13 @@ export default defineConfig(
 
 	{
 		files: ["src/**/*.astro", "src/**/*.?(m|c)[tj]s?(x)"],
-		extends: [jsxA11y.flatConfigs.recommended, tailwindcss.configs.recommended],
+		extends: [
+			jsxA11y.flatConfigs.recommended,
+			tailwindcss.configs["recommended-error"],
+		],
 		settings: { "better-tailwindcss": { entryPoint: "src/styles/app.css" } },
 		rules: {
 			"better-tailwindcss/enforce-consistent-line-wrapping": "off",
-			"better-tailwindcss/enforce-consistent-important-position": "warn",
-			"better-tailwindcss/enforce-shorthand-classes": "warn",
 			"better-tailwindcss/no-unknown-classes": [
 				"error",
 				{ detectComponentClasses: true },
@@ -117,7 +118,7 @@ export default defineConfig(
 
 	{
 		rules: {
-			"curly": ["warn", "multi-line", "consistent"],
+			curly: ["warn", "multi-line", "consistent"],
 			"prettier/prettier": "warn",
 		},
 	},

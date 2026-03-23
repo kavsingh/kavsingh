@@ -1,5 +1,6 @@
 {
 	"extends": "astro/tsconfigs/strictest",
+	"include": ["./src", "./*.ts", "./*.js"],
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -8,7 +9,5 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"allowUnreachableCode": true
-	},
-	"exclude": ["**/node_modules"],
-	"include": ["./src", "./scripts", "./*.ts", "./*.js", "./*.*.cjs"]
+	}
 }

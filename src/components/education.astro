@@ -1,4 +1,6 @@
 ---
+import { render } from "astro:content";
+
 import Article from "./article.astro";
 
 import type { CollectionEntry } from "astro:content";
@@ -8,7 +10,7 @@ export type Props = { entry: CollectionEntry<"education"> };
 const { entry } = Astro.props;
 const { institution, program, status, period, location, web, print } =
 	entry.data;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Article web={web} print={print}>
