@@ -26,6 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
+      - uses: actions/setup-node@v6
+        with:
+          node-version: latest # seems needed for astro build
       - run: bun run build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
