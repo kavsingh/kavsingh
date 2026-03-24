@@ -40,7 +40,11 @@ const links = [
 				<li
 					class:list={[
 						"me-4 print:me-0",
-						{ "screen:hidden": !web, "print:hidden": !print },
+						{
+							"hidden print:block": !web && print,
+							"print:hidden": web && !print,
+							hidden: !web && !print,
+						},
 					]}
 				>
 					<a

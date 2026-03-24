@@ -6,13 +6,14 @@
 	"lsp": {
 		"eslint": {
 			"settings": {
-				"validate": ["TypeScript", "JavaScript", "Astro"],
+				"includeLanguages": { "Astro": "html" },
 				"workingDirectories": [{ "mode": "auto" }]
 			}
 		},
 
 		"tailwindcss-language-server": {
 			"settings": {
+				"includeLanguages": { "Astro": "html" },
 				"validate": true,
 				"experimental": {
 					"configFile": { "src/styles/app.css": "src/styles/**/*" }
@@ -33,7 +34,12 @@
 		},
 
 		"Astro": {
-			"language_servers": ["astro-language-server", "vtsls", "eslint"],
+			"language_servers": [
+				"astro-language-server",
+				"tailwindcss-language-server",
+				"vtsls",
+				"eslint"
+			],
 			"code_actions_on_format": { "source.fixAll.eslint": true }
 		},
 

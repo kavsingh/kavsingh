@@ -3,8 +3,6 @@
 
 @theme {
 	--font-print: Avenir, Aptos, system-ui, sans-serif;
-	--breakpoint-screen: screen;
-	--breakpoint-print: print;
 }
 
 :root {

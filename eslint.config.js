@@ -8,9 +8,7 @@ import prettier from "eslint-plugin-prettier/recommended";
 import * as tsEslint from "typescript-eslint";
 
 export default defineConfig(
-	{
-		ignores: [".vscode/*", ".astro/*", "dist/"],
-	},
+	{ ignores: [".astro/*", "dist/"] },
 
 	{
 		linterOptions: { reportUnusedDisableDirectives: true },
@@ -27,13 +25,13 @@ export default defineConfig(
 			camelcase: "off",
 			"no-console": "off",
 			"no-restricted-syntax": [
-				"warn",
+				"error",
 				{ selector: "TSEnumDeclaration", message: "Avoid using enums" },
 			],
 			"no-unreachable": "error",
-			"@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+			"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 			"@typescript-eslint/consistent-type-imports": "error",
-			"@typescript-eslint/member-ordering": ["warn"],
+			"@typescript-eslint/member-ordering": ["error"],
 			"@typescript-eslint/restrict-template-expressions": [
 				"error",
 				{ allowNumber: true },
@@ -48,7 +46,7 @@ export default defineConfig(
 			],
 			"no-unused-vars": "off",
 			"@typescript-eslint/no-unused-vars": [
-				"warn",
+				"error",
 				{
 					args: "all",
 					argsIgnorePattern: "^_",
@@ -63,22 +61,8 @@ export default defineConfig(
 	},
 
 	{
-		files: ["**/*.c[tj]s?(x)"],
-		languageOptions: {
-			sourceType: "commonjs",
-			parserOptions: { sourceType: "commonjs" },
-		},
-		rules: {
-			"@typescript-eslint/no-require-imports": "off",
-			"@typescript-eslint/no-var-requires": "off",
-		},
-	},
-
-	{
-		files: ["*.?(m|c)[tj]s?(x)"],
-		rules: {
-			"filenames/match-exported": "off",
-		},
+		files: ["*.{ts,js}"],
+		rules: { "filenames/match-exported": "off" },
 	},
 
 	astro.configs.recommended,
@@ -99,7 +83,7 @@ export default defineConfig(
 	},
 
 	{
-		files: ["src/**/*.astro", "src/**/*.?(m|c)[tj]s?(x)"],
+		files: ["src/**/*.astro", "src/**/*.tsx"],
 		extends: [
 			jsxA11y.flatConfigs.recommended,
 			tailwindcss.configs["recommended-error"],
@@ -118,8 +102,8 @@ export default defineConfig(
 
 	{
 		rules: {
-			curly: ["warn", "multi-line", "consistent"],
-			"prettier/prettier": "warn",
+			curly: ["error", "multi-line", "consistent"],
+			"prettier/prettier": "error",
 		},
 	},
 );
