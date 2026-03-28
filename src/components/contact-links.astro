@@ -1,41 +1,30 @@
 ---
 const links = [
 	{
-		type: "email",
 		label: "Email",
-		url: "mailto://flakisms@gmail.com",
-		web: true,
-		print: true,
+		web: "mailto:flakisms@gmail.com",
+		print: "flakisms@gmail.com",
 	},
 	{
-		type: "github",
 		label: "Github",
-		url: "https://github.com/kavsingh",
-		web: true,
-		print: true,
+		web: "https://github.com/kavsingh",
+		print: "https://github.com/kavsingh",
 	},
 	{
-		type: "linkedin",
 		label: "LinkedIn",
-		url: "https://linkedin.com/in/kav-singh",
-		web: true,
-		print: true,
+		web: "https://linkedin.com/in/kav-singh",
+		print: "https://linkedin.com/in/kav-singh",
 	},
 	{
-		type: "website",
 		label: "Website",
-		url: "//kavsingh.com",
-		web: false,
-		print: true,
+		print: "kavsingh.com",
 	},
-] as const;
+];
 ---
 
 <ul class="flex list-none print:flex-col">
 	{
-		links.map(({ url, label, print, web }) => {
-			const printUrl = url.replace(/(^\w+:|^)\/\//, "");
-
+		links.map(({ label, web, print }) => {
 			return (
 				<li
 					class:list={[
@@ -49,8 +38,8 @@ const links = [
 				>
 					<a
 						class="underline print:no-underline print:after:ms-4 print:after:content-[attr(data-print-url)]"
-						href={url}
-						data-print-url={printUrl}
+						href={web}
+						data-print-url={print}
 					>
 						{label}
 					</a>
