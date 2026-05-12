@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../components/content.css";
+@import "./components/content.css" layer(components);
 
 @theme {
 	--font-print: Avenir, Aptos, system-ui, sans-serif;

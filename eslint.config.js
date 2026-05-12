@@ -88,7 +88,12 @@ export default defineConfig(
 			jsxA11y.flatConfigs.recommended,
 			tailwindcss.configs["recommended-error"],
 		],
-		settings: { "better-tailwindcss": { entryPoint: "src/styles/app.css" } },
+		settings: {
+			"better-tailwindcss": {
+				cwd: import.meta.dirname,
+				entryPoint: "./src/app.css",
+			},
+		},
 		rules: {
 			"better-tailwindcss/enforce-consistent-line-wrapping": "off",
 			"better-tailwindcss/no-unknown-classes": [

@@ -15,9 +15,7 @@
 			"settings": {
 				"includeLanguages": { "Astro": "html" },
 				"validate": true,
-				"experimental": {
-					"configFile": { "src/styles/app.css": "src/styles/**/*" }
-				}
+				"experimental": { "configFile": { "src/app.css": "src/**/*" } }
 			}
 		}
 	},
