@@ -1,9 +1,10 @@
 {
 	"$schema": "./node_modules/lefthook/schema.json",
 	"pre-commit": {
+		"parallel": true,
 		"jobs": [
 			{
-				"glob": ["*.{ts,astro,css,html,json,jsonc,yaml,yml}"],
+				"glob": ["*.{css,html,json,jsonc,yaml,yml}"],
 				"run": "bun prettier --no-error-on-unmatched-pattern {staged_files}",
 				"stage_fixed": true
 			},

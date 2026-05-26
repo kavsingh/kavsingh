@@ -1,7 +1,8 @@
 {
-	"format_on_save": "on",
 	"hard_tabs": true,
 	"formatter": "prettier",
+	"format_on_save": "on",
+	"code_actions_on_format": { "source.fixAll.eslint": true },
 
 	"lsp": {
 		"eslint": {
@@ -23,12 +24,12 @@
 	"languages": {
 		"TypeScript": {
 			"language_servers": ["vtsls", "eslint"],
-			"code_actions_on_format": { "source.fixAll.eslint": true }
+			"formatter": [{ "language_server": { "name": "eslint" } }]
 		},
 
 		"JavaScript": {
 			"language_servers": ["vtsls", "eslint"],
-			"code_actions_on_format": { "source.fixAll.eslint": true }
+			"formatter": [{ "language_server": { "name": "eslint" } }]
 		},
 
 		"Astro": {
@@ -38,7 +39,7 @@
 				"vtsls",
 				"eslint"
 			],
-			"code_actions_on_format": { "source.fixAll.eslint": true }
+			"formatter": [{ "language_server": { "name": "eslint" } }]
 		},
 
 		"CSS": {

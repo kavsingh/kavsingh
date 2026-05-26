@@ -13,5 +13,8 @@
 		"astro"
 	],
 	"tailwindCSS.includeLanguages": { "astro": "html" },
-	"tailwindCSS.experimental.configFile": "src/app.css"
+	"tailwindCSS.experimental.configFile": "src/app.css",
+	"[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+	"[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+	"[astro]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" }
 }
